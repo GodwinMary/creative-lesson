@@ -278,7 +278,7 @@ const DashboardManager = {
 
     // Load user profile
     loadUserProfile() {
-        const profile = localStorage.getItem('creative-arts-profile');
+        const profile = localStorage.getItem('arts-ai-profile');
         if (profile) {
             const data = JSON.parse(profile);
             document.getElementById('studentName').textContent = data.fullName || 'Student';
@@ -299,7 +299,7 @@ const DashboardManager = {
 
     // Load week progress
     loadWeekProgress() {
-        const weekProgress = localStorage.getItem(`creative-arts-week-progress-${this.currentClass}`);
+        const weekProgress = localStorage.getItem(`arts-ai-week-progress-${this.currentClass}`);
         if (weekProgress) {
             const progress = JSON.parse(weekProgress);
             this.currentWeek = progress.currentWeek || 1;
@@ -384,12 +384,12 @@ const DashboardManager = {
 
     // Update overall progress
     updateOverallProgress() {
-        const profile = JSON.parse(localStorage.getItem('creative-arts-profile') || '{}');
+        const profile = JSON.parse(localStorage.getItem('arts-ai-profile') || '{}');
         const classLevel = profile.classLevel;
         
         if (classLevel) {
             // Get progress for current class
-            const progressData = localStorage.getItem(`creative-arts-progress-${classLevel}`);
+            const progressData = localStorage.getItem(`arts-ai-progress-${classLevel}`);
             const progress = progressData ? JSON.parse(progressData) : {};
             
             const totalLessons = 12;
@@ -399,7 +399,7 @@ const DashboardManager = {
             document.getElementById('completedLessons').textContent = completedLessons;
             
             // Calculate quiz average
-            const quizData = localStorage.getItem(`creative-arts-quiz-${classLevel}`);
+            const quizData = localStorage.getItem(`arts-ai-quiz-${classLevel}`);
             const quizzes = quizData ? JSON.parse(quizData) : [];
             const averageScore = quizzes.length > 0 ? 
                 Math.round(quizzes.reduce((sum, quiz) => sum + quiz.score, 0) / quizzes.length) : 0;
@@ -587,7 +587,7 @@ const DashboardManager = {
 
     // Save week progress
     saveWeekProgress() {
-        const progressKey = `creative-arts-week-progress-${this.currentClass}`;
+        const progressKey = `arts-ai-week-progress-${this.currentClass}`;
         const progress = {
             currentWeek: this.currentWeek,
             updatedAt: new Date().toISOString()
