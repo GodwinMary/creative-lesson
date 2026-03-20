@@ -278,7 +278,7 @@ const DashboardManager = {
 
     // Load user profile
     loadUserProfile() {
-        const profile = localStorage.getItem('cca-profile');
+        const profile = localStorage.getItem('creative-arts-profile');
         if (profile) {
             const data = JSON.parse(profile);
             document.getElementById('studentName').textContent = data.fullName || 'Student';
@@ -299,7 +299,7 @@ const DashboardManager = {
 
     // Load week progress
     loadWeekProgress() {
-        const weekProgress = localStorage.getItem(`cca-week-progress-${this.currentClass}`);
+        const weekProgress = localStorage.getItem(`creative-arts-week-progress-${this.currentClass}`);
         if (weekProgress) {
             const progress = JSON.parse(weekProgress);
             this.currentWeek = progress.currentWeek || 1;
@@ -384,12 +384,12 @@ const DashboardManager = {
 
     // Update overall progress
     updateOverallProgress() {
-        const profile = JSON.parse(localStorage.getItem('cca-profile') || '{}');
+        const profile = JSON.parse(localStorage.getItem('creative-arts-profile') || '{}');
         const classLevel = profile.classLevel;
         
         if (classLevel) {
             // Get progress for current class
-            const progressData = localStorage.getItem(`cca-progress-${classLevel}`);
+            const progressData = localStorage.getItem(`creative-arts-progress-${classLevel}`);
             const progress = progressData ? JSON.parse(progressData) : {};
             
             const totalLessons = 12;
@@ -399,7 +399,7 @@ const DashboardManager = {
             document.getElementById('completedLessons').textContent = completedLessons;
             
             // Calculate quiz average
-            const quizData = localStorage.getItem(`cca-quiz-${classLevel}`);
+            const quizData = localStorage.getItem(`creative-arts-quiz-${classLevel}`);
             const quizzes = quizData ? JSON.parse(quizData) : [];
             const averageScore = quizzes.length > 0 ? 
                 Math.round(quizzes.reduce((sum, quiz) => sum + quiz.score, 0) / quizzes.length) : 0;
@@ -509,37 +509,6 @@ const DashboardManager = {
             const selected = document.querySelector(`input[name="question${index}"]:checked`);
             if (selected && parseInt(selected.value) === q.correct) {
                 score++;
-            }
-        });
-        
-        const percentage = Math.round((score / questions.length) * 100);
-        
-        // Save quiz result
-        const quizKey = `${this.currentClass}-week${this.currentWeek}-day${day}-quiz`;
-        const quizData = {
-            score: percentage,
-            totalQuestions: questions.length,
-            correctAnswers: score,
-            timestamp: new Date().toISOString()
-        };
-        localStorage.setItem(quizKey, JSON.stringify(quizData));
-        
-        // Mark day as completed
-        const progressKey = `${this.currentClass}-week${this.currentWeek}-day${day}`;
-        const progress = {
-            started: true,
-            completed: true,
-            score: percentage,
-            completedAt: new Date().toISOString()
-        };
-        localStorage.setItem(progressKey, JSON.stringify(progress));
-        
-        // Show result
-        this.showQuizResult(percentage, score, questions.length);
-        this.updateDayStatus(day);
-        this.updateOverallProgress();
-    },
-
     // Show quiz result
     showQuizResult(percentage, correct, total) {
         const modalContent = document.getElementById('modalContent');
@@ -618,7 +587,7 @@ const DashboardManager = {
 
     // Save week progress
     saveWeekProgress() {
-        const progressKey = `cca-week-progress-${this.currentClass}`;
+        const progressKey = `creative-arts-week-progress-${this.currentClass}`;
         const progress = {
             currentWeek: this.currentWeek,
             updatedAt: new Date().toISOString()

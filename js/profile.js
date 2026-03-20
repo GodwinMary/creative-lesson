@@ -8,7 +8,7 @@ const ProfileManager = {
 
     // Load profile from localStorage
     loadProfile() {
-        const profile = localStorage.getItem('cca-profile');
+        const profile = localStorage.getItem('creative-arts-profile');
         if (profile) {
             const data = JSON.parse(profile);
             document.getElementById('fullName').value = data.fullName || '';
@@ -23,11 +23,11 @@ const ProfileManager = {
             fullName: document.getElementById('fullName').value,
             classLevel: document.getElementById('classLevel').value,
             school: document.getElementById('school').value,
-            createdAt: localStorage.getItem('cca-profile') ? JSON.parse(localStorage.getItem('cca-profile')).createdAt : new Date().toISOString(),
+            createdAt: localStorage.getItem('creative-arts-profile') ? JSON.parse(localStorage.getItem('creative-arts-profile')).createdAt : new Date().toISOString(),
             updatedAt: new Date().toISOString()
         };
 
-        localStorage.setItem('cca-profile', JSON.stringify(profile));
+        localStorage.setItem('creative-arts-profile', JSON.stringify(profile));
         this.showNotification('Profile saved successfully! Redirecting to dashboard...');
         this.updateProgress();
         
@@ -39,7 +39,7 @@ const ProfileManager = {
 
     // Update progress displays
     updateProgress() {
-        const profile = JSON.parse(localStorage.getItem('cca-profile') || '{}');
+        const profile = JSON.parse(localStorage.getItem('creative-arts-profile') || '{}');
         const classLevel = profile.classLevel;
 
         if (classLevel) {
@@ -62,8 +62,8 @@ const ProfileManager = {
 
     // Get progress data for a specific class
     getClassProgress(classLevel) {
-        const progressData = localStorage.getItem(`cca-progress-${classLevel}`);
-        const quizData = localStorage.getItem(`cca-quiz-${classLevel}`);
+        const progressData = localStorage.getItem(`creative-arts-progress-${classLevel}`);
+        const quizData = localStorage.getItem(`creative-arts-quiz-${classLevel}`);
         
         const progress = progressData ? JSON.parse(progressData) : {};
         const quizzes = quizData ? JSON.parse(quizData) : [];
