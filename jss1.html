@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSS 1 - Cultural & Creative Arts | CCA Learn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4380D',
+                        secondary: '#FAAD14',
+                        accent: '#389E0D',
+                        dark: '#1A1A2E',
+                        cream: '#FFF8E7',
+                        terracotta: '#C4501A',
+                        gold: '#E8A317',
+                        forest: '#2D6A1E',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body class="bg-cream font-['Nunito'] text-dark">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-dark text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-3xl">🎨</span>
+                <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="index.html" class="hover:text-secondary transition">Home</a>
+                <div class="relative group">
+                    <button class="text-secondary transition">Classes ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-40 hidden group-hover:block shadow-xl">
+                        <a href="jss1.html" class="block px-4 py-2 bg-gray-800 text-secondary font-bold">JSS 1</a>
+                        <a href="jss2.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 2</a>
+                        <a href="jss3.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 3</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="hover:text-secondary transition">Explore ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-48 hidden group-hover:block shadow-xl">
+                        <a href="drawing.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎨 Drawing Studio</a>
+                        <a href="music.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎵 Music</a>
+                        <a href="drama.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎭 Drama & Theatre</a>
+                        <a href="crafts.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🏺 Traditional Crafts</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🖼️ Cultural Gallery</a>
+                    </div>
+                </div>
+                <a href="quiz.html" class="hover:text-secondary transition">🧠 AI Quiz</a>
+                <a href="assistant.html" class="bg-primary px-4 py-2 rounded-full hover:bg-terracotta transition">🤖 AI Assistant</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden text-2xl" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark border-t border-gray-700 px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-secondary font-semibold">Home</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Classes</p>
+            <a href="jss1.html" class="block py-2 pl-4 text-secondary font-bold">JSS 1</a>
+            <a href="jss2.html" class="block py-2 pl-4 hover:text-secondary">JSS 2</a>
+            <a href="jss3.html" class="block py-2 pl-4 hover:text-secondary">JSS 3</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Explore</p>
+            <a href="drawing.html" class="block py-2 pl-4 hover:text-secondary">🎨 Drawing Studio</a>
+            <a href="music.html" class="block py-2 pl-4 hover:text-secondary">🎵 Music</a>
+            <a href="drama.html" class="block py-2 pl-4 hover:text-secondary">🎭 Drama & Theatre</a>
+            <a href="crafts.html" class="block py-2 pl-4 hover:text-secondary">🏺 Traditional Crafts</a>
+            <a href="gallery.html" class="block py-2 pl-4 hover:text-secondary">🖼️ Cultural Gallery</a>
+            <div class="mt-3 flex flex-col gap-2">
+                <a href="quiz.html" class="block py-2 hover:text-secondary font-semibold">🧠 AI Quiz</a>
+                <a href="assistant.html" class="block py-2 bg-primary text-center rounded-full font-semibold">🤖 AI Assistant</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 text-8xl animate-float">📘</div>
+            <div class="absolute top-20 right-20 text-7xl animate-float-delay">🎨</div>
+            <div class="absolute bottom-20 left-1/4 text-6xl animate-float">🎵</div>
+            <div class="absolute bottom-10 right-1/3 text-8xl animate-float-delay">🎭</div>
+            <div class="absolute top-1/3 left-1/2 text-5xl animate-float">🏺</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+                    📘 Foundation Level
+                </div>
+                <h1 class="font-['Fredoka_One'] text-4xl md:text-5xl leading-tight mb-4">
+                    JSS 1: Cultural & Creative Arts
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 mb-6 leading-relaxed">
+                    Welcome to your first year of Cultural and Creative Arts! Explore the rich heritage of Nigerian culture, learn to draw and paint, discover the beauty of music, and express yourself through drama and traditional crafts.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#topics" class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-blue-50 transition transform hover:scale-105 shadow-lg">
+                        Start Learning →
+                    </a>
+                    <a href="quiz.html" class="bg-white/10 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/20">
+                        🧠 Take Quiz
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H0Z" fill="#FFF8E7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h2 class="font-['Fredoka_One'] text-2xl text-dark">Your Progress</h2>
+                    <p class="text-gray-500 text-sm">Complete all 6 topics to master JSS 1 Cultural and Creative Arts</p>
+                </div>
+                <div class="text-right">
+                    <span id="progress-text-jss1" class="font-['Fredoka_One'] text-3xl text-blue-600">0%</span>
+                    <p class="text-gray-500 text-sm">Complete</p>
+                </div>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                <div id="progress-bar-jss1" class="bg-gradient-to-r from-blue-500 to-blue-600 h-4 rounded-full transition-all duration-700 ease-out" style="width: 0%"></div>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full font-semibold">6 Topics</span>
+                <span class="text-xs bg-green-50 text-green-600 px-3 py-1 rounded-full font-semibold">Interactive Lessons</span>
+                <span class="text-xs bg-purple-50 text-purple-600 px-3 py-1 rounded-full font-semibold">Quiz Available</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section id="topics" class="max-w-7xl mx-auto px-4 py-8 pb-16">
+        <div class="text-center mb-12">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">JSS 1 Curriculum Topics</h2>
+            <p class="text-gray-600 text-lg">Click on each topic to explore the lesson. Mark topics as complete when you finish studying them.</p>
+        </div>
+
+        <div class="space-y-8">
+
+            <!-- Topic 1: Introduction to Cultural and Creative Arts -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-blue-200 transition" data-topic-class="jss1" data-topic-id="topic-1">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white cursor-pointer" onclick="toggleAccordion('jss1-topic-1')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">1</span>
+                            <div>
+                                <h3 class="font-['Fredoka_One'] text-xl md:text-2xl">Introduction to Cultural and Creative Arts</h3>
+                                <p class="text-blue-100 text-sm mt-1">Meaning, Importance, and Scope of CCA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss1-topic-1-icon" class="text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="jss1-topic-1" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="rounded-xl overflow-hidden mb-6 bg-blue-50 h-48 md:h-64 flex items-center justify-center">
+                            <img src="images/jss1/intro-cca.jpg" alt="Introduction to Cultural and Creative Arts" class="w-full h-full object-cover"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-full text-center p-4\'><span class=\'text-6xl mb-3\'>🎨🎵🎭</span><p class=\'text-blue-400 font-semibold\'>Introduction to Cultural and Creative Arts</p></div>';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">🎯</span>
+                                Learning Objectives
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Define Cultural and Creative Arts and explain its meaning in simple terms</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Identify at least five areas that make up Cultural and Creative Arts</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Explain the importance of Cultural and Creative Arts in Nigerian society</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Describe the relationship between culture, creativity, and the arts</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Key Content -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📖</span>
+                                Lesson Content
+                            </h4>
+                            <div class="prose text-gray-700 space-y-4">
+                                <p>
+                                    <strong>What is Cultural and Creative Arts (CCA)?</strong><br>
+                                    Cultural and Creative Arts is a subject that combines the study of culture and artistic expression. The word <em>"culture"</em> refers to the total way of life of a group of people -- their beliefs, traditions, customs, food, language, dressing, festivals, and art forms. <em>"Creative Arts"</em> refers to activities that involve imagination, skill, and talent to create beautiful or meaningful works. When we put them together, CCA is about understanding, appreciating, and practising the artistic traditions and creative expressions of our people.
+                                </p>
+                                <p>
+                                    <strong>The Scope of CCA</strong><br>
+                                    Cultural and Creative Arts covers a wide range of subjects and activities. The main areas include:
+                                </p>
+                                <ul class="list-disc pl-6 space-y-1">
+                                    <li><strong>Visual Arts:</strong> Drawing, painting, sculpture, graphics, and textile design</li>
+                                    <li><strong>Performing Arts:</strong> Music, dance, drama, and theatre</li>
+                                    <li><strong>Literary Arts:</strong> Poetry, storytelling, creative writing, and folklore</li>
+                                    <li><strong>Applied Arts:</strong> Crafts such as weaving, pottery, bead-making, leather work, and calabash carving</li>
+                                    <li><strong>Cultural Studies:</strong> Festivals, ceremonies, cultural values, and heritage preservation</li>
+                                </ul>
+                                <p>
+                                    <strong>Why is CCA Important?</strong><br>
+                                    Cultural and Creative Arts plays a very important role in our lives and society. It helps us to:
+                                </p>
+                                <ul class="list-disc pl-6 space-y-1">
+                                    <li>Preserve and promote Nigerian cultural heritage for future generations</li>
+                                    <li>Develop creativity, imagination, and artistic skills</li>
+                                    <li>Build self-confidence and the ability to express ourselves</li>
+                                    <li>Appreciate the beauty and diversity of different Nigerian cultures</li>
+                                    <li>Develop career opportunities in entertainment, fashion, film, music, and tourism</li>
+                                    <li>Promote national unity by understanding and respecting different cultural practices</li>
+                                </ul>
+                                <p>
+                                    In Nigeria, cultural and creative arts are part of our everyday life. From the colourful <em>agbada</em> we wear to the talking drums at festivals, from the Nollywood films we watch to the beautiful pottery and weaving produced in villages -- CCA is all around us!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Key Terms -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📝</span>
+                                Key Terms
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Culture</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Creative Arts</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Visual Arts</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Performing Arts</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Heritage</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Tradition</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Folklore</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Applied Arts</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
+                            <button onclick="ProgressTracker.markComplete('jss1', 'topic-1'); this.innerHTML='✅ Completed!'; this.classList.remove('bg-blue-600','hover:bg-blue-700'); this.classList.add('bg-green-600');"
+                                class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition">
+                                Mark as Complete
+                            </button>
+                            <a href="gallery.html" class="bg-blue-50 text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-blue-100 transition">
+                                🖼️ Explore Gallery
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 2: Nigerian Cultural Heritage -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-blue-200 transition" data-topic-class="jss1" data-topic-id="topic-2">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white cursor-pointer" onclick="toggleAccordion('jss1-topic-2')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">2</span>
+                            <div>
+                                <h3 class="font-['Fredoka_One'] text-xl md:text-2xl">Nigerian Cultural Heritage</h3>
+                                <p class="text-blue-100 text-sm mt-1">Festivals, Traditional Art Forms, and Ethnic Groups</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss1-topic-2-icon" class="text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="jss1-topic-2" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="rounded-xl overflow-hidden mb-6 bg-blue-50 h-48 md:h-64 flex items-center justify-center">
+                            <img src="images/jss1/cultural-heritage.jpg" alt="Nigerian Cultural Heritage" class="w-full h-full object-cover"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-full text-center p-4\'><span class=\'text-6xl mb-3\'>🇳🇬🗿👑</span><p class=\'text-blue-400 font-semibold\'>Nigerian Cultural Heritage</p></div>';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">🎯</span>
+                                Learning Objectives
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Identify the major ethnic groups in Nigeria and their unique cultural practices</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Describe at least three important Nigerian festivals and their significance</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Explain the importance of preserving Nigerian cultural heritage</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Identify examples of traditional Nigerian art forms from different regions</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Key Content -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📖</span>
+                                Lesson Content
+                            </h4>
+                            <div class="prose text-gray-700 space-y-4">
+                                <p>
+                                    <strong>Nigeria's Rich Cultural Diversity</strong><br>
+                                    Nigeria is the most populous country in Africa, with over 200 million people and more than 250 ethnic groups. The three largest ethnic groups are the <strong>Hausa-Fulani</strong> (mainly in the North), the <strong>Yoruba</strong> (mainly in the South-West), and the <strong>Igbo</strong> (mainly in the South-East). Other important groups include the Ijaw, Tiv, Kanuri, Ibibio, Edo, Nupe, and Efik peoples. Each group has its own language, customs, dressing, food, music, and art forms.
+                                </p>
+                                <p>
+                                    <strong>Major Nigerian Festivals</strong><br>
+                                    Festivals are an important part of Nigerian culture. They bring communities together and celebrate our traditions. Some important ones include:
+                                </p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>Eyo Festival (Lagos):</strong> A colourful Yoruba masquerade festival held in Lagos Island. Participants wear white robes and wide-brimmed hats and carry decorated staffs called <em>opambata</em>.</li>
+                                    <li><strong>Argungu Fishing Festival (Kebbi State):</strong> A grand fishing competition held on the Sokoto River, where hundreds of fishermen jump into the water at the same time to catch the biggest fish.</li>
+                                    <li><strong>New Yam Festival (Igbo land):</strong> Called <em>Iri Ji</em> or <em>Iwa Ji</em>, this festival celebrates the harvest of new yams. Yam is considered the "king of crops" in Igbo culture.</li>
+                                    <li><strong>Durbar Festival (Northern Nigeria):</strong> A spectacular horse-riding parade held during Eid celebrations in cities like Kano, Katsina, and Zaria. Horsemen dress in colourful regalia and ride before the Emir.</li>
+                                    <li><strong>Osun-Osogbo Festival (Osun State):</strong> An annual festival held at the Osun-Osogbo Sacred Grove (a UNESCO World Heritage Site) honouring the river goddess Osun.</li>
+                                </ul>
+                                <p>
+                                    <strong>Traditional Art Forms</strong><br>
+                                    Nigeria has a long history of artistic achievement:
+                                </p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>Nok Terracotta:</strong> Some of the oldest known sculptures in sub-Saharan Africa, dating back to around 500 BC. These clay figures were made by the Nok people in present-day Kaduna and Plateau states.</li>
+                                    <li><strong>Benin Bronzes:</strong> Magnificent brass and bronze plaques and sculptures created by the craftsmen of the ancient Benin Kingdom (present-day Edo State). They are famous worldwide for their beauty and detail.</li>
+                                    <li><strong>Ife Bronze Heads:</strong> Naturalistic bronze and terracotta heads produced in the ancient city of Ile-Ife, considered the spiritual homeland of the Yoruba people.</li>
+                                    <li><strong>Adire Cloth:</strong> Traditional Yoruba indigo-dyed fabric made using resist-dyeing techniques such as tying, stitching, or using starch paste.</li>
+                                    <li><strong>Akwete Cloth:</strong> A hand-woven textile produced by Igbo women in Akwete, Abia State, known for its intricate patterns.</li>
+                                </ul>
+                                <p>
+                                    <strong>Why We Must Preserve Our Heritage</strong><br>
+                                    Our cultural heritage is our identity as Nigerians. When we lose our traditions, we lose a part of who we are. Preserving cultural heritage means teaching the younger generation about our history, practising our traditional arts, and passing down knowledge through education. As students, you play an important role in keeping Nigerian culture alive!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Key Terms -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📝</span>
+                                Key Terms
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Cultural Heritage</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Ethnic Group</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Festival</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Masquerade</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Terracotta</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Bronze Casting</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Preservation</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Adire</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
+                            <button onclick="ProgressTracker.markComplete('jss1', 'topic-2'); this.innerHTML='✅ Completed!'; this.classList.remove('bg-blue-600','hover:bg-blue-700'); this.classList.add('bg-green-600');"
+                                class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition">
+                                Mark as Complete
+                            </button>
+                            <a href="gallery.html" class="bg-blue-50 text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-blue-100 transition">
+                                🖼️ Cultural Gallery
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 3: Basic Drawing and Painting -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-blue-200 transition" data-topic-class="jss1" data-topic-id="topic-3">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white cursor-pointer" onclick="toggleAccordion('jss1-topic-3')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">3</span>
+                            <div>
+                                <h3 class="font-['Fredoka_One'] text-xl md:text-2xl">Basic Drawing and Painting</h3>
+                                <p class="text-blue-100 text-sm mt-1">Lines, Shapes, Colors, and the Color Wheel</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss1-topic-3-icon" class="text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="jss1-topic-3" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="rounded-xl overflow-hidden mb-6 bg-blue-50 h-48 md:h-64 flex items-center justify-center">
+                            <img src="images/jss1/drawing-painting.jpg" alt="Basic Drawing and Painting" class="w-full h-full object-cover"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-full text-center p-4\'><span class=\'text-6xl mb-3\'>🎨✏️🖌️</span><p class=\'text-blue-400 font-semibold\'>Basic Drawing and Painting</p></div>';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">🎯</span>
+                                Learning Objectives
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Identify and draw different types of lines (straight, curved, zigzag, wavy, dotted)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Recognise and draw basic shapes (circle, square, triangle, rectangle, oval)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Understand the colour wheel and identify primary, secondary, and tertiary colours</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>List and describe drawing and painting tools and materials</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Key Content -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📖</span>
+                                Lesson Content
+                            </h4>
+                            <div class="prose text-gray-700 space-y-4">
+                                <p>
+                                    <strong>What is Drawing?</strong><br>
+                                    Drawing is the art of making pictures, designs, or images on a surface (usually paper) using tools such as pencils, crayons, charcoal, or pens. Drawing is one of the oldest forms of human expression -- even cave people drew pictures on walls thousands of years ago! Every great artist starts with learning how to draw.
+                                </p>
+                                <p>
+                                    <strong>Types of Lines</strong><br>
+                                    Lines are the most basic element of drawing. A line is simply a mark made by moving a point across a surface. There are many types of lines:
+                                </p>
+                                <ul class="list-disc pl-6 space-y-1">
+                                    <li><strong>Straight lines:</strong> Lines that go in one direction without bending (horizontal, vertical, or diagonal)</li>
+                                    <li><strong>Curved lines:</strong> Lines that bend smoothly, like the letter "S" or a rainbow</li>
+                                    <li><strong>Zigzag lines:</strong> Lines that change direction sharply, like the letter "Z"</li>
+                                    <li><strong>Wavy lines:</strong> Lines that curve up and down repeatedly, like ocean waves</li>
+                                    <li><strong>Dotted lines:</strong> Lines made up of small dots or dashes</li>
+                                    <li><strong>Thick and thin lines:</strong> Lines of different widths used to create emphasis or depth</li>
+                                </ul>
+                                <p>
+                                    <strong>Basic Shapes</strong><br>
+                                    Shapes are formed when lines are joined together. Everything we see around us can be broken down into basic shapes. The main geometric shapes are: <strong>circle</strong>, <strong>square</strong>, <strong>rectangle</strong>, <strong>triangle</strong>, and <strong>oval</strong>. Organic (free-form) shapes are irregular shapes found in nature, such as the shape of a leaf or a cloud. Artists use shapes as building blocks to draw more complex objects -- for example, a human face can be drawn starting with an oval shape.
+                                </p>
+                                <p>
+                                    <strong>Understanding Colour</strong><br>
+                                    Colour is one of the most exciting elements of art. The <strong>colour wheel</strong> is a circular diagram that shows the relationship between colours:
+                                </p>
+                                <ul class="list-disc pl-6 space-y-1">
+                                    <li><strong>Primary colours:</strong> Red, Blue, and Yellow. These cannot be made by mixing other colours.</li>
+                                    <li><strong>Secondary colours:</strong> Green (blue + yellow), Orange (red + yellow), and Purple/Violet (red + blue). These are made by mixing two primary colours.</li>
+                                    <li><strong>Tertiary colours:</strong> Made by mixing a primary colour with a neighbouring secondary colour, such as red-orange or blue-green.</li>
+                                    <li><strong>Warm colours:</strong> Red, orange, and yellow -- they remind us of fire and sunshine.</li>
+                                    <li><strong>Cool colours:</strong> Blue, green, and purple -- they remind us of water and the sky.</li>
+                                </ul>
+                                <p>
+                                    <strong>Drawing and Painting Materials</strong><br>
+                                    To draw and paint, you need the right tools. Common materials include: pencils (HB, 2B, 4B), erasers, sharpeners, rulers, drawing paper or cartridge paper, crayons, coloured pencils, watercolour paints, poster paints, paint brushes, a palette for mixing colours, and a water container. Always take care of your tools and keep your workspace clean and organised.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Key Terms -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📝</span>
+                                Key Terms
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Line</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Shape</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Colour Wheel</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Primary Colours</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Secondary Colours</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Tertiary Colours</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Palette</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Sketch</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
+                            <button onclick="ProgressTracker.markComplete('jss1', 'topic-3'); this.innerHTML='✅ Completed!'; this.classList.remove('bg-blue-600','hover:bg-blue-700'); this.classList.add('bg-green-600');"
+                                class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition">
+                                Mark as Complete
+                            </button>
+                            <a href="drawing.html" class="bg-blue-50 text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-blue-100 transition">
+                                🎨 Open Drawing Studio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 4: Music Fundamentals -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-blue-200 transition" data-topic-class="jss1" data-topic-id="topic-4">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white cursor-pointer" onclick="toggleAccordion('jss1-topic-4')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">4</span>
+                            <div>
+                                <h3 class="font-['Fredoka_One'] text-xl md:text-2xl">Music Fundamentals</h3>
+                                <p class="text-blue-100 text-sm mt-1">Rhythm, Melody, Musical Notes, and Nigerian Instruments</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss1-topic-4-icon" class="text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="jss1-topic-4" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="rounded-xl overflow-hidden mb-6 bg-blue-50 h-48 md:h-64 flex items-center justify-center">
+                            <img src="images/jss1/music-fundamentals.jpg" alt="Music Fundamentals" class="w-full h-full object-cover"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-full text-center p-4\'><span class=\'text-6xl mb-3\'>🎵🥁🎶</span><p class=\'text-blue-400 font-semibold\'>Music Fundamentals</p></div>';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">🎯</span>
+                                Learning Objectives
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Define music and explain the difference between rhythm and melody</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Identify the basic musical notes (semibreve, minim, crotchet, quaver) and their values</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Name and describe at least five traditional Nigerian musical instruments</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Classify Nigerian instruments into idiophones, membranophones, aerophones, and chordophones</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Key Content -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📖</span>
+                                Lesson Content
+                            </h4>
+                            <div class="prose text-gray-700 space-y-4">
+                                <p>
+                                    <strong>What is Music?</strong><br>
+                                    Music is the art of arranging sounds in a pleasing and organised way. It is a universal language that crosses borders, cultures, and generations. In Nigeria, music is deeply woven into our daily lives -- we sing at celebrations, during work, at worship, and even when telling stories. Music has been described as a combination of melody, rhythm, and harmony.
+                                </p>
+                                <p>
+                                    <strong>Rhythm</strong><br>
+                                    Rhythm is the pattern of sounds and silences in music. It is like the heartbeat of a song -- it gives music its pulse and makes you want to move or dance. When you clap your hands in a pattern (clap-clap-rest-clap), you are creating a rhythm. Nigerian music is especially known for its complex and exciting rhythms, which often involve multiple drummers playing interlocking patterns.
+                                </p>
+                                <p>
+                                    <strong>Melody</strong><br>
+                                    Melody is the tune of a song -- the part you can sing or hum. It is a series of musical notes played one after another in a pleasing sequence. Think of your favourite song: the part that stays in your head is the melody. A good melody can make you feel happy, sad, excited, or calm.
+                                </p>
+                                <p>
+                                    <strong>Musical Notes and Their Values</strong><br>
+                                    Musical notes represent how long a sound should last. The basic notes are:
+                                </p>
+                                <ul class="list-disc pl-6 space-y-1">
+                                    <li><strong>Semibreve (Whole note):</strong> 4 beats -- the longest common note</li>
+                                    <li><strong>Minim (Half note):</strong> 2 beats -- half as long as a semibreve</li>
+                                    <li><strong>Crotchet (Quarter note):</strong> 1 beat -- the standard walking beat</li>
+                                    <li><strong>Quaver (Eighth note):</strong> 1/2 beat -- twice as fast as a crotchet</li>
+                                    <li><strong>Semiquaver (Sixteenth note):</strong> 1/4 beat -- very quick notes</li>
+                                </ul>
+                                <p>
+                                    <strong>Traditional Nigerian Musical Instruments</strong><br>
+                                    Nigeria has a rich variety of traditional instruments. They are classified into four main groups:
+                                </p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>Idiophones</strong> (instruments that produce sound by vibrating their entire body):
+                                        <ul class="list-circle pl-4 mt-1">
+                                            <li><em>Agogo</em> -- a double metal bell used in Yoruba music</li>
+                                            <li><em>Shekere</em> -- a gourd covered with beaded netting, shaken to produce sound</li>
+                                            <li><em>Udu</em> -- an Igbo clay pot instrument with a unique, deep sound</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Membranophones</strong> (drums with a stretched skin/membrane):
+                                        <ul class="list-circle pl-4 mt-1">
+                                            <li><em>Dundun</em> (Talking Drum) -- a Yoruba hourglass-shaped drum that can mimic speech tones</li>
+                                            <li><em>Bata</em> -- a set of conical drums used in Yoruba religious and social ceremonies</li>
+                                            <li><em>Gangan</em> -- another type of Yoruba pressure drum</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Aerophones</strong> (wind instruments):
+                                        <ul class="list-circle pl-4 mt-1">
+                                            <li><em>Algaita</em> -- a Hausa double-reed wind instrument similar to an oboe</li>
+                                            <li><em>Kakaki</em> -- a long Hausa trumpet made of metal, played at royal courts</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Chordophones</strong> (stringed instruments):
+                                        <ul class="list-circle pl-4 mt-1">
+                                            <li><em>Molo</em> -- a Hausa single-stringed lute</li>
+                                            <li><em>Goje</em> -- a one-stringed fiddle played with a bow, common in Northern Nigeria</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Key Terms -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📝</span>
+                                Key Terms
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Rhythm</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Melody</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Semibreve</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Crotchet</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Idiophone</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Membranophone</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Dundun</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Shekere</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
+                            <button onclick="ProgressTracker.markComplete('jss1', 'topic-4'); this.innerHTML='✅ Completed!'; this.classList.remove('bg-blue-600','hover:bg-blue-700'); this.classList.add('bg-green-600');"
+                                class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition">
+                                Mark as Complete
+                            </button>
+                            <a href="music.html" class="bg-blue-50 text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-blue-100 transition">
+                                🎵 Explore Music
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 5: Drama and Performance Basics -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-blue-200 transition" data-topic-class="jss1" data-topic-id="topic-5">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white cursor-pointer" onclick="toggleAccordion('jss1-topic-5')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">5</span>
+                            <div>
+                                <h3 class="font-['Fredoka_One'] text-xl md:text-2xl">Drama and Performance Basics</h3>
+                                <p class="text-blue-100 text-sm mt-1">Mime, Role Play, and Storytelling</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss1-topic-5-icon" class="text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="jss1-topic-5" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="rounded-xl overflow-hidden mb-6 bg-blue-50 h-48 md:h-64 flex items-center justify-center">
+                            <img src="images/jss1/drama-performance.jpg" alt="Drama and Performance Basics" class="w-full h-full object-cover"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-full text-center p-4\'><span class=\'text-6xl mb-3\'>🎭🎪🎬</span><p class=\'text-blue-400 font-semibold\'>Drama and Performance Basics</p></div>';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">🎯</span>
+                                Learning Objectives
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Define drama and explain the difference between drama and theatre</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Demonstrate basic mime techniques by using body language to tell a story without words</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Participate in role-play activities based on everyday situations</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Retell a Nigerian folktale using voice projection, facial expressions, and gestures</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Key Content -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📖</span>
+                                Lesson Content
+                            </h4>
+                            <div class="prose text-gray-700 space-y-4">
+                                <p>
+                                    <strong>What is Drama?</strong><br>
+                                    Drama is the art of telling a story through acting. It involves people (called <em>actors</em> or <em>performers</em>) pretending to be different characters and acting out events on a stage or in a performance space. Drama allows us to explore human experiences, express emotions, and entertain an audience. <em>Theatre</em> is the place or building where drama performances take place, but the word is also used to describe the whole art of performance.
+                                </p>
+                                <p>
+                                    <strong>Drama in Nigerian Culture</strong><br>
+                                    Drama has always been a part of Nigerian life. Before modern theatres, Nigerians performed dramas during festivals, moonlight gatherings, and ceremonies. Masquerade performances, storytelling by village elders, and ritual dances are all traditional forms of Nigerian drama. Famous Nigerian dramatists include <strong>Wole Soyinka</strong> (Africa's first Nobel Prize winner in Literature), <strong>Ola Rotimi</strong>, and <strong>Femi Osofisan</strong>.
+                                </p>
+                                <p>
+                                    <strong>Mime</strong><br>
+                                    Mime is a form of drama where the performer tells a story using only body movements, facial expressions, and gestures -- without speaking any words. A good mime artist can make the audience "see" invisible objects, feel emotions, and understand a complete story just through physical movement. For example, a mime artist might pretend to be trapped in a box, climb an invisible rope, or walk against a strong wind.
+                                </p>
+                                <p>
+                                    <strong>Tips for Good Mime:</strong>
+                                </p>
+                                <ul class="list-disc pl-6 space-y-1">
+                                    <li>Use exaggerated facial expressions so the audience can see your emotions clearly</li>
+                                    <li>Move slowly and deliberately -- every movement should have a purpose</li>
+                                    <li>Use your whole body, not just your hands</li>
+                                    <li>Focus your eyes on the "invisible" object you are interacting with</li>
+                                    <li>Practise in front of a mirror to see how your movements look</li>
+                                </ul>
+                                <p>
+                                    <strong>Role Play</strong><br>
+                                    Role play is when you act as a particular character in a situation. Unlike a full drama with a script, role play is often spontaneous -- you make up what to say and do as you go. Role play helps you understand other people's feelings and perspectives. Examples of role play activities include: acting out a visit to the market, pretending to be a teacher and student, or acting out how to resolve a conflict between friends.
+                                </p>
+                                <p>
+                                    <strong>Storytelling</strong><br>
+                                    Storytelling is one of the oldest and most cherished traditions in Nigerian culture. In the evenings, especially during moonlit nights, families and communities would gather to listen to stories told by elders. Nigerian folktales often feature clever animals (like the tortoise, <em>Ijapa</em> or <em>Mbe</em>), moral lessons, and explanations for natural events. A good storyteller uses:
+                                </p>
+                                <ul class="list-disc pl-6 space-y-1">
+                                    <li><strong>Voice projection:</strong> Speaking loudly and clearly so everyone can hear</li>
+                                    <li><strong>Voice variation:</strong> Changing your voice for different characters (deep for the lion, high for the mouse)</li>
+                                    <li><strong>Facial expressions:</strong> Showing surprise, fear, joy, or anger with your face</li>
+                                    <li><strong>Gestures:</strong> Using hand and body movements to illustrate the story</li>
+                                    <li><strong>Audience participation:</strong> Asking listeners to respond with call-and-response phrases</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Key Terms -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📝</span>
+                                Key Terms
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Drama</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Theatre</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Mime</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Role Play</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Storytelling</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Folktale</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Voice Projection</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Gesture</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
+                            <button onclick="ProgressTracker.markComplete('jss1', 'topic-5'); this.innerHTML='✅ Completed!'; this.classList.remove('bg-blue-600','hover:bg-blue-700'); this.classList.add('bg-green-600');"
+                                class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition">
+                                Mark as Complete
+                            </button>
+                            <a href="drama.html" class="bg-blue-50 text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-blue-100 transition">
+                                🎭 Explore Drama
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 6: Traditional Crafts -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-blue-200 transition" data-topic-class="jss1" data-topic-id="topic-6">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white cursor-pointer" onclick="toggleAccordion('jss1-topic-6')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">6</span>
+                            <div>
+                                <h3 class="font-['Fredoka_One'] text-xl md:text-2xl">Traditional Crafts</h3>
+                                <p class="text-blue-100 text-sm mt-1">Weaving, Pottery, and Bead-Making</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss1-topic-6-icon" class="text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="jss1-topic-6" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="rounded-xl overflow-hidden mb-6 bg-blue-50 h-48 md:h-64 flex items-center justify-center">
+                            <img src="images/jss1/traditional-crafts.jpg" alt="Traditional Crafts" class="w-full h-full object-cover"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-full text-center p-4\'><span class=\'text-6xl mb-3\'>🏺🧶📿</span><p class=\'text-blue-400 font-semibold\'>Traditional Crafts</p></div>';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">🎯</span>
+                                Learning Objectives
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Define the term "craft" and list examples of traditional Nigerian crafts</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Describe the basic process of weaving, pottery, and bead-making</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Identify the materials and tools used in each craft</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 mt-1">✦</span>
+                                    <span>Explain the cultural significance of traditional crafts in different Nigerian communities</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Key Content -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📖</span>
+                                Lesson Content
+                            </h4>
+                            <div class="prose text-gray-700 space-y-4">
+                                <p>
+                                    <strong>What are Crafts?</strong><br>
+                                    A craft is an activity that involves making things by hand using skill and creativity. Traditional crafts are those that have been practised for many generations and are passed down from parents to children. In Nigeria, traditional crafts are not just about making useful objects -- they are an expression of cultural identity, artistic talent, and community pride. Many Nigerian communities are famous for particular crafts.
+                                </p>
+                                <p>
+                                    <strong>Weaving</strong><br>
+                                    Weaving is the process of interlacing threads or fibres to create fabric, cloth, or other items such as baskets and mats. Nigeria has a long tradition of weaving:
+                                </p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>Aso Oke:</strong> A hand-woven cloth produced by the Yoruba people, used for special occasions such as weddings, chieftaincy ceremonies, and burials. Types include <em>Sanyan</em> (light brown), <em>Etu</em> (dark blue), and <em>Alaari</em> (deep red).</li>
+                                    <li><strong>Akwete Cloth:</strong> Woven by Igbo women in Akwete town, Abia State, using a broad loom. Known for its colourful and intricate geometric patterns.</li>
+                                    <li><strong>Basket and Mat Weaving:</strong> Found across Nigeria, using materials such as palm fronds, raffia, bamboo, and reeds. These are used for storage, sleeping mats, and decorative items.</li>
+                                </ul>
+                                <p>
+                                    <strong>Materials used in weaving:</strong> Cotton thread, silk, raffia, palm leaves, bamboo, and modern synthetic threads. <strong>Tools:</strong> Loom (hand loom or broad loom), shuttle, bobbin, and heddle.
+                                </p>
+                                <p>
+                                    <strong>Pottery</strong><br>
+                                    Pottery is the art of making objects out of clay. The clay is shaped by hand or on a wheel, dried, and then fired (heated in a kiln or open fire) to make it hard and durable. Pottery is one of the oldest crafts in Nigeria -- archaeologists have found pottery fragments that are thousands of years old.
+                                </p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>Common pottery items:</strong> Cooking pots, water pots, storage jars, plates, cups, decorative vases, and ritual vessels</li>
+                                    <li><strong>Famous pottery centres:</strong> Abuja (known for beautiful pottery), Ilorin, Suleja, Okigwe, and many rural communities</li>
+                                    <li><strong>The pottery process:</strong> (1) Collect and prepare the clay by removing stones and impurities, (2) Knead the clay to make it smooth, (3) Shape the clay using coiling, pinching, or a potter's wheel, (4) Let the pot dry slowly in the shade, (5) Fire the pot to make it strong and waterproof, (6) Decorate with patterns, paint, or glaze</li>
+                                </ul>
+                                <p>
+                                    <strong>Bead-Making</strong><br>
+                                    Beads have been an important part of Nigerian culture for thousands of years. They are used for jewellery (necklaces, bracelets, anklets, waist beads), crowns for chiefs and kings, decoration on clothing, and for cultural and religious ceremonies.
+                                </p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>Types of beads:</strong> Glass beads, coral beads, stone beads, seed beads, bone beads, and clay beads</li>
+                                    <li><strong>Bead centres in Nigeria:</strong> Bida in Niger State is famous for glass bead-making. The Benin people use coral beads extensively in their royal regalia. The Yoruba use beads to make crowns (<em>ade</em>) for their obas (kings).</li>
+                                    <li><strong>The bead-making process (glass beads):</strong> In Bida, craftsmen melt glass in clay crucibles over a charcoal fire, then wind the molten glass around a metal rod to form the bead shape. The beads are then cooled, polished, and strung together.</li>
+                                    <li><strong>Cultural significance:</strong> Among the Yoruba, beaded crowns with fringed veils are a symbol of royal authority. Coral beads worn by the Oba of Benin represent power and wealth. Waist beads worn by women can symbolise beauty, femininity, and good health.</li>
+                                </ul>
+                                <p>
+                                    <strong>Other Nigerian Crafts:</strong> Other important crafts include leather work (Northern Nigeria), calabash carving and decoration, blacksmithing, woodcarving, dyeing (such as indigo dyeing for Adire cloth), and bronze and brass casting (especially in Benin City).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Key Terms -->
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-blue-600 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center text-sm">📝</span>
+                                Key Terms
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Craft</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Weaving</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Loom</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Aso Oke</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Pottery</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Clay</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Kiln</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Bead-Making</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Coral Beads</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
+                            <button onclick="ProgressTracker.markComplete('jss1', 'topic-6'); this.innerHTML='✅ Completed!'; this.classList.remove('bg-blue-600','hover:bg-blue-700'); this.classList.add('bg-green-600');"
+                                class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition">
+                                Mark as Complete
+                            </button>
+                            <a href="crafts.html" class="bg-blue-50 text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-blue-100 transition">
+                                🏺 Explore Crafts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Take Quiz Section -->
+    <section class="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="text-6xl mb-4">🧠</div>
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl mb-4">Ready to Test Your Knowledge?</h2>
+            <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+                You have completed the JSS 1 Cultural and Creative Arts lessons. Take the AI-powered quiz to test what you have learned and earn your score!
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="quiz.html" class="bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition transform hover:scale-105 shadow-lg">
+                    Take JSS 1 Quiz →
+                </a>
+                <a href="assistant.html" class="bg-white/10 backdrop-blur px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/20">
+                    🤖 Ask AI for Help
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-10">
+            <h2 class="font-['Fredoka_One'] text-3xl text-dark mb-3">Explore More</h2>
+            <p class="text-gray-600 text-lg">Dive deeper into each subject area with interactive activities</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="drawing.html" class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-red-400 to-orange-500 p-8 text-white text-center h-full">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🎨</div>
+                    <h3 class="font-bold text-lg">Drawing & Painting</h3>
+                    <p class="text-white/80 text-sm mt-2">Practice with our digital canvas</p>
+                </div>
+            </a>
+            <a href="music.html" class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-indigo-400 to-purple-500 p-8 text-white text-center h-full">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🎵</div>
+                    <h3 class="font-bold text-lg">Music</h3>
+                    <p class="text-white/80 text-sm mt-2">Listen to Nigerian instruments</p>
+                </div>
+            </a>
+            <a href="drama.html" class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-pink-400 to-rose-500 p-8 text-white text-center h-full">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🎭</div>
+                    <h3 class="font-bold text-lg">Drama & Theatre</h3>
+                    <p class="text-white/80 text-sm mt-2">Performance exercises</p>
+                </div>
+            </a>
+            <a href="crafts.html" class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-amber-400 to-yellow-600 p-8 text-white text-center h-full">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🏺</div>
+                    <h3 class="font-bold text-lg">Traditional Crafts</h3>
+                    <p class="text-white/80 text-sm mt-2">Learn weaving and pottery</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-3xl">🎨</span>
+                        <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">An AI-powered learning platform for Cultural and Creative Arts. Designed for Nigerian JSS 1-3 students.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Classes</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="jss1.html" class="hover:text-white transition">JSS 1 - Foundation</a></li>
+                        <li><a href="jss2.html" class="hover:text-white transition">JSS 2 - Intermediate</a></li>
+                        <li><a href="jss3.html" class="hover:text-white transition">JSS 3 - Advanced</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Explore</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="drawing.html" class="hover:text-white transition">Drawing & Painting</a></li>
+                        <li><a href="music.html" class="hover:text-white transition">Music</a></li>
+                        <li><a href="drama.html" class="hover:text-white transition">Drama & Theatre</a></li>
+                        <li><a href="crafts.html" class="hover:text-white transition">Traditional Crafts</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition">Cultural Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">AI Tools</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="quiz.html" class="hover:text-white transition">AI Quiz Master</a></li>
+                        <li><a href="assistant.html" class="hover:text-white transition">AI Study Assistant</a></li>
+                        <li><a href="drawing.html" class="hover:text-white transition">Digital Art Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 CCA Learn. Built for Nigerian Students with &#10084;&#65039;</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize progress tracking on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            ProgressTracker.updateUI('jss1');
+
+            // Update Mark as Complete buttons for already-completed topics
+            document.querySelectorAll('[data-topic-class="jss1"]').forEach(function(el) {
+                var topicId = el.dataset.topicId;
+                if (ProgressTracker.isComplete('jss1', topicId)) {
+                    var btn = el.querySelector('button[onclick*="markComplete"]');
+                    if (btn) {
+                        btn.innerHTML = '✅ Completed!';
+                        btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                        btn.classList.add('bg-green-600');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

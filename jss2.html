@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSS 2 - Cultural & Creative Arts | CCA Learn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4380D',
+                        secondary: '#FAAD14',
+                        accent: '#389E0D',
+                        dark: '#1A1A2E',
+                        cream: '#FFF8E7',
+                        terracotta: '#C4501A',
+                        gold: '#E8A317',
+                        forest: '#2D6A1E',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body class="bg-cream font-['Nunito'] text-dark">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-dark text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-3xl">🎨</span>
+                <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="index.html" class="hover:text-secondary transition">Home</a>
+                <div class="relative group">
+                    <button class="text-secondary transition">Classes ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-40 hidden group-hover:block shadow-xl">
+                        <a href="jss1.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 1</a>
+                        <a href="jss2.html" class="block px-4 py-2 bg-gray-800 text-secondary">JSS 2</a>
+                        <a href="jss3.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 3</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="hover:text-secondary transition">Explore ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-48 hidden group-hover:block shadow-xl">
+                        <a href="drawing.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎨 Drawing Studio</a>
+                        <a href="music.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎵 Music</a>
+                        <a href="drama.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎭 Drama & Theatre</a>
+                        <a href="crafts.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🏺 Traditional Crafts</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🖼️ Cultural Gallery</a>
+                    </div>
+                </div>
+                <a href="quiz.html" class="hover:text-secondary transition">🧠 AI Quiz</a>
+                <a href="assistant.html" class="bg-primary px-4 py-2 rounded-full hover:bg-terracotta transition">🤖 AI Assistant</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden text-2xl" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark border-t border-gray-700 px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-secondary font-semibold">Home</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Classes</p>
+            <a href="jss1.html" class="block py-2 pl-4 hover:text-secondary">JSS 1</a>
+            <a href="jss2.html" class="block py-2 pl-4 text-secondary font-semibold">JSS 2</a>
+            <a href="jss3.html" class="block py-2 pl-4 hover:text-secondary">JSS 3</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Explore</p>
+            <a href="drawing.html" class="block py-2 pl-4 hover:text-secondary">🎨 Drawing Studio</a>
+            <a href="music.html" class="block py-2 pl-4 hover:text-secondary">🎵 Music</a>
+            <a href="drama.html" class="block py-2 pl-4 hover:text-secondary">🎭 Drama & Theatre</a>
+            <a href="crafts.html" class="block py-2 pl-4 hover:text-secondary">🏺 Traditional Crafts</a>
+            <a href="gallery.html" class="block py-2 pl-4 hover:text-secondary">🖼️ Cultural Gallery</a>
+            <div class="mt-3 flex flex-col gap-2">
+                <a href="quiz.html" class="block py-2 hover:text-secondary font-semibold">🧠 AI Quiz</a>
+                <a href="assistant.html" class="block py-2 bg-primary text-center rounded-full font-semibold">🤖 AI Assistant</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-green-600 via-green-700 to-forest text-white">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 text-8xl animate-float">🎨</div>
+            <div class="absolute top-20 right-20 text-7xl animate-float-delay">🥁</div>
+            <div class="absolute bottom-20 left-1/4 text-6xl animate-float">📖</div>
+            <div class="absolute bottom-10 right-1/3 text-8xl animate-float-delay">🗿</div>
+            <div class="absolute top-1/3 left-1/2 text-5xl animate-float">🎭</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+                    📗 Intermediate Level
+                </div>
+                <h1 class="font-['Fredoka_One'] text-4xl md:text-5xl leading-tight mb-4">
+                    JSS 2 - Cultural &
+                    <span class="text-secondary"> Creative Arts</span>
+                </h1>
+                <p class="text-lg md:text-xl text-green-100 mb-8 leading-relaxed">
+                    Build on your foundation! In JSS 2 you will explore the elements and principles of art, Nigerian traditional music and dance, creative writing, sculpture, stage craft, and cultural festivals.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#topics" class="bg-secondary text-dark px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-400 transition transform hover:scale-105 shadow-lg">
+                        Start Learning →
+                    </a>
+                    <a href="quiz.html" class="bg-white/10 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/20">
+                        🧠 Take a Quiz
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H0Z" fill="#FFF8E7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Progress Bar -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="font-bold text-lg">Your JSS 2 Progress</h3>
+                <span id="progress-text-jss2" class="text-green-600 font-bold text-lg">0%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                <div id="progress-bar-jss2" class="progress-fill bg-gradient-to-r from-green-500 to-green-600 h-4 rounded-full" style="width: 0%"></div>
+            </div>
+            <p class="text-gray-500 text-sm mt-2">Complete all 6 topics to finish JSS 2. Click "Mark as Complete" after studying each topic.</p>
+        </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section id="topics" class="max-w-7xl mx-auto px-4 pb-16">
+
+        <!-- ==================== TOPIC 1 ==================== -->
+        <div class="mb-12 animate-on-scroll" data-topic-class="jss2" data-topic-id="topic1">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-green-300 transition lesson-card">
+                <!-- Topic Header -->
+                <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 cursor-pointer" onclick="toggleAccordion('jss2-topic1')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">1</div>
+                            <div>
+                                <h2 class="font-['Fredoka_One'] text-xl md:text-2xl text-white">Elements and Principles of Art/Design</h2>
+                                <p class="text-green-100 text-sm mt-1">Line, shape, form, colour, texture, balance, contrast, harmony, unity, rhythm, proportion</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss2-topic1-icon" class="text-white text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Content -->
+                <div id="jss2-topic1" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="img-placeholder rounded-xl h-48 md:h-64 mb-6">
+                            <img src="images/jss2/elements-principles-art.jpg" alt="Elements and Principles of Art and Design" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='🎨 Elements &amp; Principles of Art';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r-xl p-4 mb-6">
+                            <h3 class="font-bold text-green-800 mb-2">Learning Objectives</h3>
+                            <ul class="text-green-700 space-y-1 text-sm">
+                                <li>- Identify and describe the seven elements of art: line, shape, form, colour, value, texture, and space</li>
+                                <li>- Understand and apply the principles of design: balance, contrast, harmony, unity, rhythm, proportion, and emphasis</li>
+                                <li>- Analyse how Nigerian artists use these elements and principles in their work</li>
+                                <li>- Create artworks that demonstrate effective use of elements and principles</li>
+                            </ul>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="prose max-w-none">
+                            <h3 class="font-['Fredoka_One'] text-xl text-dark mb-3">What Are the Elements of Art?</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                The <strong>elements of art</strong> are the basic building blocks that artists use to create artwork. Think of them like ingredients in a recipe: every painting, sculpture, or design uses some combination of these elements. There are seven main elements of art.
+                            </p>
+
+                            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <h4 class="font-bold text-green-700 mb-2">1. Line</h4>
+                                    <p class="text-gray-600 text-sm">A line is a mark made by a moving point. Lines can be straight, curved, thick, thin, zigzag, or wavy. In Nigerian art, lines are used in <em>uli</em> body painting of the Igbo people and in the geometric patterns of Hausa embroidery (called <em>aska</em>). Lines create movement, outline shapes, and express feelings.</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <h4 class="font-bold text-green-700 mb-2">2. Shape</h4>
+                                    <p class="text-gray-600 text-sm">A shape is a flat, enclosed area created by lines. Shapes can be <strong>geometric</strong> (circles, squares, triangles) or <strong>organic</strong> (irregular, natural shapes like leaves and clouds). Adire textile patterns use both geometric and organic shapes. The Nsibidi symbols of the Ejagham people are made of combined shapes.</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <h4 class="font-bold text-green-700 mb-2">3. Form</h4>
+                                    <p class="text-gray-600 text-sm">Form is the three-dimensional version of shape. While a circle is a shape, a sphere is a form. A square becomes a cube. Nigerian Nok terracotta heads are excellent examples of form: the artists sculpted round, cylindrical, and conical forms to create expressive human faces.</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <h4 class="font-bold text-green-700 mb-2">4. Colour</h4>
+                                    <p class="text-gray-600 text-sm">Colour has three properties: <strong>hue</strong> (the name of the colour), <strong>value</strong> (lightness or darkness), and <strong>intensity</strong> (brightness or dullness). The primary colours are red, yellow, and blue. In Nigerian culture, colours carry meaning: white for purity, red for power and danger, green for life and growth.</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <h4 class="font-bold text-green-700 mb-2">5. Value</h4>
+                                    <p class="text-gray-600 text-sm">Value refers to the lightness or darkness of a colour. Artists use value to create the illusion of depth and volume in their work. A gradual change from light to dark is called <strong>shading</strong>. This technique makes flat drawings look three-dimensional and realistic.</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <h4 class="font-bold text-green-700 mb-2">6. Texture</h4>
+                                    <p class="text-gray-600 text-sm">Texture is how a surface feels or looks like it would feel. <strong>Actual texture</strong> is real (like the rough surface of a clay pot), while <strong>visual texture</strong> is an illusion created by the artist. Nigerian pottery, basketry, and wood carvings are rich in actual texture. Textile arts like <em>aso-oke</em> weaving create distinct textures.</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-4 md:col-span-2">
+                                    <h4 class="font-bold text-green-700 mb-2">7. Space</h4>
+                                    <p class="text-gray-600 text-sm">Space is the area around, between, and within objects. <strong>Positive space</strong> is occupied by the main subject, while <strong>negative space</strong> is the empty area around it. Artists use techniques like overlapping, size variation, and placement to create the illusion of depth. In traditional Nigerian wall paintings, space is used to arrange scenes and tell stories.</p>
+                                </div>
+                            </div>
+
+                            <h3 class="font-['Fredoka_One'] text-xl text-dark mb-3">What Are the Principles of Design?</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                The <strong>principles of design</strong> are the rules or guidelines that artists follow to organise the elements of art into a visually pleasing composition. They tell artists <em>how</em> to arrange the elements effectively.
+                            </p>
+
+                            <div class="space-y-4 mb-6">
+                                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-4">
+                                    <span class="text-2xl">⚖️</span>
+                                    <div>
+                                        <h4 class="font-bold text-dark">Balance</h4>
+                                        <p class="text-gray-600 text-sm">The distribution of visual weight in a composition. <strong>Symmetrical balance</strong> means both sides are equal (like a butterfly). <strong>Asymmetrical balance</strong> uses different elements of equal visual weight on each side. The Benin Bronze plaques demonstrate symmetrical balance, with the Oba (king) placed centrally.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-4">
+                                    <span class="text-2xl">🔲</span>
+                                    <div>
+                                        <h4 class="font-bold text-dark">Contrast</h4>
+                                        <p class="text-gray-600 text-sm">The arrangement of opposite elements (light vs. dark, large vs. small, rough vs. smooth) to create visual interest. Adire cloth uses the contrast between the deep indigo dye and the white resist-dyed areas to create striking patterns.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-4">
+                                    <span class="text-2xl">🎵</span>
+                                    <div>
+                                        <h4 class="font-bold text-dark">Harmony</h4>
+                                        <p class="text-gray-600 text-sm">The combination of similar or related elements to create a pleasing, unified look. Using colours that are close on the colour wheel (like green, blue-green, and blue) creates colour harmony. Nigerian beadwork often uses harmonious colour combinations passed down through generations.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-4">
+                                    <span class="text-2xl">🔗</span>
+                                    <div>
+                                        <h4 class="font-bold text-dark">Unity</h4>
+                                        <p class="text-gray-600 text-sm">The feeling that all parts of an artwork belong together. Unity is achieved when all elements and principles work in harmony. A well-designed Ankara fabric pattern demonstrates unity: the colours, shapes, and patterns all feel like they belong together.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-4">
+                                    <span class="text-2xl">🔄</span>
+                                    <div>
+                                        <h4 class="font-bold text-dark">Rhythm</h4>
+                                        <p class="text-gray-600 text-sm">The repetition of elements to create a sense of visual movement, like the beat in music. Rhythm can be <strong>regular</strong> (equal spacing), <strong>alternating</strong> (two elements taking turns), or <strong>progressive</strong> (gradually changing). The repeated geometric patterns in Hausa architecture show regular rhythm.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-4">
+                                    <span class="text-2xl">📐</span>
+                                    <div>
+                                        <h4 class="font-bold text-dark">Proportion</h4>
+                                        <p class="text-gray-600 text-sm">The size relationship between different parts of an artwork. Proportion can be realistic or exaggerated for effect. In Yoruba twin figures (<em>ere ibeji</em>), the heads are purposely made larger in proportion to the body to emphasise the spiritual importance of the head in Yoruba belief.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-4">
+                                    <span class="text-2xl">👁️</span>
+                                    <div>
+                                        <h4 class="font-bold text-dark">Emphasis</h4>
+                                        <p class="text-gray-600 text-sm">The focal point of an artwork that draws the viewer's attention first. Artists create emphasis through contrast, placement, size, or colour. In the Benin Bronze heads, the elaborate coral bead crown creates emphasis, drawing attention to the royal status of the Oba.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Key Vocabulary -->
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
+                                <h4 class="font-bold text-yellow-800 mb-2">Key Vocabulary</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Line</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Shape</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Form</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Colour</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Value</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Texture</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Space</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Balance</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Contrast</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Harmony</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Unity</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Rhythm</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Proportion</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Emphasis</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Composition</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Hue</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Intensity</span>
+                                </div>
+                            </div>
+
+                            <!-- Related Links -->
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <a href="drawing.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🎨 Practice in Drawing Studio</a>
+                                <a href="gallery.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🖼️ See Examples in Gallery</a>
+                            </div>
+
+                            <!-- Mark Complete -->
+                            <button onclick="ProgressTracker.markComplete('jss2', 'topic1'); this.innerHTML='✅ Completed!'; this.classList.add('bg-green-100', 'text-green-700', 'border-green-300'); this.classList.remove('bg-green-500', 'text-white', 'hover:bg-green-600');" class="bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition">
+                                Mark as Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TOPIC 2 ==================== -->
+        <div class="mb-12 animate-on-scroll" data-topic-class="jss2" data-topic-id="topic2">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-green-300 transition lesson-card">
+                <!-- Topic Header -->
+                <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 cursor-pointer" onclick="toggleAccordion('jss2-topic2')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">2</div>
+                            <div>
+                                <h2 class="font-['Fredoka_One'] text-xl md:text-2xl text-white">Nigerian Traditional Music and Dance Forms</h2>
+                                <p class="text-green-100 text-sm mt-1">Bata dance, Atilogwu, Swange dance, Koroso, talking drums, cultural significance</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss2-topic2-icon" class="text-white text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Content -->
+                <div id="jss2-topic2" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="img-placeholder rounded-xl h-48 md:h-64 mb-6">
+                            <img src="images/jss2/nigerian-music-dance.jpg" alt="Nigerian Traditional Music and Dance Forms" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='🥁 Nigerian Music &amp; Dance';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r-xl p-4 mb-6">
+                            <h3 class="font-bold text-green-800 mb-2">Learning Objectives</h3>
+                            <ul class="text-green-700 space-y-1 text-sm">
+                                <li>- Identify major Nigerian traditional dance forms and their ethnic origins</li>
+                                <li>- Explain the cultural significance and occasions for each dance</li>
+                                <li>- Describe the role of traditional instruments, especially the talking drum</li>
+                                <li>- Demonstrate basic movements from at least one Nigerian dance form</li>
+                                <li>- Appreciate the connection between music, dance, and community life in Nigeria</li>
+                            </ul>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="prose max-w-none">
+                            <h3 class="font-['Fredoka_One'] text-xl text-dark mb-3">Music and Dance in Nigerian Culture</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                In Nigeria, music and dance are not just entertainment. They are essential parts of everyday life, used in worship, celebrations, storytelling, communication, and community bonding. Every ethnic group has its own unique styles of music and dance, passed down from generation to generation. Let us explore some of the most important ones.
+                            </p>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">Major Nigerian Dance Forms</h3>
+
+                            <div class="space-y-6 mb-6">
+                                <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-secondary">
+                                    <h4 class="font-bold text-dark text-lg mb-2">🪘 Bata Dance (Yoruba)</h4>
+                                    <p class="text-gray-700 mb-2">The <strong>Bata dance</strong> originates from the Yoruba people of southwestern Nigeria. It is closely connected to the worship of <em>Sango</em>, the Yoruba god of thunder and lightning. The dance is performed to the accompaniment of the <em>bata</em> drum, a double-headed, hourglass-shaped drum that produces deep, resonant sounds.</p>
+                                    <p class="text-gray-700 mb-2">Bata dancers wear colourful costumes, often in red and white (the colours of Sango). The movements are powerful and energetic, featuring rapid footwork, spinning, and dramatic gestures. The lead dancer responds to the rhythms of the master drummer, creating a conversation between movement and sound.</p>
+                                    <p class="text-gray-600 text-sm italic">Occasions: Religious festivals, coronation ceremonies, chieftaincy installations, cultural celebrations.</p>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary">
+                                    <h4 class="font-bold text-dark text-lg mb-2">💃 Atilogwu Dance (Igbo)</h4>
+                                    <p class="text-gray-700 mb-2">The <strong>Atilogwu</strong> is one of the most acrobatic and exciting dances in Nigeria. The name comes from the Igbo word meaning "is this magic?" because the movements are so skilful that spectators often wonder if the dancers are using magical powers.</p>
+                                    <p class="text-gray-700 mb-2">Originating from the Afikpo area of present-day Ebonyi State, Atilogwu features incredible feats of agility: high jumps, backflips, rapid spinning, and synchronised group movements. Dancers wear colourful costumes with feathers, beads, and bells on their ankles. The dance is accompanied by drums, flutes (<em>oja</em>), and the <em>ogene</em> (metal gong).</p>
+                                    <p class="text-gray-600 text-sm italic">Occasions: New Yam festivals, weddings, cultural competitions, community gatherings.</p>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-accent">
+                                    <h4 class="font-bold text-dark text-lg mb-2">🎶 Swange Dance (Tiv)</h4>
+                                    <p class="text-gray-700 mb-2">The <strong>Swange dance</strong> belongs to the Tiv people of Benue State in central Nigeria. It is a relatively modern social dance that emerged in the mid-20th century, blending traditional Tiv dance steps with influences from highlife music. The word "swange" means "to dance" in the Tiv language.</p>
+                                    <p class="text-gray-700 mb-2">Swange is performed in a circular formation, with dancers moving gracefully in a line. The movements are smooth, flowing, and rhythmic, with gentle hip swaying and coordinated arm movements. Both men and women participate, making it one of the most inclusive Nigerian dances. It is accompanied by drums, flutes, and the thumb piano (<em>adiguve</em>).</p>
+                                    <p class="text-gray-600 text-sm italic">Occasions: Social gatherings, moonlight celebrations, festivals, weddings.</p>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-gold">
+                                    <h4 class="font-bold text-dark text-lg mb-2">🏇 Koroso Dance (Hausa/Fulani)</h4>
+                                    <p class="text-gray-700 mb-2">The <strong>Koroso</strong> is a traditional dance of the Hausa and Fulani people of northern Nigeria. It is often performed during the famous <em>Durbar</em> festival and other royal occasions. The dance showcases horsemanship, bravery, and the martial traditions of the northern emirates.</p>
+                                    <p class="text-gray-700 mb-2">Koroso dancers, typically male warriors, perform on horseback or on foot. They wear elaborate costumes including flowing robes (<em>babban riga</em>), turbans, and sometimes carry ceremonial swords and shields. The movements are bold and dignified, reflecting the warrior culture of the Hausa-Fulani. The dance is accompanied by the <em>kalangu</em> (talking drum), <em>kakaki</em> (long trumpet), and <em>ganga</em> (large drum).</p>
+                                    <p class="text-gray-600 text-sm italic">Occasions: Durbar festivals, Eid celebrations, royal events, harvest festivals.</p>
+                                </div>
+                            </div>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">The Talking Drum: Nigeria's Speaking Instrument</h3>
+                            <div class="bg-amber-50 rounded-xl p-5 mb-6">
+                                <p class="text-gray-700 mb-3">The <strong>talking drum</strong> (<em>dundun</em> in Yoruba, <em>kalangu</em> in Hausa) is one of the most remarkable instruments in the world. It can imitate the tones and rhythms of spoken language, effectively allowing the drummer to "speak" through the instrument.</p>
+                                <p class="text-gray-700 mb-3">The drum is shaped like an hourglass and has two drumheads connected by leather cords. By squeezing the cords under the arm while striking the drumhead with a curved stick, the drummer can change the pitch and produce sounds that mimic the tonal patterns of Yoruba and other Nigerian languages.</p>
+                                <p class="text-gray-700 mb-3">Historically, talking drums were used to:</p>
+                                <ul class="text-gray-700 text-sm space-y-1 ml-4 mb-3">
+                                    <li>- Send messages across long distances between villages</li>
+                                    <li>- Announce the arrival of important people</li>
+                                    <li>- Praise kings and chiefs by reciting their lineage</li>
+                                    <li>- Accompany dancers and guide their movements</li>
+                                    <li>- Tell stories and preserve oral history</li>
+                                </ul>
+                                <p class="text-gray-700 text-sm">Today, the talking drum remains a vital instrument in both traditional and contemporary Nigerian music, used by artists like King Sunny Ade and Sikiru Ayinde Barrister.</p>
+                            </div>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">Other Important Nigerian Instruments</h3>
+                            <div class="grid md:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-gray-50 rounded-xl p-4 text-center">
+                                    <div class="text-3xl mb-2">🎺</div>
+                                    <h4 class="font-bold text-sm">Kakaki</h4>
+                                    <p class="text-gray-500 text-xs">Long brass trumpet used in Hausa royal courts, up to 2 metres long</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-4 text-center">
+                                    <div class="text-3xl mb-2">🔔</div>
+                                    <h4 class="font-bold text-sm">Ogene</h4>
+                                    <p class="text-gray-500 text-xs">Large metal gong used by the Igbo people to set the rhythm for dances</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-4 text-center">
+                                    <div class="text-3xl mb-2">🎵</div>
+                                    <h4 class="font-bold text-sm">Oja (Flute)</h4>
+                                    <p class="text-gray-500 text-xs">Igbo wooden flute that produces melodious sounds for dances and ceremonies</p>
+                                </div>
+                            </div>
+
+                            <!-- Key Vocabulary -->
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
+                                <h4 class="font-bold text-yellow-800 mb-2">Key Vocabulary</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Bata</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Atilogwu</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Swange</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Koroso</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Dundun</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Kalangu</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Kakaki</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Ogene</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Oja</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Durbar</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Sango</span>
+                                </div>
+                            </div>
+
+                            <!-- Related Links -->
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <a href="music.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🎵 Explore Music Page</a>
+                                <a href="gallery.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🖼️ Cultural Gallery</a>
+                                <a href="crafts.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🏺 Traditional Crafts</a>
+                            </div>
+
+                            <!-- Mark Complete -->
+                            <button onclick="ProgressTracker.markComplete('jss2', 'topic2'); this.innerHTML='✅ Completed!'; this.classList.add('bg-green-100', 'text-green-700', 'border-green-300'); this.classList.remove('bg-green-500', 'text-white', 'hover:bg-green-600');" class="bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition">
+                                Mark as Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TOPIC 3 ==================== -->
+        <div class="mb-12 animate-on-scroll" data-topic-class="jss2" data-topic-id="topic3">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-green-300 transition lesson-card">
+                <!-- Topic Header -->
+                <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 cursor-pointer" onclick="toggleAccordion('jss2-topic3')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">3</div>
+                            <div>
+                                <h2 class="font-['Fredoka_One'] text-xl md:text-2xl text-white">Creative Writing and Storytelling</h2>
+                                <p class="text-green-100 text-sm mt-1">Folktales, proverbs, Nigerian literary traditions, oral tradition</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss2-topic3-icon" class="text-white text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Content -->
+                <div id="jss2-topic3" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="img-placeholder rounded-xl h-48 md:h-64 mb-6">
+                            <img src="images/jss2/creative-writing-storytelling.jpg" alt="Creative Writing and Storytelling" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='📖 Creative Writing &amp; Storytelling';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r-xl p-4 mb-6">
+                            <h3 class="font-bold text-green-800 mb-2">Learning Objectives</h3>
+                            <ul class="text-green-700 space-y-1 text-sm">
+                                <li>- Understand the role of oral tradition in Nigerian culture and its elements</li>
+                                <li>- Identify different types of Nigerian folktales and their moral lessons</li>
+                                <li>- Explain the meaning and use of Nigerian proverbs in storytelling</li>
+                                <li>- Write original creative stories inspired by Nigerian literary traditions</li>
+                                <li>- Perform storytelling using voice, gestures, and audience engagement</li>
+                            </ul>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="prose max-w-none">
+                            <h3 class="font-['Fredoka_One'] text-xl text-dark mb-3">The Power of Nigerian Oral Tradition</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Long before books and writing came to Nigeria, stories were passed from one generation to the next by word of mouth. This is called <strong>oral tradition</strong>. Grandparents told stories to grandchildren around the fire under the moonlight. These stories carried the history, values, wisdom, and beliefs of the people. Today, oral tradition remains one of the most important parts of Nigerian cultural heritage.
+                            </p>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">Nigerian Folktales</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                <strong>Folktales</strong> are traditional stories that have been told and retold over many generations. In Nigerian folktales, animals often behave like humans, speaking, thinking, and making decisions. These are called <strong>animal tales</strong> or <strong>fables</strong>. The most famous character in Yoruba folktales is the <strong>tortoise</strong> (<em>Ijapa</em>), who is clever but often greedy and cunning. In Igbo folktales, the tortoise (<em>Mbe</em>) plays a similar role.
+                            </p>
+
+                            <div class="bg-amber-50 rounded-xl p-5 mb-6">
+                                <h4 class="font-bold text-dark mb-3">Types of Nigerian Folktales</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-xl">🐢</span>
+                                        <div>
+                                            <h5 class="font-bold text-sm">Animal Tales (Fables)</h5>
+                                            <p class="text-gray-600 text-sm">Stories where animals act like humans. They teach moral lessons such as the consequences of greed, pride, or dishonesty. Example: "Why the Tortoise Has a Cracked Shell" teaches that greed leads to downfall.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-xl">👸</span>
+                                        <div>
+                                            <h5 class="font-bold text-sm">Legends and Hero Tales</h5>
+                                            <p class="text-gray-600 text-sm">Stories about extraordinary people with great abilities. These include tales of warriors, wise kings, and powerful queens such as Queen Amina of Zazzau, Moremi of Ile-Ife, and Oduduwa the founder of the Yoruba people.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-xl">🌍</span>
+                                        <div>
+                                            <h5 class="font-bold text-sm">Origin Stories (Myths)</h5>
+                                            <p class="text-gray-600 text-sm">Stories that explain how things came to be: how the world was created, why the sky is high, why certain animals look the way they do. Every ethnic group has its own creation myth.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-xl">👻</span>
+                                        <div>
+                                            <h5 class="font-bold text-sm">Dilemma Tales</h5>
+                                            <p class="text-gray-600 text-sm">Stories that end with a difficult question for the audience to discuss and debate. They have no single correct answer and are designed to encourage critical thinking. These are popular across many Nigerian ethnic groups.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">Nigerian Proverbs: Wisdom in a Sentence</h3>
+                            <p class="text-gray-700 mb-3 leading-relaxed">
+                                As the Igbo proverb says, <em>"Proverbs are the palm oil with which words are eaten."</em> Proverbs are short, wise sayings that express a truth or give advice. In Nigerian culture, using proverbs in speech is a sign of wisdom and education. Elders often speak in proverbs, and young people are expected to learn and understand them.
+                            </p>
+
+                            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                <div class="bg-green-50 rounded-xl p-4">
+                                    <h4 class="font-bold text-green-800 mb-2">Yoruba Proverbs</h4>
+                                    <ul class="text-gray-600 text-sm space-y-2">
+                                        <li><em>"Bi a ba n la oruko omo, a n la iwa re."</em> - When we call a child's name, we are calling their character. (Names carry meaning.)</li>
+                                        <li><em>"Agba ki wa loja, ki ori omo titun wo."</em> - An elder does not stand in the market and let a child's head go crooked. (Elders must guide the young.)</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-green-50 rounded-xl p-4">
+                                    <h4 class="font-bold text-green-800 mb-2">Igbo Proverbs</h4>
+                                    <ul class="text-gray-600 text-sm space-y-2">
+                                        <li><em>"Onye aghana nwanne ya."</em> - Let nobody abandon their sibling. (Family unity is paramount.)</li>
+                                        <li><em>"E mee nwata ka e mere ibe ya, obi ewe ya."</em> - When a child is treated like their peers, they are happy. (Treat everyone fairly.)</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-green-50 rounded-xl p-4">
+                                    <h4 class="font-bold text-green-800 mb-2">Hausa Proverbs</h4>
+                                    <ul class="text-gray-600 text-sm space-y-2">
+                                        <li><em>"Ruwan da ke zubar, ba a kwashe shi ba."</em> - Water that has been poured away cannot be collected. (Think before you act.)</li>
+                                        <li><em>"Gaskiya ta fi kwabo."</em> - Truth is worth more than a penny. (Honesty is priceless.)</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-green-50 rounded-xl p-4">
+                                    <h4 class="font-bold text-green-800 mb-2">Edo/Benin Proverbs</h4>
+                                    <ul class="text-gray-600 text-sm space-y-2">
+                                        <li><em>"Ogieva ma gha zuwa, a gha kpolo ne."</em> - Before the rain falls, there is wind. (Every event has a warning sign.)</li>
+                                        <li><em>"Oba ghato okpere, ise."</em> - When the king speaks, so it is. (Authority and respect.)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">Nigerian Literary Traditions</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Nigeria has produced some of the greatest writers in Africa. These authors drew inspiration from oral traditions and folktales to create powerful written literature. Notable Nigerian authors include <strong>Chinua Achebe</strong> (author of <em>Things Fall Apart</em>, which draws heavily on Igbo proverbs and oral tradition), <strong>Wole Soyinka</strong> (the first African to win the Nobel Prize for Literature), <strong>Amos Tutuola</strong> (who wrote <em>The Palm-Wine Drinkard</em> in a style that mirrors Yoruba oral storytelling), and <strong>Chimamanda Ngozi Adichie</strong> (a contemporary voice in Nigerian literature).
+                            </p>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">How to Write Your Own Folktale</h3>
+                            <div class="bg-blue-50 rounded-xl p-5 mb-6">
+                                <ol class="text-gray-700 text-sm space-y-2">
+                                    <li><strong>1. Choose a lesson or moral:</strong> What do you want your reader to learn? (e.g., honesty is the best policy, pride goes before a fall)</li>
+                                    <li><strong>2. Pick your characters:</strong> Use animals, humans, or spirits. Give them clear personalities (the clever hare, the greedy tortoise, the wise old woman).</li>
+                                    <li><strong>3. Set the scene:</strong> Begin with a traditional opening like "A long, long time ago, in a village far away..." or the Yoruba opening, "Alo o!" (to which the audience responds "Alo!")</li>
+                                    <li><strong>4. Create a problem:</strong> The main character must face a challenge or conflict.</li>
+                                    <li><strong>5. Build the story:</strong> Show how the character tries to solve the problem. Include dialogue and descriptions.</li>
+                                    <li><strong>6. End with the lesson:</strong> Close with the moral and a traditional ending, such as the Yoruba: "And my story ends there; whether it falls into the sea or falls on the ground."</li>
+                                    <li><strong>7. Include proverbs:</strong> Weave at least one or two proverbs into your story to add depth and cultural flavour.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Key Vocabulary -->
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
+                                <h4 class="font-bold text-yellow-800 mb-2">Key Vocabulary</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Oral tradition</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Folktale</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Fable</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Legend</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Myth</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Proverb</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Moral</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Narrative</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Dilemma tale</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Ijapa</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Folklore</span>
+                                </div>
+                            </div>
+
+                            <!-- Related Links -->
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <a href="drama.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🎭 Drama & Theatre Page</a>
+                                <a href="gallery.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🖼️ Cultural Gallery</a>
+                            </div>
+
+                            <!-- Mark Complete -->
+                            <button onclick="ProgressTracker.markComplete('jss2', 'topic3'); this.innerHTML='✅ Completed!'; this.classList.add('bg-green-100', 'text-green-700', 'border-green-300'); this.classList.remove('bg-green-500', 'text-white', 'hover:bg-green-600');" class="bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition">
+                                Mark as Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TOPIC 4 ==================== -->
+        <div class="mb-12 animate-on-scroll" data-topic-class="jss2" data-topic-id="topic4">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-green-300 transition lesson-card">
+                <!-- Topic Header -->
+                <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 cursor-pointer" onclick="toggleAccordion('jss2-topic4')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">4</div>
+                            <div>
+                                <h2 class="font-['Fredoka_One'] text-xl md:text-2xl text-white">Sculpture and 3D Art Forms</h2>
+                                <p class="text-green-100 text-sm mt-1">Modelling, carving, construction, Nigerian sculptural traditions (Nok, Ife, Benin)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss2-topic4-icon" class="text-white text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Content -->
+                <div id="jss2-topic4" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="img-placeholder rounded-xl h-48 md:h-64 mb-6">
+                            <img src="images/jss2/sculpture-3d-art.jpg" alt="Sculpture and 3D Art Forms" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='🗿 Sculpture &amp; 3D Art';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r-xl p-4 mb-6">
+                            <h3 class="font-bold text-green-800 mb-2">Learning Objectives</h3>
+                            <ul class="text-green-700 space-y-1 text-sm">
+                                <li>- Define sculpture and distinguish it from two-dimensional art</li>
+                                <li>- Identify the three main techniques of sculpture: modelling, carving, and construction</li>
+                                <li>- Describe the major Nigerian sculptural traditions: Nok, Ife, and Benin</li>
+                                <li>- Explain the materials, tools, and processes used in each technique</li>
+                                <li>- Create a simple sculpture using modelling or construction techniques</li>
+                            </ul>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="prose max-w-none">
+                            <h3 class="font-['Fredoka_One'] text-xl text-dark mb-3">What Is Sculpture?</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                <strong>Sculpture</strong> is the art of creating three-dimensional (3D) forms. Unlike drawings and paintings, which are flat (2D), sculptures have height, width, and depth. You can walk around a sculpture and see it from different angles. Sculptures can be made from many materials including clay, wood, stone, metal, plaster, and even recycled objects.
+                            </p>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">Three Main Techniques of Sculpture</h3>
+                            <div class="grid md:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-amber-50 rounded-xl p-5">
+                                    <div class="text-3xl mb-2 text-center">🏺</div>
+                                    <h4 class="font-bold text-dark text-center mb-2">Modelling</h4>
+                                    <p class="text-gray-600 text-sm mb-2">Modelling is an <strong>additive</strong> process: you build up the form by adding material. Common modelling materials include clay, plasticine, papier-mache, and plaster of Paris.</p>
+                                    <p class="text-gray-600 text-sm"><strong>Process:</strong> The sculptor starts with a lump of soft material and shapes it by adding, pressing, pinching, smoothing, and pulling. Clay can be fired (heated in a kiln) to make it permanent.</p>
+                                    <p class="text-gray-500 text-xs mt-2 italic">Nigerian example: Nok terracotta sculptures were made by modelling clay.</p>
+                                </div>
+                                <div class="bg-orange-50 rounded-xl p-5">
+                                    <div class="text-3xl mb-2 text-center">🪵</div>
+                                    <h4 class="font-bold text-dark text-center mb-2">Carving</h4>
+                                    <p class="text-gray-600 text-sm mb-2">Carving is a <strong>subtractive</strong> process: you remove material from a solid block to reveal the form inside. Materials include wood, stone, ivory, and bone.</p>
+                                    <p class="text-gray-600 text-sm"><strong>Tools:</strong> Chisels, mallets, gouges, knives, and files. The sculptor chips away unwanted material piece by piece until the desired shape emerges.</p>
+                                    <p class="text-gray-500 text-xs mt-2 italic">Nigerian example: Yoruba wood carvers create ere ibeji (twin figures), doors, and masks.</p>
+                                </div>
+                                <div class="bg-red-50 rounded-xl p-5">
+                                    <div class="text-3xl mb-2 text-center">🔧</div>
+                                    <h4 class="font-bold text-dark text-center mb-2">Construction</h4>
+                                    <p class="text-gray-600 text-sm mb-2">Construction is an <strong>assemblage</strong> process: you join separate pieces or materials together to build a sculpture. This includes welding metal, gluing, tying, and fastening.</p>
+                                    <p class="text-gray-600 text-sm"><strong>Materials:</strong> Wire, metal scraps, found objects, bamboo, cardboard, and recycled materials. This is the most modern and experimental technique.</p>
+                                    <p class="text-gray-500 text-xs mt-2 italic">Nigerian example: El Anatsui creates massive wall sculptures from recycled bottle caps.</p>
+                                </div>
+                            </div>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">Nigeria's Great Sculptural Traditions</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Nigeria has one of the oldest and richest sculptural traditions in the world. Three traditions stand out as masterpieces of human creativity: Nok, Ife, and Benin.
+                            </p>
+
+                            <div class="space-y-6 mb-6">
+                                <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-amber-500">
+                                    <h4 class="font-bold text-dark text-lg mb-2">🗿 Nok Terracotta (c. 500 BC - 200 AD)</h4>
+                                    <p class="text-gray-700 mb-2">The <strong>Nok culture</strong> produced the oldest known sculptures in sub-Saharan Africa. Discovered near the village of Nok in present-day Kaduna State in 1928, these terracotta (fired clay) figures date back over 2,500 years.</p>
+                                    <p class="text-gray-700 mb-2"><strong>Characteristics:</strong></p>
+                                    <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                        <li>- Cylindrical or triangular-shaped heads with elaborate hairstyles</li>
+                                        <li>- Triangular, pierced eyes with distinct eyebrows</li>
+                                        <li>- Detailed jewellery and body decorations</li>
+                                        <li>- Hollow interiors to prevent cracking during firing</li>
+                                        <li>- Sizes range from small pendants to nearly life-size figures</li>
+                                    </ul>
+                                    <p class="text-gray-600 text-sm mt-2">The Nok people were among the earliest iron smelters in West Africa, and their art represents a remarkably advanced civilisation.</p>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-green-500">
+                                    <h4 class="font-bold text-dark text-lg mb-2">👑 Ife Art (c. 1100 - 1500 AD)</h4>
+                                    <p class="text-gray-700 mb-2">The <strong>Ife civilisation</strong> in present-day Osun State produced some of the most naturalistic sculptures ever created in Africa. The bronzes and terracottas of Ife are so lifelike that European scholars initially refused to believe Africans had created them.</p>
+                                    <p class="text-gray-700 mb-2"><strong>Characteristics:</strong></p>
+                                    <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                        <li>- Highly realistic and naturalistic representation of the human face</li>
+                                        <li>- Smooth, idealised features with serene expressions</li>
+                                        <li>- Fine parallel lines (scarification marks) on the face</li>
+                                        <li>- Made using the <strong>lost-wax casting</strong> technique for bronze</li>
+                                        <li>- Represented Ooni (kings/rulers) and other important figures</li>
+                                    </ul>
+                                    <p class="text-gray-600 text-sm mt-2">The famous bronze head of Queen Olokun is one of the finest pieces, demonstrating the extraordinary skill of Ife artists.</p>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary">
+                                    <h4 class="font-bold text-dark text-lg mb-2">🦁 Benin Bronzes (c. 1400 - 1897 AD)</h4>
+                                    <p class="text-gray-700 mb-2">The <strong>Benin Kingdom</strong> (in present-day Edo State) produced thousands of magnificent bronze and brass sculptures, plaques, and carvings. These works decorated the royal palace of the Oba and recorded the history and achievements of the kingdom.</p>
+                                    <p class="text-gray-700 mb-2"><strong>Characteristics:</strong></p>
+                                    <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                        <li>- Commemorative heads of Obas with elaborate coral bead crowns and collars</li>
+                                        <li>- Rectangular plaques depicting court life, warriors, and ceremonies</li>
+                                        <li>- Animal figures including leopards, roosters, and pythons</li>
+                                        <li>- Made using the lost-wax casting technique with great technical skill</li>
+                                        <li>- Highly detailed depictions of clothing, weapons, and regalia</li>
+                                    </ul>
+                                    <p class="text-gray-600 text-sm mt-2">The guild of bronze casters (<em>Igun Eronmwon</em>) in Benin City continues to practice this ancient art today. Many Benin Bronzes were taken during the British punitive expedition of 1897 and are now in museums around the world, with ongoing efforts for their repatriation.</p>
+                                </div>
+                            </div>
+
+                            <!-- Key Vocabulary -->
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
+                                <h4 class="font-bold text-yellow-800 mb-2">Key Vocabulary</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Sculpture</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Modelling</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Carving</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Construction</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Terracotta</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Nok</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Ife</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Benin Bronzes</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Lost-wax casting</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Additive</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Subtractive</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Assemblage</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Relief</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Kiln</span>
+                                </div>
+                            </div>
+
+                            <!-- Related Links -->
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <a href="crafts.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🏺 Traditional Crafts</a>
+                                <a href="gallery.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🖼️ Cultural Gallery</a>
+                                <a href="drawing.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🎨 Drawing Studio</a>
+                            </div>
+
+                            <!-- Mark Complete -->
+                            <button onclick="ProgressTracker.markComplete('jss2', 'topic4'); this.innerHTML='✅ Completed!'; this.classList.add('bg-green-100', 'text-green-700', 'border-green-300'); this.classList.remove('bg-green-500', 'text-white', 'hover:bg-green-600');" class="bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition">
+                                Mark as Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TOPIC 5 ==================== -->
+        <div class="mb-12 animate-on-scroll" data-topic-class="jss2" data-topic-id="topic5">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-green-300 transition lesson-card">
+                <!-- Topic Header -->
+                <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 cursor-pointer" onclick="toggleAccordion('jss2-topic5')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">5</div>
+                            <div>
+                                <h2 class="font-['Fredoka_One'] text-xl md:text-2xl text-white">Stage Craft and Drama Production</h2>
+                                <p class="text-green-100 text-sm mt-1">Set design, costumes, props, lighting basics, directing</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss2-topic5-icon" class="text-white text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Content -->
+                <div id="jss2-topic5" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="img-placeholder rounded-xl h-48 md:h-64 mb-6">
+                            <img src="images/jss2/stagecraft-drama.jpg" alt="Stage Craft and Drama Production" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='🎭 Stage Craft &amp; Drama';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r-xl p-4 mb-6">
+                            <h3 class="font-bold text-green-800 mb-2">Learning Objectives</h3>
+                            <ul class="text-green-700 space-y-1 text-sm">
+                                <li>- Define stage craft and explain its importance in drama production</li>
+                                <li>- Identify the different parts of a stage and types of stages</li>
+                                <li>- Describe the roles of set design, costumes, props, and lighting in a production</li>
+                                <li>- Understand the role of the director and the production team</li>
+                                <li>- Plan and participate in a simple class drama production</li>
+                            </ul>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="prose max-w-none">
+                            <h3 class="font-['Fredoka_One'] text-xl text-dark mb-3">What Is Stage Craft?</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                <strong>Stage craft</strong> is the art and technique of creating the physical environment for a theatrical performance. While actors perform on stage, there is a whole team of people working behind the scenes to make the production come alive. Stage craft covers everything the audience sees and hears apart from the actors' performance: the scenery, the lighting, the sound, the costumes, and the props.
+                            </p>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">Parts of a Stage</h3>
+                            <div class="bg-gray-50 rounded-xl p-5 mb-6">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h4 class="font-bold text-sm text-dark mb-2">Key Stage Areas</h4>
+                                        <ul class="text-gray-600 text-sm space-y-1">
+                                            <li><strong>Centre Stage:</strong> The middle of the performing area, the strongest position</li>
+                                            <li><strong>Downstage:</strong> The front of the stage, closest to the audience</li>
+                                            <li><strong>Upstage:</strong> The back of the stage, farthest from the audience</li>
+                                            <li><strong>Stage Right:</strong> The right side from the actor's perspective (facing the audience)</li>
+                                            <li><strong>Stage Left:</strong> The left side from the actor's perspective</li>
+                                            <li><strong>Wings:</strong> The hidden areas on either side of the stage where actors wait</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-dark mb-2">Types of Stages</h4>
+                                        <ul class="text-gray-600 text-sm space-y-1">
+                                            <li><strong>Proscenium Stage:</strong> A framed stage with the audience on one side (most common)</li>
+                                            <li><strong>Thrust Stage:</strong> Extends into the audience, with seating on three sides</li>
+                                            <li><strong>Arena/Theatre-in-the-Round:</strong> Audience surrounds the stage on all sides</li>
+                                            <li><strong>Open-Air Stage:</strong> Common in Nigerian traditional performances, performed outdoors in village squares</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">Elements of Stage Craft</h3>
+                            <div class="space-y-4 mb-6">
+                                <div class="bg-blue-50 rounded-xl p-5">
+                                    <h4 class="font-bold text-dark mb-2">🎨 Set Design (Scenery)</h4>
+                                    <p class="text-gray-700 text-sm mb-2">Set design creates the visual environment where the action takes place. The set tells the audience where and when the story is happening: a palace throne room, a market square, a village compound, or a modern city apartment.</p>
+                                    <p class="text-gray-700 text-sm"><strong>Elements include:</strong> Backdrops (painted or projected backgrounds), flats (lightweight frames covered with canvas), platforms and levels, furniture, and scenic elements like trees, walls, or doorways. A set designer must consider the script, the director's vision, the available space, and the budget.</p>
+                                </div>
+
+                                <div class="bg-purple-50 rounded-xl p-5">
+                                    <h4 class="font-bold text-dark mb-2">👘 Costumes</h4>
+                                    <p class="text-gray-700 text-sm mb-2">Costumes tell the audience who each character is without the character having to say a word. They show social status, occupation, personality, historical period, and cultural background.</p>
+                                    <p class="text-gray-700 text-sm mb-2">In Nigerian drama productions, costumes often draw from traditional attire:</p>
+                                    <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                        <li>- An Oba might wear a flowing <em>agbada</em> with a coral bead crown and necklace</li>
+                                        <li>- A market woman might wear a wrapper (<em>iro</em>) with a blouse (<em>buba</em>) and head tie (<em>gele</em>)</li>
+                                        <li>- A hunter character could wear a <em>dansiki</em> decorated with charms and animal skins</li>
+                                        <li>- A masquerade character wears elaborate costumes with carved masks</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-pink-50 rounded-xl p-5">
+                                    <h4 class="font-bold text-dark mb-2">🪑 Props (Properties)</h4>
+                                    <p class="text-gray-700 text-sm mb-2"><strong>Props</strong> are objects used by actors during a performance. They make the action more realistic and help tell the story. Props are classified into three types:</p>
+                                    <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                        <li><strong>Hand props:</strong> Items carried or handled by actors (a staff, a sword, a calabash, a broom, a book)</li>
+                                        <li><strong>Set props:</strong> Larger items that are part of the set (tables, chairs, market stalls, cooking pots)</li>
+                                        <li><strong>Personal props:</strong> Items worn or carried by a specific character throughout the play (a walking stick, a fan, a handbag)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-yellow-50 rounded-xl p-5">
+                                    <h4 class="font-bold text-dark mb-2">💡 Lighting</h4>
+                                    <p class="text-gray-700 text-sm mb-2">Lighting does much more than simply making the stage visible. It creates mood, focuses attention, indicates time of day, and can represent location changes.</p>
+                                    <p class="text-gray-700 text-sm"><strong>Basic lighting techniques:</strong></p>
+                                    <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                        <li>- <strong>General wash:</strong> Even light across the whole stage</li>
+                                        <li>- <strong>Spotlight:</strong> A focused beam on one actor or area, drawing attention</li>
+                                        <li>- <strong>Blackout:</strong> All lights go off, used to end scenes or create dramatic moments</li>
+                                        <li>- <strong>Coloured lighting:</strong> Red for danger or anger, blue for night or sadness, warm amber for happiness</li>
+                                        <li>- <strong>Fade in/Fade out:</strong> Gradually increasing or decreasing light to begin or end a scene</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-green-50 rounded-xl p-5">
+                                    <h4 class="font-bold text-dark mb-2">🎬 The Director</h4>
+                                    <p class="text-gray-700 text-sm mb-2">The <strong>director</strong> is the creative leader of the production. Like a captain of a ship, the director guides everyone towards a unified vision for the play. The director's responsibilities include:</p>
+                                    <ul class="text-gray-600 text-sm space-y-1 ml-4">
+                                        <li>- Interpreting the script and deciding the overall vision</li>
+                                        <li>- Casting actors in appropriate roles</li>
+                                        <li>- Blocking (planning where actors move on stage)</li>
+                                        <li>- Guiding actors' performances and characterisation</li>
+                                        <li>- Coordinating with the design team (set, costumes, lighting, sound)</li>
+                                        <li>- Running rehearsals and ensuring the show is ready by opening night</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">Nigerian Drama Traditions</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Nigeria has a vibrant drama tradition that includes both traditional and modern forms. Traditional Nigerian performances like masquerade festivals, the Alarinjo travelling theatre of the Yoruba, and community storytelling events are all forms of drama that use stage craft elements. Modern Nigerian theatre was pioneered by artists like Hubert Ogunde (the father of Nigerian theatre), Duro Ladipo, Ola Rotimi, and Wole Soyinka, who blended traditional performance styles with Western theatrical techniques.
+                            </p>
+
+                            <!-- Key Vocabulary -->
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
+                                <h4 class="font-bold text-yellow-800 mb-2">Key Vocabulary</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Stage craft</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Set design</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Costume</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Props</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Lighting</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Director</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Blocking</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Proscenium</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Backdrop</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Spotlight</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Wings</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Blackout</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Rehearsal</span>
+                                </div>
+                            </div>
+
+                            <!-- Related Links -->
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <a href="drama.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🎭 Drama & Theatre Page</a>
+                                <a href="music.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🎵 Music Page</a>
+                            </div>
+
+                            <!-- Mark Complete -->
+                            <button onclick="ProgressTracker.markComplete('jss2', 'topic5'); this.innerHTML='✅ Completed!'; this.classList.add('bg-green-100', 'text-green-700', 'border-green-300'); this.classList.remove('bg-green-500', 'text-white', 'hover:bg-green-600');" class="bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition">
+                                Mark as Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TOPIC 6 ==================== -->
+        <div class="mb-12 animate-on-scroll" data-topic-class="jss2" data-topic-id="topic6">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-transparent hover:border-green-300 transition lesson-card">
+                <!-- Topic Header -->
+                <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 cursor-pointer" onclick="toggleAccordion('jss2-topic6')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">6</div>
+                            <div>
+                                <h2 class="font-['Fredoka_One'] text-xl md:text-2xl text-white">Cultural Festivals and Celebrations</h2>
+                                <p class="text-green-100 text-sm mt-1">Eyo festival, Argungu fishing festival, Osun-Osogbo, New Yam festival, Durbar</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="topic-check text-2xl">⬜</span>
+                            <span id="jss2-topic6-icon" class="text-white text-2xl font-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Content -->
+                <div id="jss2-topic6" class="accordion-content">
+                    <div class="p-6 md:p-8">
+                        <!-- Image Placeholder -->
+                        <div class="img-placeholder rounded-xl h-48 md:h-64 mb-6">
+                            <img src="images/jss2/cultural-festivals.jpg" alt="Nigerian Cultural Festivals and Celebrations" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='🎊 Cultural Festivals &amp; Celebrations';">
+                        </div>
+
+                        <!-- Learning Objectives -->
+                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r-xl p-4 mb-6">
+                            <h3 class="font-bold text-green-800 mb-2">Learning Objectives</h3>
+                            <ul class="text-green-700 space-y-1 text-sm">
+                                <li>- Identify major Nigerian cultural festivals and the ethnic groups that celebrate them</li>
+                                <li>- Describe the significance, activities, and arts involved in each festival</li>
+                                <li>- Explain how festivals preserve and promote Nigerian cultural heritage</li>
+                                <li>- Analyse the role of visual arts, music, dance, and drama in festivals</li>
+                                <li>- Appreciate the diversity of Nigerian cultural expressions through festivals</li>
+                            </ul>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="prose max-w-none">
+                            <h3 class="font-['Fredoka_One'] text-xl text-dark mb-3">Why Are Festivals Important?</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                <strong>Cultural festivals</strong> are special occasions when communities come together to celebrate their heritage, honour their ancestors, give thanks, and strengthen social bonds. Festivals are living museums: they keep traditions alive through music, dance, costumes, art, food, and rituals. Nigeria, with its rich diversity of over 250 ethnic groups, has hundreds of colourful festivals throughout the year. Let us explore some of the most important ones.
+                            </p>
+
+                            <div class="space-y-6 mb-6">
+                                <div class="bg-white rounded-xl p-5 shadow-md border-l-4 border-secondary">
+                                    <div class="flex items-start gap-4">
+                                        <div class="img-placeholder rounded-lg w-24 h-24 flex-shrink-0 text-3xl">
+                                            <img src="images/jss2/eyo-festival.jpg" alt="Eyo Festival" class="w-full h-full object-cover rounded-lg" onerror="this.style.display='none'; this.parentElement.innerHTML='👻';">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-dark text-lg mb-1">Eyo Festival (Adamu Orisa Play)</h4>
+                                            <p class="text-green-700 text-xs font-semibold mb-2">Lagos - Yoruba People</p>
+                                            <p class="text-gray-700 text-sm mb-2">The <strong>Eyo Festival</strong> is one of the most spectacular festivals in Lagos. It is performed to honour the memory of a deceased prominent Lagos chief or Oba. The festival features the <em>Eyo</em> masquerades: tall figures dressed entirely in white flowing robes and wearing wide-brimmed hats called <em>agogoro</em>.</p>
+                                            <p class="text-gray-700 text-sm mb-2">The Eyo masquerades dance through the streets of Lagos Island, accompanied by drums and chanting. There are different groups of Eyo, each representing a different family or district. The festival brings all of Lagos together and is sometimes called "the forerunner of the modern carnival."</p>
+                                            <p class="text-gray-600 text-sm"><strong>Arts involved:</strong> Costume design (white robes and hats), dance, drumming, masquerade performance, procession choreography.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white rounded-xl p-5 shadow-md border-l-4 border-blue-500">
+                                    <div class="flex items-start gap-4">
+                                        <div class="img-placeholder rounded-lg w-24 h-24 flex-shrink-0 text-3xl">
+                                            <img src="images/jss2/argungu-festival.jpg" alt="Argungu Fishing Festival" class="w-full h-full object-cover rounded-lg" onerror="this.style.display='none'; this.parentElement.innerHTML='🐟';">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-dark text-lg mb-1">Argungu International Fishing Festival</h4>
+                                            <p class="text-green-700 text-xs font-semibold mb-2">Kebbi State - Hausa/Kebbawa People</p>
+                                            <p class="text-gray-700 text-sm mb-2">The <strong>Argungu Fishing Festival</strong> is held annually along the banks of the Matan Fada River in Argungu, Kebbi State. It began in 1934 to mark the end of centuries of hostility between the Sokoto Caliphate and the Kebbi Kingdom.</p>
+                                            <p class="text-gray-700 text-sm mb-2">The main event is a dramatic fishing competition where thousands of fishermen, armed only with hand nets and calabash gourds, jump into the river at the sound of a gunshot and compete to catch the biggest fish within one hour. The festival also features swimming competitions, canoe races, bare-hand fishing, diving competitions, wild duck catching, and a grand durbar parade.</p>
+                                            <p class="text-gray-600 text-sm"><strong>Arts involved:</strong> Net weaving and calabash decoration, traditional drumming, Koroso dance, elaborate traditional clothing, pottery exhibitions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white rounded-xl p-5 shadow-md border-l-4 border-accent">
+                                    <div class="flex items-start gap-4">
+                                        <div class="img-placeholder rounded-lg w-24 h-24 flex-shrink-0 text-3xl">
+                                            <img src="images/jss2/osun-osogbo.jpg" alt="Osun-Osogbo Festival" class="w-full h-full object-cover rounded-lg" onerror="this.style.display='none'; this.parentElement.innerHTML='🌊';">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-dark text-lg mb-1">Osun-Osogbo Festival</h4>
+                                            <p class="text-green-700 text-xs font-semibold mb-2">Osun State - Yoruba People</p>
+                                            <p class="text-gray-700 text-sm mb-2">The <strong>Osun-Osogbo Festival</strong> is a two-week celebration held annually in August at the Osun-Osogbo Sacred Grove in Osogbo, Osun State. The grove is a UNESCO World Heritage Site, one of the last remaining sacred groves in Yoruba culture, and contains shrines, sculptures, and art works honouring the river goddess Osun.</p>
+                                            <p class="text-gray-700 text-sm mb-2">The festival culminates with the <em>Arugba</em> (the sacred calabash carrier), a young maiden chosen to carry a covered calabash containing offerings to the Osun River. The procession follows her from the palace of the Ataoja (king) of Osogbo to the sacred grove. The festival attracts thousands of worshippers, tourists, and cultural enthusiasts from around the world.</p>
+                                            <p class="text-gray-600 text-sm"><strong>Arts involved:</strong> Sculpture (the grove contains remarkable artworks by Susanne Wenger and local artists), traditional Yoruba music and drumming, dance, body painting, elaborate priestess costumes, ritual performances.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white rounded-xl p-5 shadow-md border-l-4 border-forest">
+                                    <div class="flex items-start gap-4">
+                                        <div class="img-placeholder rounded-lg w-24 h-24 flex-shrink-0 text-3xl">
+                                            <img src="images/jss2/new-yam-festival.jpg" alt="New Yam Festival" class="w-full h-full object-cover rounded-lg" onerror="this.style.display='none'; this.parentElement.innerHTML='🍠';">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-dark text-lg mb-1">New Yam Festival (Iri Ji / Iwa Ji)</h4>
+                                            <p class="text-green-700 text-xs font-semibold mb-2">Southeast Nigeria - Igbo People</p>
+                                            <p class="text-gray-700 text-sm mb-2">The <strong>New Yam Festival</strong> (<em>Iri Ji Ohuru</em> or <em>Iwa Ji</em>) is the most important festival of the Igbo people, celebrating the end of the farming season and the harvesting of the new yam. Yam is considered the "king of crops" in Igbo culture and symbolises prosperity, hard work, and the blessings of the earth.</p>
+                                            <p class="text-gray-700 text-sm mb-2">The festival typically takes place between August and October, depending on the community. The oldest man in the village offers the first yam to the gods and ancestors, giving thanks for a bountiful harvest. After this, everyone is free to eat the new yam. The celebration includes feasting, masquerade displays, wrestling competitions, the Atilogwu dance, and the presentation of the biggest yam by competing farmers.</p>
+                                            <p class="text-gray-600 text-sm"><strong>Arts involved:</strong> Masquerade carving and costume making, Atilogwu dance, drumming and flute music, body decoration, calabash carving and painting, food presentation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white rounded-xl p-5 shadow-md border-l-4 border-primary">
+                                    <div class="flex items-start gap-4">
+                                        <div class="img-placeholder rounded-lg w-24 h-24 flex-shrink-0 text-3xl">
+                                            <img src="images/jss2/durbar-festival.jpg" alt="Durbar Festival" class="w-full h-full object-cover rounded-lg" onerror="this.style.display='none'; this.parentElement.innerHTML='🏇';">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-dark text-lg mb-1">Durbar Festival</h4>
+                                            <p class="text-green-700 text-xs font-semibold mb-2">Northern Nigeria - Hausa/Fulani People</p>
+                                            <p class="text-gray-700 text-sm mb-2">The <strong>Durbar</strong> is a grand royal festival celebrated in cities like Kano, Katsina, Zaria, and Bauchi to mark the end of Eid-el-Fitr (to celebrate the end of Ramadan) and Eid-el-Kabir (the festival of sacrifice). The word "Durbar" originally comes from the Urdu/Hindi language and refers to a royal assembly or court.</p>
+                                            <p class="text-gray-700 text-sm mb-2">The festival is a dazzling display of horsemanship, military tradition, and royal splendour. Hundreds of horsemen dressed in magnificent traditional regalia ride to the Emir's palace to pay homage. The horses are adorned with colourful quilted armour, silver ornaments, and bells. The procession includes musicians playing the kakaki (long trumpet), kalangu (talking drum), and ganga (large drum). The highlight is the <em>jahi</em>: a cavalry charge where riders gallop at full speed towards the Emir, stopping dramatically just before him to salute.</p>
+                                            <p class="text-gray-600 text-sm"><strong>Arts involved:</strong> Textile art (elaborate embroidered robes and turbans), metalwork (horse ornaments and weapons), leatherwork (horse saddles and armour), drumming and trumpet playing, Koroso dance, equestrian displays.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="font-['Fredoka_One'] text-lg text-dark mb-3">How Festivals Preserve Culture</h3>
+                            <div class="bg-green-50 rounded-xl p-5 mb-6">
+                                <p class="text-gray-700 text-sm mb-3">Festivals serve several vital purposes in preserving Nigerian cultural heritage:</p>
+                                <div class="grid md:grid-cols-2 gap-3">
+                                    <div class="flex items-start gap-2">
+                                        <span class="text-green-600 font-bold">1.</span>
+                                        <p class="text-gray-600 text-sm"><strong>Transmission:</strong> They pass traditions, skills, and values from elders to young people through participation and observation.</p>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span class="text-green-600 font-bold">2.</span>
+                                        <p class="text-gray-600 text-sm"><strong>Unity:</strong> They bring communities together, strengthening social bonds and shared identity.</p>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span class="text-green-600 font-bold">3.</span>
+                                        <p class="text-gray-600 text-sm"><strong>Arts promotion:</strong> They keep traditional arts alive: drumming, dance, costume-making, sculpture, and crafts.</p>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span class="text-green-600 font-bold">4.</span>
+                                        <p class="text-gray-600 text-sm"><strong>Tourism:</strong> They attract visitors from around the world, generating income and international recognition for Nigerian culture.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Key Vocabulary -->
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
+                                <h4 class="font-bold text-yellow-800 mb-2">Key Vocabulary</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Festival</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Eyo</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Argungu</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Osun-Osogbo</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Iri Ji</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Durbar</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Masquerade</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Arugba</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Sacred grove</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Heritage</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Jahi</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">UNESCO</span>
+                                </div>
+                            </div>
+
+                            <!-- Related Links -->
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <a href="gallery.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🖼️ Cultural Gallery</a>
+                                <a href="crafts.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🏺 Traditional Crafts</a>
+                                <a href="music.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🎵 Music Page</a>
+                                <a href="drama.html" class="text-green-600 hover:text-green-800 font-semibold text-sm underline">🎭 Drama & Theatre</a>
+                            </div>
+
+                            <!-- Mark Complete -->
+                            <button onclick="ProgressTracker.markComplete('jss2', 'topic6'); this.innerHTML='✅ Completed!'; this.classList.add('bg-green-100', 'text-green-700', 'border-green-300'); this.classList.remove('bg-green-500', 'text-white', 'hover:bg-green-600');" class="bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition">
+                                Mark as Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Take Quiz Section -->
+    <section class="bg-gradient-to-r from-green-500 to-green-600 py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="text-5xl mb-4">🧠</div>
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-white mb-4">Ready to Test Your Knowledge?</h2>
+            <p class="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
+                You have learned about the elements and principles of art, Nigerian music and dance, storytelling, sculpture, stage craft, and cultural festivals. Now take the JSS 2 quiz to see how much you remember!
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="quiz.html" class="bg-secondary text-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition transform hover:scale-105 shadow-lg">
+                    Take the JSS 2 Quiz →
+                </a>
+                <a href="assistant.html" class="bg-white/10 backdrop-blur px-8 py-4 rounded-full font-bold text-lg text-white hover:bg-white/20 transition border border-white/20">
+                    🤖 Ask AI for Help
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigate Other Classes -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-8">
+            <h2 class="font-['Fredoka_One'] text-2xl md:text-3xl text-dark mb-2">Explore Other Classes</h2>
+            <p class="text-gray-600">Continue your CCA learning journey</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <a href="jss1.html" class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-blue-300">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white text-center">
+                    <div class="text-4xl mb-2">📘</div>
+                    <h3 class="font-['Fredoka_One'] text-xl">JSS 1</h3>
+                    <p class="text-blue-100 text-sm">Foundation Level</p>
+                </div>
+                <div class="p-4 text-center">
+                    <span class="text-blue-500 font-bold group-hover:text-blue-600 transition">← Go Back to JSS 1</span>
+                </div>
+            </a>
+            <a href="jss3.html" class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300">
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 text-white text-center">
+                    <div class="text-4xl mb-2">📕</div>
+                    <h3 class="font-['Fredoka_One'] text-xl">JSS 3</h3>
+                    <p class="text-purple-100 text-sm">Advanced Level</p>
+                </div>
+                <div class="p-4 text-center">
+                    <span class="text-purple-500 font-bold group-hover:text-purple-600 transition">Continue to JSS 3 →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-3xl">🎨</span>
+                        <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">An AI-powered learning platform for Cultural and Creative Arts. Designed for Nigerian JSS 1-3 students.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Classes</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="jss1.html" class="hover:text-white transition">JSS 1 - Foundation</a></li>
+                        <li><a href="jss2.html" class="hover:text-white transition">JSS 2 - Intermediate</a></li>
+                        <li><a href="jss3.html" class="hover:text-white transition">JSS 3 - Advanced</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Explore</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="drawing.html" class="hover:text-white transition">Drawing & Painting</a></li>
+                        <li><a href="music.html" class="hover:text-white transition">Music</a></li>
+                        <li><a href="drama.html" class="hover:text-white transition">Drama & Theatre</a></li>
+                        <li><a href="crafts.html" class="hover:text-white transition">Traditional Crafts</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition">Cultural Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">AI Tools</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="quiz.html" class="hover:text-white transition">AI Quiz Master</a></li>
+                        <li><a href="assistant.html" class="hover:text-white transition">AI Study Assistant</a></li>
+                        <li><a href="drawing.html" class="hover:text-white transition">Digital Art Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2026 CCA Learn. Built for Nigerian Students with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize progress tracking on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            ProgressTracker.updateUI('jss2');
+
+            // Restore completed button states
+            document.querySelectorAll('[data-topic-class="jss2"]').forEach(el => {
+                const topicId = el.dataset.topicId;
+                if (ProgressTracker.isComplete('jss2', topicId)) {
+                    const btn = el.querySelector('button[onclick*="markComplete"]');
+                    if (btn) {
+                        btn.innerHTML = '✅ Completed!';
+                        btn.classList.add('bg-green-100', 'text-green-700', 'border-green-300');
+                        btn.classList.remove('bg-green-500', 'text-white', 'hover:bg-green-600');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music & Rhythm - CCA Learn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4380D',
+                        secondary: '#FAAD14',
+                        accent: '#389E0D',
+                        dark: '#1A1A2E',
+                        cream: '#FFF8E7',
+                        terracotta: '#C4501A',
+                        gold: '#E8A317',
+                        forest: '#2D6A1E',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        /* Piano key styles */
+        .white-key {
+            width: 60px;
+            height: 180px;
+            background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+            border: 1px solid #ccc;
+            border-radius: 0 0 6px 6px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            transition: all 0.08s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 -2px 4px rgba(0,0,0,0.05);
+        }
+        .white-key:hover {
+            background: linear-gradient(to bottom, #e8e8ff, #f0f0ff);
+        }
+        .white-key:active, .white-key.active {
+            background: linear-gradient(to bottom, #d0d0ff, #e0e0ff);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.15), inset 0 1px 3px rgba(0,0,0,0.1);
+            transform: translateY(2px);
+        }
+        .black-key {
+            width: 36px;
+            height: 110px;
+            background: linear-gradient(to bottom, #333, #111);
+            border: 1px solid #000;
+            border-radius: 0 0 4px 4px;
+            cursor: pointer;
+            position: absolute;
+            z-index: 2;
+            margin-left: -18px;
+            transition: all 0.08s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4), inset 0 -2px 3px rgba(60,60,60,0.3);
+        }
+        .black-key:hover {
+            background: linear-gradient(to bottom, #444, #222);
+        }
+        .black-key:active, .black-key.active {
+            background: linear-gradient(to bottom, #555, #333);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            transform: translateY(2px);
+            height: 108px;
+        }
+
+        /* Music bar visualizer animation */
+        @keyframes musicBar {
+            0%, 100% { height: 10px; }
+            25% { height: 30px; }
+            50% { height: 50px; }
+            75% { height: 20px; }
+        }
+        @keyframes musicBar2 {
+            0%, 100% { height: 20px; }
+            30% { height: 45px; }
+            60% { height: 15px; }
+            80% { height: 35px; }
+        }
+        @keyframes musicBar3 {
+            0%, 100% { height: 15px; }
+            20% { height: 40px; }
+            45% { height: 25px; }
+            70% { height: 55px; }
+        }
+        .music-bar {
+            width: 6px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.8);
+            animation-duration: 1.2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        /* Rhythm game styles */
+        .rhythm-lane {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        .rhythm-note {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.1s;
+        }
+        .rhythm-note.hit {
+            animation: noteHit 0.3s ease-out forwards;
+        }
+        @keyframes noteHit {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .hit-zone {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            border-top: 3px dashed rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Tab styles */
+        .theory-tab {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .theory-tab.active {
+            background: white;
+            color: #1A1A2E;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-cream font-['Nunito'] text-dark">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-dark text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-3xl">🎨</span>
+                <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="index.html" class="hover:text-secondary transition">Home</a>
+                <div class="relative group">
+                    <button class="hover:text-secondary transition">Classes ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-40 hidden group-hover:block shadow-xl">
+                        <a href="jss1.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 1</a>
+                        <a href="jss2.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 2</a>
+                        <a href="jss3.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 3</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-secondary transition">Explore ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-48 hidden group-hover:block shadow-xl">
+                        <a href="drawing.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎨 Drawing Studio</a>
+                        <a href="music.html" class="block px-4 py-2 bg-gray-800 text-secondary">🎵 Music</a>
+                        <a href="drama.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎭 Drama & Theatre</a>
+                        <a href="crafts.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🏺 Traditional Crafts</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🖼️ Cultural Gallery</a>
+                    </div>
+                </div>
+                <a href="quiz.html" class="hover:text-secondary transition">🧠 AI Quiz</a>
+                <a href="assistant.html" class="bg-primary px-4 py-2 rounded-full hover:bg-terracotta transition">🤖 AI Assistant</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden text-2xl" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark border-t border-gray-700 px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-secondary font-semibold">Home</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Classes</p>
+            <a href="jss1.html" class="block py-2 pl-4 hover:text-secondary">JSS 1</a>
+            <a href="jss2.html" class="block py-2 pl-4 hover:text-secondary">JSS 2</a>
+            <a href="jss3.html" class="block py-2 pl-4 hover:text-secondary">JSS 3</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Explore</p>
+            <a href="drawing.html" class="block py-2 pl-4 hover:text-secondary">🎨 Drawing Studio</a>
+            <a href="music.html" class="block py-2 pl-4 text-secondary font-semibold">🎵 Music</a>
+            <a href="drama.html" class="block py-2 pl-4 hover:text-secondary">🎭 Drama & Theatre</a>
+            <a href="crafts.html" class="block py-2 pl-4 hover:text-secondary">🏺 Traditional Crafts</a>
+            <a href="gallery.html" class="block py-2 pl-4 hover:text-secondary">🖼️ Cultural Gallery</a>
+            <div class="mt-3 flex flex-col gap-2">
+                <a href="quiz.html" class="block py-2 hover:text-secondary font-semibold">🧠 AI Quiz</a>
+                <a href="assistant.html" class="block py-2 bg-primary text-center rounded-full font-semibold">🤖 AI Assistant</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-indigo-400 to-purple-500 text-white">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 text-8xl animate-bounce" style="animation-duration:3s">🎵</div>
+            <div class="absolute top-20 right-20 text-7xl animate-bounce" style="animation-duration:2.5s">🎶</div>
+            <div class="absolute bottom-20 left-1/4 text-6xl animate-bounce" style="animation-duration:3.5s">🥁</div>
+            <div class="absolute bottom-10 right-1/3 text-8xl animate-bounce" style="animation-duration:2.8s">🎸</div>
+            <div class="absolute top-1/3 left-1/2 text-5xl animate-bounce" style="animation-duration:3.2s">🎤</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="flex-1">
+                    <div class="inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+                        🎵 Interactive Music Learning
+                    </div>
+                    <h1 class="font-['Fredoka_One'] text-4xl md:text-6xl leading-tight mb-6">
+                        Music & <span class="text-yellow-300">Rhythm</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-indigo-100 mb-8 leading-relaxed">
+                        Explore the rich world of Nigerian music! Learn instruments, play notes on a virtual piano, master rhythm, and discover the beats that make Nigeria's music culture legendary.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#virtual-piano" class="bg-white text-purple-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-indigo-50 transition transform hover:scale-105 shadow-lg">
+                            Play Piano 🎹
+                        </a>
+                        <a href="#rhythm-game" class="bg-white/10 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/20">
+                            Rhythm Game 🥁
+                        </a>
+                    </div>
+                </div>
+                <!-- Music Bar Visualizer -->
+                <div class="flex items-end gap-2 h-32">
+                    <div class="music-bar bg-yellow-300" style="animation-name: musicBar; animation-delay: 0s;"></div>
+                    <div class="music-bar bg-pink-300" style="animation-name: musicBar2; animation-delay: 0.1s;"></div>
+                    <div class="music-bar bg-green-300" style="animation-name: musicBar3; animation-delay: 0.2s;"></div>
+                    <div class="music-bar bg-blue-300" style="animation-name: musicBar; animation-delay: 0.3s;"></div>
+                    <div class="music-bar bg-yellow-300" style="animation-name: musicBar2; animation-delay: 0.15s;"></div>
+                    <div class="music-bar bg-pink-300" style="animation-name: musicBar3; animation-delay: 0.25s;"></div>
+                    <div class="music-bar bg-green-300" style="animation-name: musicBar; animation-delay: 0.35s;"></div>
+                    <div class="music-bar bg-blue-300" style="animation-name: musicBar2; animation-delay: 0.05s;"></div>
+                    <div class="music-bar bg-yellow-300" style="animation-name: musicBar3; animation-delay: 0.4s;"></div>
+                    <div class="music-bar bg-pink-300" style="animation-name: musicBar; animation-delay: 0.2s;"></div>
+                    <div class="music-bar bg-green-300" style="animation-name: musicBar2; animation-delay: 0.1s;"></div>
+                    <div class="music-bar bg-blue-300" style="animation-name: musicBar3; animation-delay: 0.3s;"></div>
+                    <div class="music-bar bg-yellow-300" style="animation-name: musicBar; animation-delay: 0.45s;"></div>
+                    <div class="music-bar bg-pink-300" style="animation-name: musicBar2; animation-delay: 0.15s;"></div>
+                    <div class="music-bar bg-green-300" style="animation-name: musicBar3; animation-delay: 0.35s;"></div>
+                    <div class="music-bar bg-blue-300" style="animation-name: musicBar; animation-delay: 0.25s;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H0Z" fill="#FFF8E7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Virtual Piano Section -->
+    <section id="virtual-piano" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-10">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">Virtual Piano</h2>
+            <p class="text-gray-600 text-lg">Click the keys or use your keyboard (A-K for white keys, W-U for black keys) to play notes!</p>
+        </div>
+        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-10 overflow-x-auto">
+            <!-- Piano Display -->
+            <div class="text-center mb-6">
+                <div id="noteDisplay" class="inline-block bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-3 rounded-full font-bold text-xl min-w-[150px]">
+                    Press a key!
+                </div>
+            </div>
+            <!-- Piano Keys -->
+            <div class="flex justify-center">
+                <div id="piano" class="relative flex" style="height: 200px;">
+                    <!-- White keys -->
+                    <div class="white-key flex flex-col justify-end items-center pb-3" data-note="C4" data-key="a">
+                        <span class="text-xs text-gray-500 font-bold">C4</span>
+                        <span class="text-[10px] text-gray-400 mt-1">A</span>
+                    </div>
+                    <div class="white-key flex flex-col justify-end items-center pb-3" data-note="D4" data-key="s">
+                        <span class="text-xs text-gray-500 font-bold">D4</span>
+                        <span class="text-[10px] text-gray-400 mt-1">S</span>
+                    </div>
+                    <div class="white-key flex flex-col justify-end items-center pb-3" data-note="E4" data-key="d">
+                        <span class="text-xs text-gray-500 font-bold">E4</span>
+                        <span class="text-[10px] text-gray-400 mt-1">D</span>
+                    </div>
+                    <div class="white-key flex flex-col justify-end items-center pb-3" data-note="F4" data-key="f">
+                        <span class="text-xs text-gray-500 font-bold">F4</span>
+                        <span class="text-[10px] text-gray-400 mt-1">F</span>
+                    </div>
+                    <div class="white-key flex flex-col justify-end items-center pb-3" data-note="G4" data-key="g">
+                        <span class="text-xs text-gray-500 font-bold">G4</span>
+                        <span class="text-[10px] text-gray-400 mt-1">G</span>
+                    </div>
+                    <div class="white-key flex flex-col justify-end items-center pb-3" data-note="A4" data-key="h">
+                        <span class="text-xs text-gray-500 font-bold">A4</span>
+                        <span class="text-[10px] text-gray-400 mt-1">H</span>
+                    </div>
+                    <div class="white-key flex flex-col justify-end items-center pb-3" data-note="B4" data-key="j">
+                        <span class="text-xs text-gray-500 font-bold">B4</span>
+                        <span class="text-[10px] text-gray-400 mt-1">J</span>
+                    </div>
+                    <!-- Black keys positioned absolutely -->
+                    <div class="black-key flex flex-col justify-end items-center pb-2" data-note="C#4" data-key="w" style="left: 42px;">
+                        <span class="text-[9px] text-gray-300 font-bold">C#</span>
+                        <span class="text-[8px] text-gray-400 mt-1">W</span>
+                    </div>
+                    <div class="black-key flex flex-col justify-end items-center pb-2" data-note="D#4" data-key="e" style="left: 102px;">
+                        <span class="text-[9px] text-gray-300 font-bold">D#</span>
+                        <span class="text-[8px] text-gray-400 mt-1">E</span>
+                    </div>
+                    <div class="black-key flex flex-col justify-end items-center pb-2" data-note="F#4" data-key="t" style="left: 222px;">
+                        <span class="text-[9px] text-gray-300 font-bold">F#</span>
+                        <span class="text-[8px] text-gray-400 mt-1">T</span>
+                    </div>
+                    <div class="black-key flex flex-col justify-end items-center pb-2" data-note="G#4" data-key="y" style="left: 282px;">
+                        <span class="text-[9px] text-gray-300 font-bold">G#</span>
+                        <span class="text-[8px] text-gray-400 mt-1">Y</span>
+                    </div>
+                    <div class="black-key flex flex-col justify-end items-center pb-2" data-note="A#4" data-key="u" style="left: 342px;">
+                        <span class="text-[9px] text-gray-300 font-bold">A#</span>
+                        <span class="text-[8px] text-gray-400 mt-1">U</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Piano Controls -->
+            <div class="flex justify-center gap-4 mt-8 flex-wrap">
+                <button onclick="playScale()" class="bg-indigo-500 text-white px-6 py-2 rounded-full font-bold hover:bg-indigo-600 transition">
+                    Play C Major Scale
+                </button>
+                <button onclick="playChord('C')" class="bg-purple-500 text-white px-6 py-2 rounded-full font-bold hover:bg-purple-600 transition">
+                    C Major Chord
+                </button>
+                <button onclick="playChord('Am')" class="bg-pink-500 text-white px-6 py-2 rounded-full font-bold hover:bg-pink-600 transition">
+                    A Minor Chord
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nigerian Musical Instruments Section -->
+    <section class="bg-gradient-to-br from-amber-50 to-orange-50 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">Nigerian Musical Instruments</h2>
+                <p class="text-gray-600 text-lg">Discover the traditional instruments that define Nigerian music</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Talking Drum (Dundun) -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                        <span class="text-7xl group-hover:scale-110 transition-transform">🥁</span>
+                        <img src="images/music/talking-drum.jpg" alt="Talking Drum" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="font-bold text-lg">Talking Drum (Dundun)</h3>
+                        </div>
+                        <span class="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-xs font-bold mb-3">Yoruba</span>
+                        <p class="text-gray-600 text-sm mb-3">An hourglass-shaped drum that can mimic the tone and rhythm of Yoruba speech. It is one of the oldest instruments in West Africa.</p>
+                        <div class="bg-gray-50 rounded-lg p-3 text-sm text-gray-500">
+                            <strong class="text-dark">How it's played:</strong> Held under the arm, the player squeezes the strings connecting the two drumheads to change pitch while striking with a curved stick.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shekere -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center">
+                        <span class="text-7xl group-hover:scale-110 transition-transform">🎶</span>
+                        <img src="images/music/shekere.jpg" alt="Shekere" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="font-bold text-lg">Shekere</h3>
+                        </div>
+                        <span class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold mb-3">Yoruba</span>
+                        <p class="text-gray-600 text-sm mb-3">A gourd covered with a net of beads or cowrie shells. It produces a shaking, rattling sound that is essential in Yoruba ceremonial music.</p>
+                        <div class="bg-gray-50 rounded-lg p-3 text-sm text-gray-500">
+                            <strong class="text-dark">How it's played:</strong> Shaken, tossed, or struck against the hands. The beaded net slides over the gourd to create rhythmic patterns.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ekwe -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center">
+                        <span class="text-7xl group-hover:scale-110 transition-transform">🪵</span>
+                        <img src="images/music/ekwe.jpg" alt="Ekwe" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="font-bold text-lg">Ekwe</h3>
+                        </div>
+                        <span class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-bold mb-3">Igbo</span>
+                        <p class="text-gray-600 text-sm mb-3">A wooden slit drum carved from a single log. It was traditionally used for communication across Igbo villages and during festivals.</p>
+                        <div class="bg-gray-50 rounded-lg p-3 text-sm text-gray-500">
+                            <strong class="text-dark">How it's played:</strong> Struck with wooden sticks on the slit opening. Different positions on the slit produce different tones and messages.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ogene -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center">
+                        <span class="text-7xl group-hover:scale-110 transition-transform">🔔</span>
+                        <img src="images/music/ogene.jpg" alt="Ogene" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="font-bold text-lg">Ogene</h3>
+                        </div>
+                        <span class="inline-block bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-bold mb-3">Igbo</span>
+                        <p class="text-gray-600 text-sm mb-3">A large metal gong made from iron. It is a key instrument in Igbo traditional music, used in ceremonies, masquerade festivals, and celebrations.</p>
+                        <div class="bg-gray-50 rounded-lg p-3 text-sm text-gray-500">
+                            <strong class="text-dark">How it's played:</strong> Struck with a wooden stick. The open end can be muted with the hand to create different sound effects.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kakaki -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
+                        <span class="text-7xl group-hover:scale-110 transition-transform">🎺</span>
+                        <img src="images/music/kakaki.jpg" alt="Kakaki" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="font-bold text-lg">Kakaki</h3>
+                        </div>
+                        <span class="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold mb-3">Hausa</span>
+                        <p class="text-gray-600 text-sm mb-3">A long metal trumpet, sometimes up to 2 metres long. It is a royal instrument used in Hausa emirate courts to announce the presence of an Emir.</p>
+                        <div class="bg-gray-50 rounded-lg p-3 text-sm text-gray-500">
+                            <strong class="text-dark">How it's played:</strong> Blown from one end like a trumpet. It produces a deep, resonant sound that carries over long distances.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gangan -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-purple-400 to-violet-500 flex items-center justify-center">
+                        <span class="text-7xl group-hover:scale-110 transition-transform">🪘</span>
+                        <img src="images/music/gangan.jpg" alt="Gangan" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="font-bold text-lg">Gangan</h3>
+                        </div>
+                        <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold mb-3">Yoruba</span>
+                        <p class="text-gray-600 text-sm mb-3">A smaller version of the talking drum family. The Gangan is the lead drum in many Yoruba ensembles and can replicate the tones of Yoruba language.</p>
+                        <div class="bg-gray-50 rounded-lg p-3 text-sm text-gray-500">
+                            <strong class="text-dark">How it's played:</strong> Tucked under the arm and squeezed to change pitch. Played with a curved stick called "opa" to create melodic rhythms.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Udu Drum -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center">
+                        <span class="text-7xl group-hover:scale-110 transition-transform">🏺</span>
+                        <img src="images/music/udu-drum.jpg" alt="Udu Drum" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="font-bold text-lg">Udu Drum</h3>
+                        </div>
+                        <span class="inline-block bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-xs font-bold mb-3">Igbo</span>
+                        <p class="text-gray-600 text-sm mb-3">A clay pot with an additional hole on the side. Originally a water jug, Igbo women discovered its musical potential and it became a ceremonial instrument.</p>
+                        <div class="bg-gray-50 rounded-lg p-3 text-sm text-gray-500">
+                            <strong class="text-dark">How it's played:</strong> The player strikes the side hole, the top opening, and the body with fingers and palms to produce deep, resonant bass tones.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bonus: Overview Card -->
+                <div class="bg-gradient-to-br from-dark to-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden text-white p-6 flex flex-col justify-center items-center text-center">
+                    <span class="text-5xl mb-4">🇳🇬</span>
+                    <h3 class="font-['Fredoka_One'] text-xl mb-3">Musical Heritage</h3>
+                    <p class="text-gray-300 text-sm mb-4">Nigeria's musical instruments reflect the diversity of over 250 ethnic groups. Each instrument carries centuries of cultural tradition and storytelling.</p>
+                    <a href="gallery.html" class="bg-secondary text-dark px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-400 transition">
+                        Explore Gallery
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Theory Lessons -->
+    <section id="music-theory" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-10">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">Music Theory Lessons</h2>
+            <p class="text-gray-600 text-lg">Learn music theory at your level</p>
+        </div>
+
+        <!-- JSS Level Tabs -->
+        <div class="flex justify-center gap-2 mb-8 flex-wrap">
+            <button class="theory-tab active px-6 py-3 rounded-full font-bold text-sm bg-indigo-100 text-indigo-700" onclick="showTheoryTab('jss1')">
+                📘 JSS 1 - Foundations
+            </button>
+            <button class="theory-tab px-6 py-3 rounded-full font-bold text-sm bg-gray-100 text-gray-600" onclick="showTheoryTab('jss2')">
+                📗 JSS 2 - Intermediate
+            </button>
+            <button class="theory-tab px-6 py-3 rounded-full font-bold text-sm bg-gray-100 text-gray-600" onclick="showTheoryTab('jss3')">
+                📕 JSS 3 - Advanced
+            </button>
+        </div>
+
+        <!-- JSS1 Content -->
+        <div id="theory-jss1" class="theory-content">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Musical Notes -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🎵</span>
+                        <h3 class="font-bold text-xl">Musical Notes</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">In music, there are 7 main notes that form the basis of all melodies. These notes are named after letters of the alphabet:</p>
+                    <div class="flex justify-center gap-2 mb-4">
+                        <span class="bg-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">C</span>
+                        <span class="bg-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">D</span>
+                        <span class="bg-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">E</span>
+                        <span class="bg-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">F</span>
+                        <span class="bg-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">G</span>
+                        <span class="bg-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">A</span>
+                        <span class="bg-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">B</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">These repeat in higher and lower <strong>octaves</strong>. Between some notes, there are <strong>sharps (#)</strong> and <strong>flats (b)</strong> - giving us 12 notes total in Western music.</p>
+                </div>
+
+                <!-- The Staff -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">📝</span>
+                        <h3 class="font-bold text-xl">The Musical Staff</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">The <strong>staff</strong> (or stave) is a set of 5 horizontal lines where musical notes are written. Notes are placed on the lines or in the spaces between them.</p>
+                    <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                        <div class="space-y-3 relative py-4 px-2">
+                            <div class="border-t border-gray-400"></div>
+                            <div class="border-t border-gray-400"></div>
+                            <div class="border-t border-gray-400"></div>
+                            <div class="border-t border-gray-400"></div>
+                            <div class="border-t border-gray-400"></div>
+                            <span class="absolute left-2 top-0 text-4xl text-indigo-500 font-serif" style="line-height: 1;">&#119070;</span>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">Treble Clef on a Staff</p>
+                    </div>
+                    <p class="text-gray-600 text-sm"><strong>Lines (bottom to top):</strong> E, G, B, D, F - Remember: <em>"Every Good Boy Deserves Fudge"</em></p>
+                    <p class="text-gray-600 text-sm"><strong>Spaces (bottom to top):</strong> F, A, C, E - They spell <em>"FACE"</em></p>
+                </div>
+
+                <!-- Time Signatures -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">⏱️</span>
+                        <h3 class="font-bold text-xl">Time Signatures</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Time signatures tell us how many beats are in each <strong>bar</strong> (measure) of music and what type of note gets one beat.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-indigo-50 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-indigo-600">4/4</div>
+                            <p class="text-sm text-gray-600 mt-1">Common Time</p>
+                            <p class="text-xs text-gray-500">4 beats per bar</p>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-purple-600">3/4</div>
+                            <p class="text-sm text-gray-600 mt-1">Waltz Time</p>
+                            <p class="text-xs text-gray-500">3 beats per bar</p>
+                        </div>
+                        <div class="bg-pink-50 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-pink-600">2/4</div>
+                            <p class="text-sm text-gray-600 mt-1">March Time</p>
+                            <p class="text-xs text-gray-500">2 beats per bar</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-green-600">6/8</div>
+                            <p class="text-sm text-gray-600 mt-1">Compound Time</p>
+                            <p class="text-xs text-gray-500">6 beats per bar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rhythm Basics -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🥁</span>
+                        <h3 class="font-bold text-xl">Rhythm Basics</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Rhythm is the pattern of long and short sounds in music. Different note values tell us how long to play each note:</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4 bg-gray-50 rounded-lg p-3">
+                            <span class="text-2xl">&#119133;</span>
+                            <div>
+                                <p class="font-bold">Whole Note (Semibreve)</p>
+                                <p class="text-sm text-gray-500">4 beats</p>
+                            </div>
+                            <div class="flex-1 flex gap-1 justify-end">
+                                <span class="bg-indigo-400 h-3 rounded-full" style="width:100%"></span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-gray-50 rounded-lg p-3">
+                            <span class="text-2xl">&#119134;</span>
+                            <div>
+                                <p class="font-bold">Half Note (Minim)</p>
+                                <p class="text-sm text-gray-500">2 beats</p>
+                            </div>
+                            <div class="flex-1 flex gap-1 justify-end">
+                                <span class="bg-purple-400 h-3 rounded-full" style="width:50%"></span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-gray-50 rounded-lg p-3">
+                            <span class="text-2xl">&#119135;</span>
+                            <div>
+                                <p class="font-bold">Quarter Note (Crotchet)</p>
+                                <p class="text-sm text-gray-500">1 beat</p>
+                            </div>
+                            <div class="flex-1 flex gap-1 justify-end">
+                                <span class="bg-pink-400 h-3 rounded-full" style="width:25%"></span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-gray-50 rounded-lg p-3">
+                            <span class="text-2xl">&#119136;</span>
+                            <div>
+                                <p class="font-bold">Eighth Note (Quaver)</p>
+                                <p class="text-sm text-gray-500">1/2 beat</p>
+                            </div>
+                            <div class="flex-1 flex gap-1 justify-end">
+                                <span class="bg-green-400 h-3 rounded-full" style="width:12.5%"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JSS2 Content -->
+        <div id="theory-jss2" class="theory-content hidden">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Nigerian Traditional Music -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🇳🇬</span>
+                        <h3 class="font-bold text-xl">Nigerian Traditional Music Forms</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Nigeria has a rich tradition of music that reflects its diverse cultures. Traditional music serves many purposes:</p>
+                    <div class="space-y-3">
+                        <div class="bg-amber-50 rounded-lg p-3">
+                            <p class="font-bold text-amber-700">Work Songs</p>
+                            <p class="text-sm text-gray-600">Sung during farming, fishing, and other communal activities to keep a steady rhythm and boost morale.</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">Ceremonial Music</p>
+                            <p class="text-sm text-gray-600">Performed at weddings, festivals, chieftaincy installations, and religious events.</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Lullabies</p>
+                            <p class="text-sm text-gray-600">Gentle songs sung to children, often carrying moral lessons and cultural values.</p>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-3">
+                            <p class="font-bold text-purple-700">Praise Songs</p>
+                            <p class="text-sm text-gray-600">Songs honouring important people, ancestors, or deities. Common in Yoruba and Hausa traditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Musical Scales -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🎼</span>
+                        <h3 class="font-bold text-xl">Musical Scales</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">A <strong>scale</strong> is a sequence of notes arranged in ascending or descending order. Scales form the foundation of melodies.</p>
+                    <div class="space-y-4">
+                        <div class="bg-indigo-50 rounded-lg p-4">
+                            <p class="font-bold text-indigo-700 mb-2">Major Scale (Happy sound)</p>
+                            <div class="flex gap-1 flex-wrap">
+                                <span class="bg-indigo-500 text-white px-2 py-1 rounded text-sm font-bold">C</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-indigo-500 text-white px-2 py-1 rounded text-sm font-bold">D</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-indigo-500 text-white px-2 py-1 rounded text-sm font-bold">E</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-indigo-500 text-white px-2 py-1 rounded text-sm font-bold">F</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-indigo-500 text-white px-2 py-1 rounded text-sm font-bold">G</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-indigo-500 text-white px-2 py-1 rounded text-sm font-bold">A</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-indigo-500 text-white px-2 py-1 rounded text-sm font-bold">B</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Pattern: Whole-Whole-Half-Whole-Whole-Whole-Half</p>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-4">
+                            <p class="font-bold text-purple-700 mb-2">Minor Scale (Sad sound)</p>
+                            <div class="flex gap-1 flex-wrap">
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded text-sm font-bold">A</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded text-sm font-bold">B</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded text-sm font-bold">C</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded text-sm font-bold">D</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded text-sm font-bold">E</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded text-sm font-bold">F</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded text-sm font-bold">G</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Pattern: Whole-Half-Whole-Whole-Half-Whole-Whole</p>
+                        </div>
+                        <div class="bg-amber-50 rounded-lg p-4">
+                            <p class="font-bold text-amber-700 mb-2">Pentatonic Scale (5 notes, common in African music)</p>
+                            <div class="flex gap-1 flex-wrap">
+                                <span class="bg-amber-500 text-white px-2 py-1 rounded text-sm font-bold">C</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-amber-500 text-white px-2 py-1 rounded text-sm font-bold">D</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-amber-500 text-white px-2 py-1 rounded text-sm font-bold">E</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-amber-500 text-white px-2 py-1 rounded text-sm font-bold">G</span>
+                                <span class="text-gray-400">-</span>
+                                <span class="bg-amber-500 text-white px-2 py-1 rounded text-sm font-bold">A</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Used widely in traditional African and Nigerian music</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Types of Music -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🎧</span>
+                        <h3 class="font-bold text-xl">Types of Music</h3>
+                    </div>
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="bg-blue-50 rounded-lg p-4 text-center">
+                            <span class="text-3xl">🎻</span>
+                            <p class="font-bold mt-2">Classical Music</p>
+                            <p class="text-sm text-gray-600">Formal Western art music. Composers include Beethoven and Mozart. Uses orchestra instruments.</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-4 text-center">
+                            <span class="text-3xl">🏡</span>
+                            <p class="font-bold mt-2">Folk Music</p>
+                            <p class="text-sm text-gray-600">Traditional music passed down through generations. Each Nigerian ethnic group has unique folk songs.</p>
+                        </div>
+                        <div class="bg-pink-50 rounded-lg p-4 text-center">
+                            <span class="text-3xl">🎤</span>
+                            <p class="font-bold mt-2">Pop Music</p>
+                            <p class="text-sm text-gray-600">Popular contemporary music. Nigerian pop (Afrobeats) is now a global phenomenon.</p>
+                        </div>
+                        <div class="bg-amber-50 rounded-lg p-4 text-center">
+                            <span class="text-3xl">🎷</span>
+                            <p class="font-bold mt-2">Highlife</p>
+                            <p class="text-sm text-gray-600">Originated in Ghana and Nigeria. Blends traditional rhythms with Western instruments. Pioneers: Bobby Benson, Rex Lawson.</p>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-4 text-center">
+                            <span class="text-3xl">🥁</span>
+                            <p class="font-bold mt-2">Juju Music</p>
+                            <p class="text-sm text-gray-600">Yoruba popular music using talking drums, guitars, and vocals. King Sunny Ade is the legendary king of Juju.</p>
+                        </div>
+                        <div class="bg-red-50 rounded-lg p-4 text-center">
+                            <span class="text-3xl">✊</span>
+                            <p class="font-bold mt-2">Afrobeat</p>
+                            <p class="text-sm text-gray-600">Created by Fela Kuti. Combines jazz, funk, and Yoruba rhythms with political lyrics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JSS3 Content -->
+        <div id="theory-jss3" class="theory-content hidden">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Composition Basics -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">✍️</span>
+                        <h3 class="font-bold text-xl">Composition Basics</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Music composition is the art of creating original music. Here are the key elements every composer needs to understand:</p>
+                    <div class="space-y-3">
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <p class="font-bold">Melody</p>
+                            <p class="text-sm text-gray-600">The main tune - a sequence of single notes that form the recognisable part of a song.</p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <p class="font-bold">Harmony</p>
+                            <p class="text-sm text-gray-600">Multiple notes played together (chords) that support the melody and add depth.</p>
+                        </div>
+                        <div class="border-l-4 border-pink-500 pl-4">
+                            <p class="font-bold">Rhythm</p>
+                            <p class="text-sm text-gray-600">The pattern of beats and timing that drives the music forward.</p>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <p class="font-bold">Dynamics</p>
+                            <p class="text-sm text-gray-600">Variations in loudness - from piano (soft) to forte (loud).</p>
+                        </div>
+                        <div class="border-l-4 border-amber-500 pl-4">
+                            <p class="font-bold">Tempo</p>
+                            <p class="text-sm text-gray-600">The speed of the music - from largo (very slow) to presto (very fast).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Song Structure -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🏗️</span>
+                        <h3 class="font-bold text-xl">Song Structure</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Most songs follow a structure that organises the music into sections:</p>
+                    <div class="space-y-4">
+                        <div class="bg-indigo-50 rounded-lg p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-indigo-500 text-white px-3 py-1 rounded-full text-xs font-bold">INTRO</span>
+                            </div>
+                            <p class="text-sm text-gray-600">The opening section that sets the mood and introduces the musical theme.</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold">VERSE</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Tells the story. The melody stays the same, but the lyrics change each time to advance the narrative.</p>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold">CHORUS</span>
+                            </div>
+                            <p class="text-sm text-gray-600">The main hook - the most memorable, catchy part of the song. Same words and melody each time it repeats.</p>
+                        </div>
+                        <div class="bg-pink-50 rounded-lg p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold">BRIDGE</span>
+                            </div>
+                            <p class="text-sm text-gray-600">A contrasting section that provides variety and builds tension before returning to the chorus.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-gray-500 text-white px-3 py-1 rounded-full text-xs font-bold">OUTRO</span>
+                            </div>
+                            <p class="text-sm text-gray-600">The closing section that brings the song to an end, often by fading out or resolving the melody.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-indigo-100 rounded-lg p-3 text-center">
+                        <p class="text-sm font-bold text-indigo-700">Common Pattern: Intro - Verse - Chorus - Verse - Chorus - Bridge - Chorus - Outro</p>
+                    </div>
+                </div>
+
+                <!-- Famous Nigerian Musicians -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🌟</span>
+                        <h3 class="font-bold text-xl">Famous Nigerian & African Musicians</h3>
+                    </div>
+                    <div class="grid sm:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-24 h-24 mx-auto bg-gradient-to-br from-red-400 to-orange-500 rounded-full flex items-center justify-center mb-3">
+                                <img src="images/music/fela-kuti.jpg" alt="Fela Kuti" class="w-full h-full rounded-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-4xl\'>🎷</span>'">
+                            </div>
+                            <h4 class="font-bold text-lg">Fela Anikulapo Kuti</h4>
+                            <p class="text-indigo-500 text-sm font-bold mb-2">Father of Afrobeat</p>
+                            <p class="text-gray-600 text-sm">Created the Afrobeat genre by fusing jazz, funk, and Yoruba rhythms. He was also a political activist who used music to fight for the rights of everyday Nigerians. His band "Africa 70" became legendary worldwide.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-24 h-24 mx-auto bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center mb-3">
+                                <img src="images/music/king-sunny-ade.jpg" alt="King Sunny Ade" class="w-full h-full rounded-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-4xl\'>🎸</span>'">
+                            </div>
+                            <h4 class="font-bold text-lg">King Sunny Ade</h4>
+                            <p class="text-amber-500 text-sm font-bold mb-2">King of Juju Music</p>
+                            <p class="text-gray-600 text-sm">Popularised Juju music internationally with his innovative use of the talking drum combined with modern instruments. He was one of the first African musicians nominated for a Grammy Award.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-24 h-24 mx-auto bg-gradient-to-br from-green-400 to-teal-500 rounded-full flex items-center justify-center mb-3">
+                                <img src="images/music/miriam-makeba.jpg" alt="Miriam Makeba" class="w-full h-full rounded-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-4xl\'>🎤</span>'">
+                            </div>
+                            <h4 class="font-bold text-lg">Miriam Makeba</h4>
+                            <p class="text-green-500 text-sm font-bold mb-2">Mama Africa (South Africa)</p>
+                            <p class="text-gray-600 text-sm">A South African singer known as "Mama Africa" who used her music to fight against apartheid. Her song "Pata Pata" became a global hit. She championed African music on the world stage and inspired generations of Nigerian artists.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rhythm Game Section -->
+    <section id="rhythm-game" class="bg-gradient-to-br from-dark via-gray-900 to-purple-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl mb-3">Rhythm Challenge</h2>
+                <p class="text-gray-400 text-lg">Watch the pattern, then tap along to match the beat!</p>
+            </div>
+
+            <div class="bg-white/5 backdrop-blur rounded-3xl border border-white/10 p-6 md:p-10">
+                <!-- Game Stats -->
+                <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+                    <div class="flex gap-4">
+                        <div class="bg-white/10 rounded-xl px-4 py-2 text-center">
+                            <p class="text-xs text-gray-400">Score</p>
+                            <p id="rhythmScore" class="font-bold text-xl text-secondary">0</p>
+                        </div>
+                        <div class="bg-white/10 rounded-xl px-4 py-2 text-center">
+                            <p class="text-xs text-gray-400">Level</p>
+                            <p id="rhythmLevel" class="font-bold text-xl text-green-400">1</p>
+                        </div>
+                        <div class="bg-white/10 rounded-xl px-4 py-2 text-center">
+                            <p class="text-xs text-gray-400">Streak</p>
+                            <p id="rhythmStreak" class="font-bold text-xl text-pink-400">0</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <select id="rhythmDifficulty" class="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm">
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Game Status Message -->
+                <div id="rhythmMessage" class="text-center text-lg font-bold mb-6 text-secondary">
+                    Press "Start" to begin!
+                </div>
+
+                <!-- Rhythm Display -->
+                <div class="grid grid-cols-4 gap-3 mb-8" id="rhythmPads">
+                    <div class="rhythm-pad aspect-square bg-red-500/20 border-2 border-red-500/40 rounded-2xl flex items-center justify-center text-4xl cursor-pointer hover:bg-red-500/40 transition select-none" data-pad="0" onclick="hitRhythmPad(0)">
+                        🥁
+                    </div>
+                    <div class="rhythm-pad aspect-square bg-blue-500/20 border-2 border-blue-500/40 rounded-2xl flex items-center justify-center text-4xl cursor-pointer hover:bg-blue-500/40 transition select-none" data-pad="1" onclick="hitRhythmPad(1)">
+                        🔔
+                    </div>
+                    <div class="rhythm-pad aspect-square bg-green-500/20 border-2 border-green-500/40 rounded-2xl flex items-center justify-center text-4xl cursor-pointer hover:bg-green-500/40 transition select-none" data-pad="2" onclick="hitRhythmPad(2)">
+                        🎵
+                    </div>
+                    <div class="rhythm-pad aspect-square bg-yellow-500/20 border-2 border-yellow-500/40 rounded-2xl flex items-center justify-center text-4xl cursor-pointer hover:bg-yellow-500/40 transition select-none" data-pad="3" onclick="hitRhythmPad(3)">
+                        🪘
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <button id="rhythmStartBtn" onclick="startRhythmGame()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-3 rounded-full font-bold text-lg hover:from-green-600 hover:to-emerald-600 transition transform hover:scale-105 shadow-lg">
+                        Start Game
+                    </button>
+                    <button onclick="resetRhythmGame()" class="bg-white/10 border border-white/20 px-6 py-3 rounded-full font-bold hover:bg-white/20 transition">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Genres of Nigeria -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">Music Genres of Nigeria</h2>
+            <p class="text-gray-600 text-lg">Nigeria is one of the world's most musically diverse countries</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Highlife -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-amber-400 to-orange-500 p-6 text-white text-center h-full">
+                    <img src="images/music/highlife.jpg" alt="Highlife" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    <div class="relative z-10">
+                        <div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🎷</div>
+                        <h3 class="font-bold text-lg">Highlife</h3>
+                        <p class="text-white/80 text-sm mt-2">Originated in the early 20th century. Blends traditional Akan and Yoruba rhythms with Western instruments like brass and guitar.</p>
+                        <p class="text-white/60 text-xs mt-2 italic">Key Artists: Bobby Benson, Rex Lawson, Victor Olaiya</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Juju -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-green-400 to-emerald-500 p-6 text-white text-center h-full">
+                    <img src="images/music/juju.jpg" alt="Juju Music" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    <div class="relative z-10">
+                        <div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🥁</div>
+                        <h3 class="font-bold text-lg">Juju Music</h3>
+                        <p class="text-white/80 text-sm mt-2">Yoruba popular music featuring talking drums, electric guitars, and melodic vocals. Evolved from palm wine music.</p>
+                        <p class="text-white/60 text-xs mt-2 italic">Key Artists: King Sunny Ade, Ebenezer Obey</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Afrobeat -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-red-400 to-rose-500 p-6 text-white text-center h-full">
+                    <img src="images/music/afrobeat.jpg" alt="Afrobeat" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    <div class="relative z-10">
+                        <div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🎺</div>
+                        <h3 class="font-bold text-lg">Afrobeat</h3>
+                        <p class="text-white/80 text-sm mt-2">Created by Fela Kuti in the 1970s. Fuses jazz, funk, and traditional Yoruba music with politically charged lyrics.</p>
+                        <p class="text-white/60 text-xs mt-2 italic">Key Artists: Fela Kuti, Tony Allen, Femi Kuti</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apala -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-indigo-400 to-blue-500 p-6 text-white text-center h-full">
+                    <img src="images/music/apala.jpg" alt="Apala" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    <div class="relative z-10">
+                        <div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🪘</div>
+                        <h3 class="font-bold text-lg">Apala</h3>
+                        <p class="text-white/80 text-sm mt-2">Traditional Yoruba percussion music originally performed to wake up worshippers during Ramadan. Uses agidigbo and talking drums.</p>
+                        <p class="text-white/60 text-xs mt-2 italic">Key Artists: Haruna Ishola, Ayinla Omowura</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fuji -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-purple-400 to-violet-500 p-6 text-white text-center h-full">
+                    <img src="images/music/fuji.jpg" alt="Fuji" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    <div class="relative z-10">
+                        <div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🎤</div>
+                        <h3 class="font-bold text-lg">Fuji</h3>
+                        <p class="text-white/80 text-sm mt-2">Evolved from Apala and Were music. A fast-paced Yoruba genre with intense percussion, vocals, and synthesizers added in modern times.</p>
+                        <p class="text-white/60 text-xs mt-2 italic">Key Artists: Barrister, Wasiu Ayinde (K1 De Ultimate)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gospel -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-sky-400 to-cyan-500 p-6 text-white text-center h-full">
+                    <img src="images/music/gospel.jpg" alt="Gospel" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    <div class="relative z-10">
+                        <div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🙏</div>
+                        <h3 class="font-bold text-lg">Gospel</h3>
+                        <p class="text-white/80 text-sm mt-2">Christian religious music that blends Western gospel traditions with Nigerian languages and rhythms. One of the most popular genres in Nigeria.</p>
+                        <p class="text-white/60 text-xs mt-2 italic">Key Artists: Sinach, Nathaniel Bassey, Frank Edwards</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hip-Hop / Afrobeats -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 sm:col-span-2">
+                <div class="bg-gradient-to-br from-pink-400 to-fuchsia-500 p-6 text-white text-center h-full">
+                    <img src="images/music/hiphop.jpg" alt="Nigerian Hip-Hop" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition">
+                    <div class="relative z-10">
+                        <div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🎧</div>
+                        <h3 class="font-bold text-lg">Hip-Hop & Afrobeats</h3>
+                        <p class="text-white/80 text-sm mt-2">Modern Nigerian hip-hop and Afrobeats (different from Fela's Afrobeat) have taken the world by storm. Blending rap, R&B, dancehall, and Nigerian rhythms, this genre has produced global superstars.</p>
+                        <p class="text-white/60 text-xs mt-2 italic">Key Artists: Wizkid, Burna Boy, Davido, Tiwa Savage, Rema</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl mb-4">Ready to Test Your Music Knowledge?</h2>
+            <p class="text-indigo-100 text-lg mb-8">Take the AI-powered quiz to see how much you have learned about music and Nigerian musical heritage!</p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="quiz.html" class="bg-white text-purple-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-indigo-50 transition transform hover:scale-105 shadow-lg">
+                    🧠 Take the Quiz
+                </a>
+                <a href="assistant.html" class="bg-white/10 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/20">
+                    🤖 Ask AI Assistant
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-3xl">🎨</span>
+                        <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">An AI-powered learning platform for Cultural and Creative Arts. Designed for Nigerian JSS 1-3 students.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Classes</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="jss1.html" class="hover:text-white transition">JSS 1 - Foundation</a></li>
+                        <li><a href="jss2.html" class="hover:text-white transition">JSS 2 - Intermediate</a></li>
+                        <li><a href="jss3.html" class="hover:text-white transition">JSS 3 - Advanced</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Explore</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="drawing.html" class="hover:text-white transition">Drawing & Painting</a></li>
+                        <li><a href="music.html" class="hover:text-white transition">Music</a></li>
+                        <li><a href="drama.html" class="hover:text-white transition">Drama & Theatre</a></li>
+                        <li><a href="crafts.html" class="hover:text-white transition">Traditional Crafts</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition">Cultural Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">AI Tools</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="quiz.html" class="hover:text-white transition">AI Quiz Master</a></li>
+                        <li><a href="assistant.html" class="hover:text-white transition">AI Study Assistant</a></li>
+                        <li><a href="drawing.html" class="hover:text-white transition">Digital Art Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 CCA Learn. Built for Nigerian Students with &#10084;&#65039;</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+    // ========================================
+    // VIRTUAL PIANO - Web Audio API
+    // ========================================
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function getAudioContext() {
+        if (!audioCtx) {
+            audioCtx = new AudioCtx();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        return audioCtx;
+    }
+
+    // Note frequencies (Hz) for the 4th octave
+    const noteFrequencies = {
+        'C4': 261.63,
+        'C#4': 277.18,
+        'D4': 293.66,
+        'D#4': 311.13,
+        'E4': 329.63,
+        'F4': 349.23,
+        'F#4': 369.99,
+        'G4': 392.00,
+        'G#4': 415.30,
+        'A4': 440.00,
+        'A#4': 466.16,
+        'B4': 493.88,
+    };
+
+    // Play a note with the Web Audio API
+    function playNote(noteName, duration = 0.5) {
+        const ctx = getAudioContext();
+        const freq = noteFrequencies[noteName];
+        if (!freq) return;
+
+        // Create oscillator
+        const oscillator = ctx.createOscillator();
+        const gainNode = ctx.createGain();
+
+        oscillator.type = 'triangle'; // Triangle wave for a piano-like sound
+        oscillator.frequency.setValueAtTime(freq, ctx.currentTime);
+
+        // Add a second oscillator for richness
+        const osc2 = ctx.createOscillator();
+        const gain2 = ctx.createGain();
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain2.gain.setValueAtTime(0.3, ctx.currentTime);
+
+        // ADSR envelope
+        gainNode.gain.setValueAtTime(0, ctx.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.6, ctx.currentTime + 0.02); // Attack
+        gainNode.gain.linearRampToValueAtTime(0.4, ctx.currentTime + 0.1);  // Decay
+        gainNode.gain.linearRampToValueAtTime(0.3, ctx.currentTime + duration * 0.7); // Sustain
+        gainNode.gain.linearRampToValueAtTime(0, ctx.currentTime + duration); // Release
+
+        gain2.gain.setValueAtTime(0, ctx.currentTime);
+        gain2.gain.linearRampToValueAtTime(0.2, ctx.currentTime + 0.02);
+        gain2.gain.linearRampToValueAtTime(0, ctx.currentTime + duration);
+
+        oscillator.connect(gainNode);
+        gainNode.connect(ctx.destination);
+        osc2.connect(gain2);
+        gain2.connect(ctx.destination);
+
+        oscillator.start(ctx.currentTime);
+        oscillator.stop(ctx.currentTime + duration + 0.1);
+        osc2.start(ctx.currentTime);
+        osc2.stop(ctx.currentTime + duration + 0.1);
+
+        // Update display
+        const noteDisplay = document.getElementById('noteDisplay');
+        noteDisplay.textContent = noteName;
+        noteDisplay.classList.add('scale-110');
+        setTimeout(() => noteDisplay.classList.remove('scale-110'), 200);
+
+        return { oscillator, osc2, gainNode, gain2 };
+    }
+
+    // Piano key click handlers
+    document.querySelectorAll('.white-key, .black-key').forEach(key => {
+        key.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            const note = key.dataset.note;
+            playNote(note, 0.8);
+            key.classList.add('active');
+        });
+        key.addEventListener('mouseup', () => {
+            key.classList.remove('active');
+        });
+        key.addEventListener('mouseleave', () => {
+            key.classList.remove('active');
+        });
+        // Touch support
+        key.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const note = key.dataset.note;
+            playNote(note, 0.8);
+            key.classList.add('active');
+        });
+        key.addEventListener('touchend', () => {
+            key.classList.remove('active');
+        });
+    });
+
+    // Keyboard mapping
+    const keyboardMap = {
+        'a': 'C4', 'w': 'C#4', 's': 'D4', 'e': 'D#4', 'd': 'E4',
+        'f': 'F4', 't': 'F#4', 'g': 'G4', 'y': 'G#4', 'h': 'A4',
+        'u': 'A#4', 'j': 'B4'
+    };
+
+    const activeKeys = {};
+    document.addEventListener('keydown', (e) => {
+        if (e.repeat) return;
+        const note = keyboardMap[e.key.toLowerCase()];
+        if (note && !activeKeys[e.key.toLowerCase()]) {
+            activeKeys[e.key.toLowerCase()] = true;
+            playNote(note, 0.8);
+            const keyEl = document.querySelector(`[data-key="${e.key.toLowerCase()}"]`);
+            if (keyEl) keyEl.classList.add('active');
+        }
+    });
+
+    document.addEventListener('keyup', (e) => {
+        const note = keyboardMap[e.key.toLowerCase()];
+        if (note) {
+            activeKeys[e.key.toLowerCase()] = false;
+            const keyEl = document.querySelector(`[data-key="${e.key.toLowerCase()}"]`);
+            if (keyEl) keyEl.classList.remove('active');
+        }
+    });
+
+    // Play C Major Scale
+    function playScale() {
+        const scaleNotes = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4'];
+        scaleNotes.forEach((note, i) => {
+            setTimeout(() => {
+                playNote(note, 0.4);
+                const keyEl = document.querySelector(`[data-note="${note}"]`);
+                if (keyEl) {
+                    keyEl.classList.add('active');
+                    setTimeout(() => keyEl.classList.remove('active'), 350);
+                }
+            }, i * 400);
+        });
+    }
+
+    // Play Chords
+    function playChord(chordName) {
+        const chords = {
+            'C': ['C4', 'E4', 'G4'],
+            'Am': ['A4', 'C4', 'E4'],
+        };
+        const notes = chords[chordName];
+        if (!notes) return;
+
+        document.getElementById('noteDisplay').textContent = chordName + ' Chord';
+        notes.forEach(note => {
+            playNote(note, 1.0);
+            const keyEl = document.querySelector(`[data-note="${note}"]`);
+            if (keyEl) {
+                keyEl.classList.add('active');
+                setTimeout(() => keyEl.classList.remove('active'), 800);
+            }
+        });
+    }
+
+    // ========================================
+    // MUSIC THEORY TABS
+    // ========================================
+    function showTheoryTab(level) {
+        // Hide all content
+        document.querySelectorAll('.theory-content').forEach(el => el.classList.add('hidden'));
+        // Show selected
+        document.getElementById('theory-' + level).classList.remove('hidden');
+
+        // Update tab styles
+        document.querySelectorAll('.theory-tab').forEach(tab => {
+            tab.classList.remove('active', 'bg-indigo-100', 'text-indigo-700');
+            tab.classList.add('bg-gray-100', 'text-gray-600');
+        });
+        event.target.classList.add('active', 'bg-indigo-100', 'text-indigo-700');
+        event.target.classList.remove('bg-gray-100', 'text-gray-600');
+    }
+
+    // ========================================
+    // RHYTHM GAME
+    // ========================================
+    let rhythmGameState = {
+        score: 0,
+        level: 1,
+        streak: 0,
+        bestStreak: 0,
+        pattern: [],
+        playerPattern: [],
+        isPlaying: false,
+        isShowingPattern: false,
+        currentStep: 0,
+        speed: 600,
+    };
+
+    const padColors = [
+        { bg: 'bg-red-500', border: 'border-red-400', glow: 'shadow-red-500/50' },
+        { bg: 'bg-blue-500', border: 'border-blue-400', glow: 'shadow-blue-500/50' },
+        { bg: 'bg-green-500', border: 'border-green-400', glow: 'shadow-green-500/50' },
+        { bg: 'bg-yellow-500', border: 'border-yellow-400', glow: 'shadow-yellow-500/50' },
+    ];
+
+    const padSounds = [200, 300, 400, 500]; // Frequencies for each pad
+
+    function playPadSound(padIndex) {
+        const ctx = getAudioContext();
+        const freq = padSounds[padIndex];
+
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+        gain.gain.setValueAtTime(0, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.3, ctx.currentTime + 0.01);
+        gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.2);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.3);
+    }
+
+    function playErrorSound() {
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(150, ctx.currentTime);
+        osc.frequency.linearRampToValueAtTime(80, ctx.currentTime + 0.3);
+        gain.gain.setValueAtTime(0.3, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.3);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.4);
+    }
+
+    function playSuccessSound() {
+        const ctx = getAudioContext();
+        const notes = [523.25, 659.25, 783.99]; // C5, E5, G5
+        notes.forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, ctx.currentTime + i * 0.1);
+            gain.gain.setValueAtTime(0, ctx.currentTime + i * 0.1);
+            gain.gain.linearRampToValueAtTime(0.3, ctx.currentTime + i * 0.1 + 0.02);
+            gain.gain.linearRampToValueAtTime(0, ctx.currentTime + i * 0.1 + 0.3);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(ctx.currentTime + i * 0.1);
+            osc.stop(ctx.currentTime + i * 0.1 + 0.4);
+        });
+    }
+
+    function flashPad(padIndex) {
+        const pads = document.querySelectorAll('.rhythm-pad');
+        const pad = pads[padIndex];
+        const color = padColors[padIndex];
+
+        pad.classList.add(color.bg, color.border, 'shadow-lg', color.glow, 'scale-95');
+        playPadSound(padIndex);
+
+        setTimeout(() => {
+            pad.classList.remove(color.bg, color.border, 'shadow-lg', color.glow, 'scale-95');
+        }, 300);
+    }
+
+    function generatePattern() {
+        const difficulty = document.getElementById('rhythmDifficulty').value;
+        let length;
+        switch (difficulty) {
+            case 'easy': length = 3 + Math.floor(rhythmGameState.level / 2); break;
+            case 'medium': length = 4 + rhythmGameState.level; break;
+            case 'hard': length = 5 + rhythmGameState.level + Math.floor(rhythmGameState.level / 2); break;
+            default: length = 4;
+        }
+        length = Math.min(length, 20); // Cap at 20
+
+        const pattern = [];
+        for (let i = 0; i < length; i++) {
+            pattern.push(Math.floor(Math.random() * 4));
+        }
+        return pattern;
+    }
+
+    function showPattern() {
+        rhythmGameState.isShowingPattern = true;
+        const pattern = rhythmGameState.pattern;
+        const difficulty = document.getElementById('rhythmDifficulty').value;
+
+        let speed;
+        switch (difficulty) {
+            case 'easy': speed = 700; break;
+            case 'medium': speed = 500; break;
+            case 'hard': speed = 350; break;
+            default: speed = 600;
+        }
+
+        document.getElementById('rhythmMessage').textContent = 'Watch the pattern...';
+        document.getElementById('rhythmMessage').classList.add('animate-pulse');
+
+        pattern.forEach((pad, i) => {
+            setTimeout(() => {
+                flashPad(pad);
+            }, (i + 1) * speed);
+        });
+
+        setTimeout(() => {
+            rhythmGameState.isShowingPattern = false;
+            rhythmGameState.playerPattern = [];
+            rhythmGameState.currentStep = 0;
+            document.getElementById('rhythmMessage').textContent = 'Your turn! Repeat the pattern!';
+            document.getElementById('rhythmMessage').classList.remove('animate-pulse');
+        }, (pattern.length + 1) * speed + 200);
+    }
+
+    function startRhythmGame() {
+        if (rhythmGameState.isShowingPattern) return;
+
+        rhythmGameState.isPlaying = true;
+        rhythmGameState.pattern = generatePattern();
+        document.getElementById('rhythmStartBtn').textContent = 'Playing...';
+        document.getElementById('rhythmStartBtn').disabled = true;
+
+        showPattern();
+    }
+
+    function hitRhythmPad(padIndex) {
+        if (!rhythmGameState.isPlaying || rhythmGameState.isShowingPattern) {
+            // Still allow sound outside of game
+            flashPad(padIndex);
+            return;
+        }
+
+        flashPad(padIndex);
+
+        const expected = rhythmGameState.pattern[rhythmGameState.currentStep];
+
+        if (padIndex === expected) {
+            rhythmGameState.currentStep++;
+            rhythmGameState.playerPattern.push(padIndex);
+
+            if (rhythmGameState.currentStep === rhythmGameState.pattern.length) {
+                // Success! Complete pattern matched
+                rhythmGameState.score += rhythmGameState.pattern.length * 10 * rhythmGameState.level;
+                rhythmGameState.streak++;
+                if (rhythmGameState.streak > rhythmGameState.bestStreak) {
+                    rhythmGameState.bestStreak = rhythmGameState.streak;
+                }
+                rhythmGameState.level++;
+
+                updateRhythmUI();
+                playSuccessSound();
+
+                document.getElementById('rhythmMessage').innerHTML = '<span class="text-green-400">Correct! Well done!</span>';
+
+                setTimeout(() => {
+                    rhythmGameState.pattern = generatePattern();
+                    showPattern();
+                }, 1500);
+            }
+        } else {
+            // Wrong!
+            playErrorSound();
+            rhythmGameState.streak = 0;
+            document.getElementById('rhythmMessage').innerHTML = '<span class="text-red-400">Wrong! Game Over. Try again!</span>';
+            rhythmGameState.isPlaying = false;
+
+            document.getElementById('rhythmStartBtn').textContent = 'Try Again';
+            document.getElementById('rhythmStartBtn').disabled = false;
+
+            // Flash all pads red briefly
+            const pads = document.querySelectorAll('.rhythm-pad');
+            pads.forEach(pad => {
+                pad.classList.add('bg-red-500/50');
+                setTimeout(() => pad.classList.remove('bg-red-500/50'), 500);
+            });
+
+            updateRhythmUI();
+        }
+    }
+
+    function updateRhythmUI() {
+        document.getElementById('rhythmScore').textContent = rhythmGameState.score;
+        document.getElementById('rhythmLevel').textContent = rhythmGameState.level;
+        document.getElementById('rhythmStreak').textContent = rhythmGameState.streak;
+    }
+
+    function resetRhythmGame() {
+        rhythmGameState = {
+            score: 0,
+            level: 1,
+            streak: 0,
+            bestStreak: 0,
+            pattern: [],
+            playerPattern: [],
+            isPlaying: false,
+            isShowingPattern: false,
+            currentStep: 0,
+            speed: 600,
+        };
+        updateRhythmUI();
+        document.getElementById('rhythmMessage').textContent = 'Press "Start" to begin!';
+        document.getElementById('rhythmStartBtn').textContent = 'Start Game';
+        document.getElementById('rhythmStartBtn').disabled = false;
+    }
+
+    // Keyboard support for rhythm game (1-4 keys)
+    document.addEventListener('keydown', (e) => {
+        if (e.key >= '1' && e.key <= '4') {
+            hitRhythmPad(parseInt(e.key) - 1);
+        }
+    });
+    </script>
+</body>
+</html>

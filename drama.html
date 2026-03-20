@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drama & Theatre Arts - CCA Learn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4380D',
+                        secondary: '#FAAD14',
+                        accent: '#389E0D',
+                        dark: '#1A1A2E',
+                        cream: '#FFF8E7',
+                        terracotta: '#C4501A',
+                        gold: '#E8A317',
+                        forest: '#2D6A1E',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body class="bg-cream font-['Nunito'] text-dark">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-dark text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-3xl">🎨</span>
+                <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="index.html" class="hover:text-secondary transition">Home</a>
+                <div class="relative group">
+                    <button class="hover:text-secondary transition">Classes ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-40 hidden group-hover:block shadow-xl">
+                        <a href="jss1.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 1</a>
+                        <a href="jss2.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 2</a>
+                        <a href="jss3.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 3</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="hover:text-secondary transition">Explore ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-48 hidden group-hover:block shadow-xl">
+                        <a href="drawing.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎨 Drawing Studio</a>
+                        <a href="music.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎵 Music</a>
+                        <a href="drama.html" class="block px-4 py-2 bg-gray-800 text-secondary">🎭 Drama & Theatre</a>
+                        <a href="crafts.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🏺 Traditional Crafts</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🖼️ Cultural Gallery</a>
+                    </div>
+                </div>
+                <a href="quiz.html" class="hover:text-secondary transition">🧠 AI Quiz</a>
+                <a href="assistant.html" class="bg-primary px-4 py-2 rounded-full hover:bg-terracotta transition">🤖 AI Assistant</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden text-2xl" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark border-t border-gray-700 px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-secondary font-semibold">Home</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Classes</p>
+            <a href="jss1.html" class="block py-2 pl-4 hover:text-secondary">JSS 1</a>
+            <a href="jss2.html" class="block py-2 pl-4 hover:text-secondary">JSS 2</a>
+            <a href="jss3.html" class="block py-2 pl-4 hover:text-secondary">JSS 3</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Explore</p>
+            <a href="drawing.html" class="block py-2 pl-4 hover:text-secondary">🎨 Drawing Studio</a>
+            <a href="music.html" class="block py-2 pl-4 hover:text-secondary">🎵 Music</a>
+            <a href="drama.html" class="block py-2 pl-4 text-secondary font-semibold">🎭 Drama & Theatre</a>
+            <a href="crafts.html" class="block py-2 pl-4 hover:text-secondary">🏺 Traditional Crafts</a>
+            <a href="gallery.html" class="block py-2 pl-4 hover:text-secondary">🖼️ Cultural Gallery</a>
+            <div class="mt-3 flex flex-col gap-2">
+                <a href="quiz.html" class="block py-2 hover:text-secondary font-semibold">🧠 AI Quiz</a>
+                <a href="assistant.html" class="block py-2 bg-primary text-center rounded-full font-semibold">🤖 AI Assistant</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-pink-400 to-rose-500 text-white">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 text-8xl animate-float">🎭</div>
+            <div class="absolute top-20 right-20 text-7xl animate-float-delay">🎬</div>
+            <div class="absolute bottom-20 left-1/4 text-6xl animate-float">🎪</div>
+            <div class="absolute bottom-10 right-1/3 text-8xl animate-float-delay">🌟</div>
+            <div class="absolute top-1/3 left-1/2 text-5xl animate-float">🎤</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+                    🎭 Creative Arts Module
+                </div>
+                <h1 class="font-['Fredoka_One'] text-4xl md:text-6xl leading-tight mb-6">
+                    Drama & Theatre Arts
+                </h1>
+                <p class="text-lg md:text-xl text-pink-100 mb-8 leading-relaxed">
+                    Step into the spotlight! Learn the art of performance, storytelling, and stagecraft rooted in Nigeria's rich theatrical heritage. From mime and movement to full-scale productions.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#what-is-drama" class="bg-white text-rose-500 px-8 py-3 rounded-full font-bold text-lg hover:bg-pink-50 transition transform hover:scale-105 shadow-lg">
+                        Start Learning →
+                    </a>
+                    <a href="#activities" class="bg-white/10 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/20">
+                        🎬 Try Activities
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H0Z" fill="#FFF8E7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- What is Drama? -->
+    <section id="what-is-drama" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">What is Drama?</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Drama is the art of telling stories through live performance. Actors use speech, movement, gestures, and emotions to bring characters and stories to life on stage.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+            <div>
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="font-bold text-xl text-rose-500 mb-4">Key Elements of Drama</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="text-rose-500 font-bold text-lg mt-0.5">1.</span>
+                            <div><strong>Plot</strong> — The story or sequence of events in a play</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-rose-500 font-bold text-lg mt-0.5">2.</span>
+                            <div><strong>Characters</strong> — The people (actors) who carry out the action</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-rose-500 font-bold text-lg mt-0.5">3.</span>
+                            <div><strong>Dialogue</strong> — The words spoken by characters</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-rose-500 font-bold text-lg mt-0.5">4.</span>
+                            <div><strong>Setting</strong> — Where and when the story takes place</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-rose-500 font-bold text-lg mt-0.5">5.</span>
+                            <div><strong>Theme</strong> — The central message or lesson of the play</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-rose-500 font-bold text-lg mt-0.5">6.</span>
+                            <div><strong>Conflict</strong> — The struggle or problem that drives the story</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="img-placeholder h-48 bg-gradient-to-br from-pink-100 to-rose-100">
+                        <img src="images/drama/drama-intro.jpg" alt="Drama introduction" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-6xl\'>🎭</div>'">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-3">Types of Drama</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-pink-50 rounded-xl p-3 text-center">
+                                <div class="text-2xl mb-1">😂</div>
+                                <p class="font-bold text-sm">Comedy</p>
+                                <p class="text-xs text-gray-500">Humorous, happy ending</p>
+                            </div>
+                            <div class="bg-rose-50 rounded-xl p-3 text-center">
+                                <div class="text-2xl mb-1">😢</div>
+                                <p class="font-bold text-sm">Tragedy</p>
+                                <p class="text-xs text-gray-500">Serious, sad ending</p>
+                            </div>
+                            <div class="bg-purple-50 rounded-xl p-3 text-center">
+                                <div class="text-2xl mb-1">🤫</div>
+                                <p class="font-bold text-sm">Mime</p>
+                                <p class="text-xs text-gray-500">Silent, body expression</p>
+                            </div>
+                            <div class="bg-amber-50 rounded-xl p-3 text-center">
+                                <div class="text-2xl mb-1">🎵</div>
+                                <p class="font-bold text-sm">Musical</p>
+                                <p class="text-xs text-gray-500">Songs and dance</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-3 text-center">
+                                <div class="text-2xl mb-1">😂😢</div>
+                                <p class="font-bold text-sm">Tragicomedy</p>
+                                <p class="text-xs text-gray-500">Mix of both</p>
+                            </div>
+                            <div class="bg-green-50 rounded-xl p-3 text-center">
+                                <div class="text-2xl mb-1">📻</div>
+                                <p class="font-bold text-sm">Radio Drama</p>
+                                <p class="text-xs text-gray-500">Voice and sound only</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nigerian Theatre Pioneers -->
+    <section class="bg-gradient-to-r from-dark via-gray-900 to-rose-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="inline-block bg-secondary/20 text-secondary px-4 py-1 rounded-full text-sm font-bold mb-3">
+                    Nigerian Heritage
+                </div>
+                <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl mb-3">Nigerian Theatre Pioneers</h2>
+                <p class="text-gray-400 text-lg">Meet the legends who shaped Nigerian drama and theatre</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Hubert Ogunde -->
+                <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition group">
+                    <div class="text-center mb-4">
+                        <div class="w-20 h-20 bg-gradient-to-br from-secondary to-amber-600 rounded-full flex items-center justify-center mx-auto text-4xl mb-3">🎭</div>
+                        <h3 class="font-bold text-lg group-hover:text-secondary transition">Hubert Ogunde</h3>
+                        <p class="text-secondary text-sm font-semibold">Father of Nigerian Theatre</p>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-3">Pioneer of Yoruba professional theatre. He founded the first professional theatrical company in Nigeria in 1945 and used drama to address social and political issues.</p>
+                    <div class="border-t border-white/10 pt-3">
+                        <p class="text-xs text-gray-400 font-semibold uppercase mb-1">Famous Works</p>
+                        <p class="text-gray-300 text-sm">Tiger's Empire, Yoruba Ronu, Bread and Bullet</p>
+                    </div>
+                </div>
+                <!-- Duro Ladipo -->
+                <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition group">
+                    <div class="text-center mb-4">
+                        <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full flex items-center justify-center mx-auto text-4xl mb-3">🎪</div>
+                        <h3 class="font-bold text-lg group-hover:text-secondary transition">Duro Ladipo</h3>
+                        <p class="text-rose-400 text-sm font-semibold">Master of Yoruba Opera</p>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-3">Created folk operas based on Yoruba mythology and history. His works blended traditional music, dance, and drama in spectacular theatrical productions.</p>
+                    <div class="border-t border-white/10 pt-3">
+                        <p class="text-xs text-gray-400 font-semibold uppercase mb-1">Famous Works</p>
+                        <p class="text-gray-300 text-sm">Oba Koso, Oba Moro, Oba Waja (Yoruba Trilogy)</p>
+                    </div>
+                </div>
+                <!-- Wole Soyinka -->
+                <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition group">
+                    <div class="text-center mb-4">
+                        <div class="w-20 h-20 bg-gradient-to-br from-accent to-forest rounded-full flex items-center justify-center mx-auto text-4xl mb-3">🏆</div>
+                        <h3 class="font-bold text-lg group-hover:text-secondary transition">Wole Soyinka</h3>
+                        <p class="text-green-400 text-sm font-semibold">Nobel Laureate in Literature</p>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-3">Africa's first Nobel Prize winner in Literature (1986). A playwright, poet, and essayist whose works explore the human condition through a uniquely African lens.</p>
+                    <div class="border-t border-white/10 pt-3">
+                        <p class="text-xs text-gray-400 font-semibold uppercase mb-1">Famous Works</p>
+                        <p class="text-gray-300 text-sm">Death and the King's Horseman, The Lion and the Jewel, A Dance of the Forests</p>
+                    </div>
+                </div>
+                <!-- Ola Rotimi -->
+                <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition group">
+                    <div class="text-center mb-4">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto text-4xl mb-3">🎬</div>
+                        <h3 class="font-bold text-lg group-hover:text-secondary transition">Ola Rotimi</h3>
+                        <p class="text-blue-400 text-sm font-semibold">Master Dramatist & Director</p>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-3">A brilliant playwright known for adapting Greek classical tragedies into African contexts. He was also an exceptional director and theatre administrator at the University of Ife.</p>
+                    <div class="border-t border-white/10 pt-3">
+                        <p class="text-xs text-gray-400 font-semibold uppercase mb-1">Famous Works</p>
+                        <p class="text-gray-300 text-sm">The Gods Are Not to Blame, Our Husband Has Gone Mad Again, Kurunmi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drama Skills by JSS Level -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">Drama Skills by JSS Level</h2>
+            <p class="text-gray-600 text-lg">Build your drama skills progressively through each level</p>
+        </div>
+
+        <!-- Tab Buttons -->
+        <div class="flex justify-center gap-2 mb-8">
+            <button id="jss-btn-jss1" data-tab-btn="jss" onclick="switchTab('jss','jss1')" class="tab-btn active px-6 py-3 rounded-full font-bold text-sm transition bg-secondary text-dark">JSS 1 - Foundation</button>
+            <button id="jss-btn-jss2" data-tab-btn="jss" onclick="switchTab('jss','jss2')" class="tab-btn px-6 py-3 rounded-full font-bold text-sm transition bg-gray-200 text-gray-600 hover:bg-gray-300">JSS 2 - Intermediate</button>
+            <button id="jss-btn-jss3" data-tab-btn="jss" onclick="switchTab('jss','jss3')" class="tab-btn px-6 py-3 rounded-full font-bold text-sm transition bg-gray-200 text-gray-600 hover:bg-gray-300">JSS 3 - Advanced</button>
+        </div>
+
+        <!-- JSS 1 Content -->
+        <div id="jss-jss1" data-tab-group="jss" class="grid md:grid-cols-3 gap-6">
+            <!-- Mime & Movement -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-pink-400">
+                <div class="text-4xl mb-3">🤸</div>
+                <h3 class="font-bold text-xl mb-2 text-pink-500">Mime & Movement</h3>
+                <p class="text-gray-600 text-sm mb-4">Learn to tell stories using only your body — no words needed!</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-pink-400 rounded-full"></span> Body language & posture</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-pink-400 rounded-full"></span> Facial expressions (happy, sad, angry, surprised)</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-pink-400 rounded-full"></span> Hand gestures & sign language basics</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-pink-400 rounded-full"></span> Movement exercises (walking, running, climbing)</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-pink-400 rounded-full"></span> Mirror games & follow-the-leader</li>
+                </ul>
+                <div class="mt-4">
+                    <div class="img-placeholder h-32 rounded-xl bg-gradient-to-br from-pink-100 to-rose-100">
+                        <img src="images/drama/mime-movement.jpg" alt="Mime and movement" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-4xl\'>🤹</div>'">
+                    </div>
+                </div>
+            </div>
+            <!-- Role Play -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-rose-400">
+                <div class="text-4xl mb-3">🎭</div>
+                <h3 class="font-bold text-xl mb-2 text-rose-500">Role Play Basics</h3>
+                <p class="text-gray-600 text-sm mb-4">Step into someone else's shoes and experience different perspectives.</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-rose-400 rounded-full"></span> What is role play?</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-rose-400 rounded-full"></span> Playing everyday characters (teacher, doctor, farmer)</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-rose-400 rounded-full"></span> Voice projection & diction</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-rose-400 rounded-full"></span> Simple dialogues & scenes</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-rose-400 rounded-full"></span> Working with a partner</li>
+                </ul>
+                <div class="mt-4">
+                    <div class="img-placeholder h-32 rounded-xl bg-gradient-to-br from-rose-100 to-red-100">
+                        <img src="images/drama/role-play.jpg" alt="Role play" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-4xl\'>🎭</div>'">
+                    </div>
+                </div>
+            </div>
+            <!-- Improvisation -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-amber-400">
+                <div class="text-4xl mb-3">💡</div>
+                <h3 class="font-bold text-xl mb-2 text-amber-500">Improvisation</h3>
+                <p class="text-gray-600 text-sm mb-4">Create scenes on the spot — think fast and be creative!</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-amber-400 rounded-full"></span> What is improvisation (improv)?</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-amber-400 rounded-full"></span> "Yes, and..." technique</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-amber-400 rounded-full"></span> Quick-thinking exercises</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-amber-400 rounded-full"></span> Group storytelling circles</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-amber-400 rounded-full"></span> Freeze frame activities</li>
+                </ul>
+                <div class="mt-4">
+                    <div class="img-placeholder h-32 rounded-xl bg-gradient-to-br from-amber-100 to-yellow-100">
+                        <img src="images/drama/improvisation.jpg" alt="Improvisation" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-4xl\'>💡</div>'">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JSS 2 Content -->
+        <div id="jss-jss2" data-tab-group="jss" class="hidden grid md:grid-cols-3 gap-6">
+            <!-- Stage Craft -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-indigo-400">
+                <div class="text-4xl mb-3">🎪</div>
+                <h3 class="font-bold text-xl mb-2 text-indigo-500">Stage Craft</h3>
+                <p class="text-gray-600 text-sm mb-4">Discover how to create the magic behind the scenes.</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-indigo-400 rounded-full"></span> Set design & stage decoration</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-indigo-400 rounded-full"></span> Costumes & wardrobe</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-indigo-400 rounded-full"></span> Props & their uses</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-indigo-400 rounded-full"></span> Stage makeup basics</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-indigo-400 rounded-full"></span> Lighting & sound effects</li>
+                </ul>
+                <div class="mt-4">
+                    <div class="img-placeholder h-32 rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100">
+                        <img src="images/drama/stagecraft.jpg" alt="Stage craft" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-4xl\'>🎪</div>'">
+                    </div>
+                </div>
+            </div>
+            <!-- Scriptwriting -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-green-400">
+                <div class="text-4xl mb-3">📝</div>
+                <h3 class="font-bold text-xl mb-2 text-green-500">Scriptwriting Basics</h3>
+                <p class="text-gray-600 text-sm mb-4">Learn how to write your own scripts and bring stories to the stage.</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-400 rounded-full"></span> Script format & structure</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-400 rounded-full"></span> Writing dialogue that sounds natural</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-400 rounded-full"></span> Stage directions</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-400 rounded-full"></span> Creating scenes & acts</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-400 rounded-full"></span> Reading scripts aloud</li>
+                </ul>
+                <div class="mt-4">
+                    <div class="img-placeholder h-32 rounded-xl bg-gradient-to-br from-green-100 to-emerald-100">
+                        <img src="images/drama/scriptwriting.jpg" alt="Scriptwriting" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-4xl\'>📝</div>'">
+                    </div>
+                </div>
+            </div>
+            <!-- Character Development -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-orange-400">
+                <div class="text-4xl mb-3">🧑‍🎤</div>
+                <h3 class="font-bold text-xl mb-2 text-orange-500">Character Development</h3>
+                <p class="text-gray-600 text-sm mb-4">Build believable, memorable characters for the stage.</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-orange-400 rounded-full"></span> Understanding character motivation</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-orange-400 rounded-full"></span> Creating character backstories</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-orange-400 rounded-full"></span> Voice, accent & mannerisms</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-orange-400 rounded-full"></span> Emotional range & expression</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-orange-400 rounded-full"></span> Staying in character</li>
+                </ul>
+                <div class="mt-4">
+                    <div class="img-placeholder h-32 rounded-xl bg-gradient-to-br from-orange-100 to-amber-100">
+                        <img src="images/drama/character-dev.jpg" alt="Character development" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-4xl\'>🧑‍🎤</div>'">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JSS 3 Content -->
+        <div id="jss-jss3" data-tab-group="jss" class="hidden grid md:grid-cols-3 gap-6">
+            <!-- Full Production -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-purple-400">
+                <div class="text-4xl mb-3">🎬</div>
+                <h3 class="font-bold text-xl mb-2 text-purple-500">Full Production</h3>
+                <p class="text-gray-600 text-sm mb-4">Put it all together and stage a complete theatrical production!</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-400 rounded-full"></span> Directing a play</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-400 rounded-full"></span> Stage management & coordination</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-400 rounded-full"></span> The rehearsal process</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-400 rounded-full"></span> Audience engagement techniques</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-400 rounded-full"></span> Handling stage fright</li>
+                </ul>
+                <div class="mt-4">
+                    <div class="img-placeholder h-32 rounded-xl bg-gradient-to-br from-purple-100 to-violet-100">
+                        <img src="images/drama/full-production.jpg" alt="Full production" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-4xl\'>🎬</div>'">
+                    </div>
+                </div>
+            </div>
+            <!-- Nigerian Drama Traditions -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-teal-400">
+                <div class="text-4xl mb-3">🥁</div>
+                <h3 class="font-bold text-xl mb-2 text-teal-500">Nigerian Drama Traditions</h3>
+                <p class="text-gray-600 text-sm mb-4">Explore the deep roots of performance in Nigerian culture.</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-teal-400 rounded-full"></span> Masquerade performances (Egungun, Mmanwu)</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-teal-400 rounded-full"></span> Festival dramas & rituals</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-teal-400 rounded-full"></span> Storytelling traditions (moonlight tales)</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-teal-400 rounded-full"></span> Puppet theatre traditions</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-teal-400 rounded-full"></span> Modern Nollywood & its origins</li>
+                </ul>
+                <div class="mt-4">
+                    <div class="img-placeholder h-32 rounded-xl bg-gradient-to-br from-teal-100 to-cyan-100">
+                        <img src="images/drama/nigerian-traditions.jpg" alt="Nigerian drama traditions" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-4xl\'>🥁</div>'">
+                    </div>
+                </div>
+            </div>
+            <!-- Careers in Drama -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-red-400">
+                <div class="text-4xl mb-3">🌟</div>
+                <h3 class="font-bold text-xl mb-2 text-red-500">Drama & Careers</h3>
+                <p class="text-gray-600 text-sm mb-4">Discover exciting career paths in the performing arts.</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-red-400 rounded-full"></span> Acting (stage, film, TV)</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-red-400 rounded-full"></span> Directing & producing</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-red-400 rounded-full"></span> Screenwriting & playwriting</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-red-400 rounded-full"></span> Costume & set design</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-red-400 rounded-full"></span> Arts administration & education</li>
+                </ul>
+                <div class="mt-4">
+                    <div class="img-placeholder h-32 rounded-xl bg-gradient-to-br from-red-100 to-rose-100">
+                        <img src="images/drama/careers.jpg" alt="Careers in drama" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-4xl\'>🌟</div>'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stage Layout Diagram -->
+    <section class="bg-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="inline-block bg-secondary/20 text-secondary px-4 py-1 rounded-full text-sm font-bold mb-3">
+                    Learn the Stage
+                </div>
+                <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl mb-3">Parts of a Stage</h2>
+                <p class="text-gray-400 text-lg">Understanding stage positions is essential for every performer. Click each area to learn more!</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="relative bg-gray-800 rounded-2xl p-4 md:p-8 border border-gray-700">
+                    <!-- Audience label -->
+                    <div class="text-center mb-4">
+                        <span class="bg-gray-700 text-gray-300 px-4 py-1 rounded-full text-sm font-bold">AUDIENCE</span>
+                    </div>
+
+                    <!-- Stage Grid -->
+                    <div class="relative border-2 border-secondary/30 rounded-xl overflow-hidden">
+                        <!-- Backstage -->
+                        <div class="bg-gray-900/50 text-center py-3 border-b border-secondary/20">
+                            <button onclick="showStageInfo('backstage')" class="stage-area hover:bg-secondary/20 px-4 py-1 rounded transition w-full">
+                                <span class="text-gray-400 font-bold text-sm">BACKSTAGE</span>
+                            </button>
+                        </div>
+
+                        <div class="flex">
+                            <!-- Stage Left Wing -->
+                            <div class="w-16 md:w-24 bg-gray-900/30 border-r border-secondary/20 flex items-center justify-center">
+                                <button onclick="showStageInfo('wing-left')" class="stage-area hover:bg-secondary/20 p-2 rounded transition">
+                                    <span class="text-gray-400 font-bold text-xs md:text-sm writing-mode-vertical" style="writing-mode: vertical-rl; text-orientation: mixed;">WING (SR)</span>
+                                </button>
+                            </div>
+
+                            <!-- Main Stage -->
+                            <div class="flex-1 grid grid-cols-3 grid-rows-3">
+                                <button onclick="showStageInfo('upstage-right')" class="stage-area border border-secondary/10 p-3 md:p-6 hover:bg-rose-500/20 transition text-center group">
+                                    <span class="text-rose-300 font-bold text-xs md:text-sm group-hover:text-rose-200">Upstage<br>Right</span>
+                                </button>
+                                <button onclick="showStageInfo('upstage-center')" class="stage-area border border-secondary/10 p-3 md:p-6 hover:bg-rose-500/20 transition text-center group">
+                                    <span class="text-rose-300 font-bold text-xs md:text-sm group-hover:text-rose-200">Upstage<br>Center</span>
+                                </button>
+                                <button onclick="showStageInfo('upstage-left')" class="stage-area border border-secondary/10 p-3 md:p-6 hover:bg-rose-500/20 transition text-center group">
+                                    <span class="text-rose-300 font-bold text-xs md:text-sm group-hover:text-rose-200">Upstage<br>Left</span>
+                                </button>
+                                <button onclick="showStageInfo('center-right')" class="stage-area border border-secondary/10 p-3 md:p-6 hover:bg-pink-500/20 transition text-center group">
+                                    <span class="text-pink-300 font-bold text-xs md:text-sm group-hover:text-pink-200">Center<br>Right</span>
+                                </button>
+                                <button onclick="showStageInfo('center-stage')" class="stage-area border border-secondary/10 p-3 md:p-6 hover:bg-secondary/20 transition text-center group bg-secondary/5">
+                                    <span class="text-secondary font-bold text-xs md:text-sm group-hover:text-yellow-200">Center<br>Stage</span>
+                                </button>
+                                <button onclick="showStageInfo('center-left')" class="stage-area border border-secondary/10 p-3 md:p-6 hover:bg-pink-500/20 transition text-center group">
+                                    <span class="text-pink-300 font-bold text-xs md:text-sm group-hover:text-pink-200">Center<br>Left</span>
+                                </button>
+                                <button onclick="showStageInfo('downstage-right')" class="stage-area border border-secondary/10 p-3 md:p-6 hover:bg-amber-500/20 transition text-center group">
+                                    <span class="text-amber-300 font-bold text-xs md:text-sm group-hover:text-amber-200">Downstage<br>Right</span>
+                                </button>
+                                <button onclick="showStageInfo('downstage-center')" class="stage-area border border-secondary/10 p-3 md:p-6 hover:bg-amber-500/20 transition text-center group">
+                                    <span class="text-amber-300 font-bold text-xs md:text-sm group-hover:text-amber-200">Downstage<br>Center</span>
+                                </button>
+                                <button onclick="showStageInfo('downstage-left')" class="stage-area border border-secondary/10 p-3 md:p-6 hover:bg-amber-500/20 transition text-center group">
+                                    <span class="text-amber-300 font-bold text-xs md:text-sm group-hover:text-amber-200">Downstage<br>Left</span>
+                                </button>
+                            </div>
+
+                            <!-- Stage Right Wing -->
+                            <div class="w-16 md:w-24 bg-gray-900/30 border-l border-secondary/20 flex items-center justify-center">
+                                <button onclick="showStageInfo('wing-right')" class="stage-area hover:bg-secondary/20 p-2 rounded transition">
+                                    <span class="text-gray-400 font-bold text-xs md:text-sm" style="writing-mode: vertical-rl; text-orientation: mixed;">WING (SL)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Note about stage directions -->
+                    <div class="mt-4 text-center">
+                        <p class="text-gray-500 text-xs"><strong>Note:</strong> Stage Right (SR) and Stage Left (SL) are from the actor's perspective facing the audience. "Upstage" is away from the audience; "Downstage" is toward the audience.</p>
+                    </div>
+
+                    <!-- Info Box -->
+                    <div id="stageInfoBox" class="mt-4 bg-secondary/10 border border-secondary/30 rounded-xl p-4 hidden">
+                        <h4 id="stageInfoTitle" class="font-bold text-secondary mb-1"></h4>
+                        <p id="stageInfoText" class="text-gray-300 text-sm"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Drama Activities -->
+    <section id="activities" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">Interactive Drama Activities</h2>
+            <p class="text-gray-600 text-lg">Practice your drama skills with these fun, interactive exercises!</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Emotion Wheel -->
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h3 class="font-bold text-xl mb-2 text-rose-500 flex items-center gap-2">🎡 Emotion Wheel</h3>
+                <p class="text-gray-600 text-sm mb-4">Spin the wheel and act out the emotion it lands on! Great for practicing facial expressions and body language.</p>
+
+                <div class="relative flex justify-center mb-4">
+                    <!-- Wheel Container -->
+                    <div class="relative w-64 h-64">
+                        <canvas id="emotionWheel" width="256" height="256" class="w-full h-full"></canvas>
+                        <!-- Pointer -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 w-0 h-0 border-l-[12px] border-r-[12px] border-t-[20px] border-l-transparent border-r-transparent border-t-dark z-10"></div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="spinEmotionWheel()" id="spinBtn" class="bg-gradient-to-r from-pink-400 to-rose-500 text-white px-6 py-3 rounded-full font-bold hover:from-pink-500 hover:to-rose-600 transition transform hover:scale-105 shadow-md">
+                        Spin the Wheel!
+                    </button>
+                    <div id="emotionResult" class="mt-4 text-lg font-bold text-dark hidden">
+                        <p>Act out: <span id="emotionText" class="text-rose-500 text-2xl"></span></p>
+                        <p id="emotionTip" class="text-sm text-gray-500 mt-1 font-normal"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scene Generator -->
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h3 class="font-bold text-xl mb-2 text-indigo-500 flex items-center gap-2">🎬 Scene Generator</h3>
+                <p class="text-gray-600 text-sm mb-4">Get a random scene prompt for improvisation practice. Work alone or with classmates!</p>
+
+                <div id="sceneCard" class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-5 mb-4 min-h-[200px] flex items-center justify-center">
+                    <div class="text-center text-gray-400">
+                        <div class="text-5xl mb-2">🎬</div>
+                        <p class="font-semibold">Click the button below to generate a scene!</p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="generateScene()" class="bg-gradient-to-r from-indigo-400 to-purple-500 text-white px-6 py-3 rounded-full font-bold hover:from-indigo-500 hover:to-purple-600 transition transform hover:scale-105 shadow-md">
+                        Generate Scene
+                    </button>
+                </div>
+            </div>
+
+            <!-- Script Builder -->
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h3 class="font-bold text-xl mb-2 text-green-600 flex items-center gap-2">📝 Script Builder</h3>
+                <p class="text-gray-600 text-sm mb-4">Write your own mini-script! Add characters, dialogue, and stage directions.</p>
+
+                <div class="space-y-3 mb-4">
+                    <div>
+                        <label class="text-sm font-bold text-gray-700 block mb-1">Character Name</label>
+                        <input id="scriptCharacter" type="text" placeholder="e.g., Adaeze" class="w-full border-2 border-gray-200 rounded-lg px-3 py-2 text-sm focus:border-green-400 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="text-sm font-bold text-gray-700 block mb-1">Stage Direction <span class="text-gray-400 font-normal">(optional)</span></label>
+                        <input id="scriptDirection" type="text" placeholder="e.g., enters from stage left, looking worried" class="w-full border-2 border-gray-200 rounded-lg px-3 py-2 text-sm focus:border-green-400 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="text-sm font-bold text-gray-700 block mb-1">Dialogue</label>
+                        <textarea id="scriptDialogue" rows="3" placeholder="e.g., Where is everyone? The ceremony starts in ten minutes!" class="w-full border-2 border-gray-200 rounded-lg px-3 py-2 text-sm focus:border-green-400 focus:outline-none transition resize-none"></textarea>
+                    </div>
+                </div>
+
+                <div class="flex gap-2 mb-4">
+                    <button onclick="addToScript()" class="flex-1 bg-gradient-to-r from-green-400 to-emerald-500 text-white px-4 py-2 rounded-full font-bold text-sm hover:from-green-500 hover:to-emerald-600 transition">
+                        Add to Script
+                    </button>
+                    <button onclick="clearScript()" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-300 transition">
+                        Clear
+                    </button>
+                </div>
+
+                <!-- Script Preview -->
+                <div id="scriptPreview" class="bg-amber-50 border-2 border-amber-200 rounded-xl p-4 min-h-[120px] font-mono text-sm">
+                    <p class="text-center text-gray-400 italic" id="scriptPlaceholder">Your script will appear here...</p>
+                    <div id="scriptContent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nigerian Folktales for Drama -->
+    <section class="bg-gradient-to-r from-accent to-forest text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold mb-3">
+                    Act It Out!
+                </div>
+                <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl mb-3">Nigerian Folktales for Drama</h2>
+                <p class="text-green-100 text-lg">These beloved Nigerian folktales make wonderful plays. Read the story, then act it out with your classmates!</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- The Tortoise and the Birds -->
+                <div class="bg-white/10 backdrop-blur border border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition group">
+                    <div class="img-placeholder h-44 bg-gradient-to-br from-green-600/30 to-emerald-700/30">
+                        <img src="images/drama/tortoise-birds.jpg" alt="The Tortoise and the Birds" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-6xl\'>🐢🐦</div>'">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 group-hover:text-secondary transition">The Tortoise and the Birds</h3>
+                        <p class="text-green-100 text-sm mb-3">Tortoise tricks the birds into lending him feathers so he can fly to a feast in the sky. But his greed leads to his downfall when the birds take back their feathers and he falls to earth, cracking his shell.</p>
+                        <div class="border-t border-white/10 pt-3 mt-3">
+                            <p class="text-xs text-green-200 font-semibold uppercase mb-1">Characters Needed</p>
+                            <p class="text-sm text-green-100">Tortoise, 4-6 Birds, Narrator, Sky People</p>
+                        </div>
+                        <div class="mt-3">
+                            <p class="text-xs text-green-200 font-semibold uppercase mb-1">Moral</p>
+                            <p class="text-sm text-green-100">Greed and dishonesty always lead to trouble</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why the Bat Flies at Night -->
+                <div class="bg-white/10 backdrop-blur border border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition group">
+                    <div class="img-placeholder h-44 bg-gradient-to-br from-indigo-600/30 to-purple-700/30">
+                        <img src="images/drama/bat-night.jpg" alt="Why the Bat Flies at Night" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-6xl\'>🦇🌙</div>'">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 group-hover:text-secondary transition">Why the Bat Flies at Night</h3>
+                        <p class="text-green-100 text-sm mb-3">Bat keeps switching sides between the birds and the animals during their great war, claiming to belong to whichever side is winning. When peace comes, neither side trusts him, so he hides in shame and only comes out at night.</p>
+                        <div class="border-t border-white/10 pt-3 mt-3">
+                            <p class="text-xs text-green-200 font-semibold uppercase mb-1">Characters Needed</p>
+                            <p class="text-sm text-green-100">Bat, Eagle (bird leader), Lion (animal leader), Narrator, Birds group, Animals group</p>
+                        </div>
+                        <div class="mt-3">
+                            <p class="text-xs text-green-200 font-semibold uppercase mb-1">Moral</p>
+                            <p class="text-sm text-green-100">Disloyalty and indecision earn nobody's trust</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Greedy Monkey -->
+                <div class="bg-white/10 backdrop-blur border border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition group">
+                    <div class="img-placeholder h-44 bg-gradient-to-br from-amber-600/30 to-orange-700/30">
+                        <img src="images/drama/greedy-monkey.jpg" alt="The Greedy Monkey" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-6xl\'>🐒🍌</div>'">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 group-hover:text-secondary transition">The Greedy Monkey</h3>
+                        <p class="text-green-100 text-sm mb-3">Monkey finds a magic pot that produces food. Instead of sharing with the village, he keeps it all for himself. The pot eventually stops working because of his selfishness, and he learns the value of generosity.</p>
+                        <div class="border-t border-white/10 pt-3 mt-3">
+                            <p class="text-xs text-green-200 font-semibold uppercase mb-1">Characters Needed</p>
+                            <p class="text-sm text-green-100">Monkey, Village Chief, 3-4 Villagers, Narrator, Old Wise Woman</p>
+                        </div>
+                        <div class="mt-3">
+                            <p class="text-xs text-green-200 font-semibold uppercase mb-1">Moral</p>
+                            <p class="text-sm text-green-100">Sharing brings abundance; greed brings loss</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-3xl">🎨</span>
+                        <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">An AI-powered learning platform for Cultural and Creative Arts. Designed for Nigerian JSS 1-3 students.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Classes</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="jss1.html" class="hover:text-white transition">JSS 1 - Foundation</a></li>
+                        <li><a href="jss2.html" class="hover:text-white transition">JSS 2 - Intermediate</a></li>
+                        <li><a href="jss3.html" class="hover:text-white transition">JSS 3 - Advanced</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Explore</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="drawing.html" class="hover:text-white transition">Drawing & Painting</a></li>
+                        <li><a href="music.html" class="hover:text-white transition">Music</a></li>
+                        <li><a href="drama.html" class="hover:text-white transition text-white font-semibold">Drama & Theatre</a></li>
+                        <li><a href="crafts.html" class="hover:text-white transition">Traditional Crafts</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition">Cultural Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">AI Tools</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="quiz.html" class="hover:text-white transition">AI Quiz Master</a></li>
+                        <li><a href="assistant.html" class="hover:text-white transition">AI Study Assistant</a></li>
+                        <li><a href="drawing.html" class="hover:text-white transition">Digital Art Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 CCA Learn. Built for Nigerian Students with &#10084;&#65039;</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+    // ==========================================
+    // STAGE LAYOUT INTERACTIVE
+    // ==========================================
+    const stageInfo = {
+        'backstage': {
+            title: 'Backstage',
+            text: 'The area behind the stage that the audience cannot see. This is where actors wait before entering, where costumes are stored, and where the crew manages the production.'
+        },
+        'wing-left': {
+            title: 'Stage Right Wing',
+            text: 'The offstage area to the actor\'s RIGHT (audience\'s left). Actors enter and exit through the wings. Props and set pieces are often stored here during a show.'
+        },
+        'wing-right': {
+            title: 'Stage Left Wing',
+            text: 'The offstage area to the actor\'s LEFT (audience\'s right). Like the other wing, it provides hidden space for entrances, exits, and storage.'
+        },
+        'upstage-right': {
+            title: 'Upstage Right (USR)',
+            text: 'The area farthest from the audience on the actor\'s right side. "Upstage" comes from old theatres where the stage was sloped (raked) upward away from the audience.'
+        },
+        'upstage-center': {
+            title: 'Upstage Center (USC)',
+            text: 'The center area farthest from the audience. Often used for dramatic entrances and reveals. Important set pieces like thrones or doorways are often placed here.'
+        },
+        'upstage-left': {
+            title: 'Upstage Left (USL)',
+            text: 'The area farthest from the audience on the actor\'s left side. Actors positioned here may need to project their voice more strongly to reach the audience.'
+        },
+        'center-right': {
+            title: 'Center Right (CR)',
+            text: 'The middle area of the stage on the actor\'s right. A good position for conversations and medium-importance scenes.'
+        },
+        'center-stage': {
+            title: 'Center Stage (CS)',
+            text: 'The most powerful position on stage! This is where the most important action happens. An actor at center stage naturally draws the audience\'s attention.'
+        },
+        'center-left': {
+            title: 'Center Left (CL)',
+            text: 'The middle area of the stage on the actor\'s left. Often used for secondary action or conversations happening alongside the main scene.'
+        },
+        'downstage-right': {
+            title: 'Downstage Right (DSR)',
+            text: 'The area closest to the audience on the actor\'s right. Often used for asides (when a character speaks privately to the audience) and intimate moments.'
+        },
+        'downstage-center': {
+            title: 'Downstage Center (DSC)',
+            text: 'The area closest to the audience at center. The strongest downstage position. Great for monologues, soliloquies, and addressing the audience directly.'
+        },
+        'downstage-left': {
+            title: 'Downstage Left (DSL)',
+            text: 'The area closest to the audience on the actor\'s left. Like DSR, this is an intimate position often used for direct audience address or private moments.'
+        }
+    };
+
+    function showStageInfo(area) {
+        const info = stageInfo[area];
+        if (!info) return;
+        const box = document.getElementById('stageInfoBox');
+        const title = document.getElementById('stageInfoTitle');
+        const text = document.getElementById('stageInfoText');
+        title.textContent = info.title;
+        text.textContent = info.text;
+        box.classList.remove('hidden');
+        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // ==========================================
+    // EMOTION WHEEL
+    // ==========================================
+    const emotions = [
+        { name: 'Happy', emoji: '😊', color: '#FAAD14', tip: 'Show joy through a big smile, bright eyes, and bouncy movement!' },
+        { name: 'Sad', emoji: '😢', color: '#6366F1', tip: 'Droop your shoulders, look down, and let your voice become soft and slow.' },
+        { name: 'Angry', emoji: '😠', color: '#DC2626', tip: 'Clench your fists, furrow your brows, and speak firmly with a deeper voice.' },
+        { name: 'Scared', emoji: '😨', color: '#7C3AED', tip: 'Widen your eyes, hunch your shoulders, and tremble slightly. Speak in a shaky voice.' },
+        { name: 'Surprised', emoji: '😲', color: '#EC4899', tip: 'Open your mouth wide, raise your eyebrows high, and gasp!' },
+        { name: 'Disgusted', emoji: '🤢', color: '#059669', tip: 'Scrunch your nose, pull back, and turn your head away.' },
+        { name: 'Proud', emoji: '😤', color: '#D97706', tip: 'Stand tall, chest out, chin up, and put your hands on your hips!' },
+        { name: 'Shy', emoji: '🫣', color: '#F472B6', tip: 'Look down, fidget with your hands, and speak very quietly.' },
+        { name: 'Excited', emoji: '🤩', color: '#EF4444', tip: 'Jump up and down, clap your hands, and speak quickly with energy!' },
+        { name: 'Confused', emoji: '🤔', color: '#8B5CF6', tip: 'Tilt your head, scratch your chin, and furrow your brows with a puzzled look.' },
+        { name: 'Bored', emoji: '🥱', color: '#6B7280', tip: 'Yawn, slouch, look around lazily, and speak in a flat, monotone voice.' },
+        { name: 'Nervous', emoji: '😬', color: '#14B8A6', tip: 'Bite your lip, shift your weight from foot to foot, and fiddle with your clothes.' }
+    ];
+
+    let isSpinning = false;
+    let currentRotation = 0;
+
+    function drawWheel() {
+        const canvas = document.getElementById('emotionWheel');
+        const ctx = canvas.getContext('2d');
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = canvas.width / 2 - 5;
+        const sliceAngle = (2 * Math.PI) / emotions.length;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.save();
+        ctx.translate(centerX, centerY);
+        ctx.rotate((currentRotation * Math.PI) / 180);
+        ctx.translate(-centerX, -centerY);
+
+        emotions.forEach((emotion, i) => {
+            const startAngle = i * sliceAngle - Math.PI / 2;
+            const endAngle = startAngle + sliceAngle;
+
+            // Draw slice
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+            ctx.closePath();
+            ctx.fillStyle = emotion.color;
+            ctx.fill();
+            ctx.strokeStyle = '#FFF8E7';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Draw text
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            const textAngle = startAngle + sliceAngle / 2;
+            ctx.rotate(textAngle);
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 10px Nunito, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(emotion.emoji, radius * 0.6, -2);
+            ctx.font = 'bold 9px Nunito, sans-serif';
+            ctx.fillText(emotion.name, radius * 0.6, 10);
+            ctx.restore();
+        });
+
+        // Draw center circle
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, 18, 0, 2 * Math.PI);
+        ctx.fillStyle = '#1A1A2E';
+        ctx.fill();
+        ctx.strokeStyle = '#FAAD14';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        ctx.restore();
+    }
+
+    function spinEmotionWheel() {
+        if (isSpinning) return;
+        isSpinning = true;
+        const spinBtn = document.getElementById('spinBtn');
+        spinBtn.disabled = true;
+        spinBtn.textContent = 'Spinning...';
+
+        const targetRotation = currentRotation + 1440 + Math.random() * 1440;
+        const duration = 4000;
+        const startTime = performance.now();
+        const startRotation = currentRotation;
+
+        function animate(time) {
+            const elapsed = time - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            currentRotation = startRotation + (targetRotation - startRotation) * eased;
+            drawWheel();
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                isSpinning = false;
+                spinBtn.disabled = false;
+                spinBtn.textContent = 'Spin Again!';
+
+                // Determine which emotion was landed on
+                const normalizedAngle = ((360 - (currentRotation % 360)) + 360) % 360;
+                const sliceDegrees = 360 / emotions.length;
+                const index = Math.floor(normalizedAngle / sliceDegrees);
+                const landed = emotions[index % emotions.length];
+
+                const resultDiv = document.getElementById('emotionResult');
+                const emotionText = document.getElementById('emotionText');
+                const emotionTip = document.getElementById('emotionTip');
+                resultDiv.classList.remove('hidden');
+                emotionText.textContent = landed.emoji + ' ' + landed.name;
+                emotionTip.textContent = landed.tip;
+            }
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    // Draw wheel on load
+    document.addEventListener('DOMContentLoaded', drawWheel);
+
+    // ==========================================
+    // SCENE GENERATOR
+    // ==========================================
+    const scenePrompts = [
+        {
+            title: 'The Missing Textbook',
+            setting: 'A busy classroom before exams',
+            characters: 'Student, Best Friend, Class Captain',
+            scenario: 'You discover your CCA textbook is missing just one hour before the final exam. Your best friend is acting strangely. What happened?',
+            challenge: 'Create the conversation where you confront your friend and discover the truth.'
+        },
+        {
+            title: 'The Village Meeting',
+            setting: 'Under the big iroko tree in a village square',
+            characters: 'Village Chief, Elders, Young Person, Storyteller',
+            scenario: 'The village chief has called an emergency meeting. A mysterious stranger has arrived claiming to be a long-lost member of the community. The elders are suspicious.',
+            challenge: 'Act out the debate between the elders who welcome the stranger and those who distrust them.'
+        },
+        {
+            title: 'Market Day Mishap',
+            setting: 'A bustling Nigerian market',
+            characters: 'Market Seller, Customer, Peacemaker, Onlookers',
+            scenario: 'A customer insists they already paid for yams, but the seller says they did not. A crowd gathers. Someone must resolve the dispute before it escalates.',
+            challenge: 'Show how the peacemaker calms both sides and finds the truth.'
+        },
+        {
+            title: 'The Cultural Festival',
+            setting: 'School hall during a cultural day celebration',
+            characters: 'Student Performer, Nervous Friend, Encouraging Teacher, MC',
+            scenario: 'Your friend has stage fright just minutes before their big cultural dance performance. The MC is already calling their name. You need to encourage them to go on stage.',
+            challenge: 'Improvise the motivational speech that gives your friend the courage to perform.'
+        },
+        {
+            title: 'The Talking Drum',
+            setting: 'A moonlit compound in ancient Yorubaland',
+            characters: 'Drummer, Chief, Messenger, Villagers',
+            scenario: 'A talking drum message arrives warning of danger approaching the village. The chief must decide: should the people flee, hide, or stand their ground?',
+            challenge: 'Act out the urgent council meeting and the chief\'s decision.'
+        },
+        {
+            title: 'New Student',
+            setting: 'A JSS 2 classroom on Monday morning',
+            characters: 'New Student, Class Leader, Friendly Student, Unfriendly Student',
+            scenario: 'A new student from another state joins your class. They speak with a different accent and dress differently. Some students are welcoming, others are not.',
+            challenge: 'Show both the kind and unkind reactions, and how the new student handles it.'
+        },
+        {
+            title: 'The Lost Recipe',
+            setting: 'Grandmother\'s kitchen',
+            characters: 'Grandchild, Grandmother, Sibling, Neighbor',
+            scenario: 'Grandmother\'s famous jollof rice recipe has been passed down for generations, but the recipe paper has gone missing before the family reunion!',
+            challenge: 'Act out the frantic search and how the family comes together to recreate the recipe from memory.'
+        },
+        {
+            title: 'The Art Competition',
+            setting: 'School art room and assembly hall',
+            characters: 'Two rival artists, Art Teacher, Judge, Supportive Friend',
+            scenario: 'Two students are competing for the top prize in the school art competition. One discovers the other has copied their idea. How do they handle it?',
+            challenge: 'Show the confrontation, the teacher\'s involvement, and the resolution.'
+        },
+        {
+            title: 'Power Outage Performance',
+            setting: 'School auditorium during a drama performance',
+            characters: 'Lead Actor, Director, Stage Manager, Audience Members',
+            scenario: 'The lights go out in the middle of the school play! NEPA has struck again. The show must go on — but how?',
+            challenge: 'Improvise how the cast adapts and continues the performance using phone flashlights and creativity.'
+        },
+        {
+            title: 'The Masquerade\'s Secret',
+            setting: 'Village square during a festival',
+            characters: 'Young Person, Elder, Masquerade, Curious Child, Parent',
+            scenario: 'During a masquerade festival, a curious child tries to unmask the masquerade. The elders are horrified! You must stop the child while respecting the tradition.',
+            challenge: 'Act out the tense moment and how the elder explains the importance of the tradition.'
+        }
+    ];
+
+    function generateScene() {
+        const scene = scenePrompts[Math.floor(Math.random() * scenePrompts.length)];
+        const sceneCard = document.getElementById('sceneCard');
+        sceneCard.innerHTML = `
+            <div class="w-full">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="text-2xl">🎬</span>
+                    <h4 class="font-bold text-lg text-indigo-700">${scene.title}</h4>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-2">
+                        <span class="bg-indigo-100 text-indigo-600 px-2 py-0.5 rounded text-xs font-bold shrink-0 mt-0.5">SETTING</span>
+                        <p class="text-sm text-gray-700">${scene.setting}</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="bg-purple-100 text-purple-600 px-2 py-0.5 rounded text-xs font-bold shrink-0 mt-0.5">CHARACTERS</span>
+                        <p class="text-sm text-gray-700">${scene.characters}</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="bg-pink-100 text-pink-600 px-2 py-0.5 rounded text-xs font-bold shrink-0 mt-0.5">SCENARIO</span>
+                        <p class="text-sm text-gray-700">${scene.scenario}</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 border border-indigo-200">
+                        <p class="text-xs font-bold text-indigo-500 uppercase mb-1">Your Challenge</p>
+                        <p class="text-sm text-gray-700 font-semibold">${scene.challenge}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // ==========================================
+    // SCRIPT BUILDER
+    // ==========================================
+    let scriptLines = [];
+
+    function addToScript() {
+        const character = document.getElementById('scriptCharacter').value.trim();
+        const direction = document.getElementById('scriptDirection').value.trim();
+        const dialogue = document.getElementById('scriptDialogue').value.trim();
+
+        if (!character) {
+            alert('Please enter a character name!');
+            return;
+        }
+        if (!dialogue) {
+            alert('Please enter some dialogue!');
+            return;
+        }
+
+        scriptLines.push({ character, direction, dialogue });
+        renderScript();
+
+        // Clear inputs
+        document.getElementById('scriptCharacter').value = '';
+        document.getElementById('scriptDirection').value = '';
+        document.getElementById('scriptDialogue').value = '';
+        document.getElementById('scriptCharacter').focus();
+    }
+
+    function clearScript() {
+        scriptLines = [];
+        renderScript();
+    }
+
+    function renderScript() {
+        const content = document.getElementById('scriptContent');
+        const placeholder = document.getElementById('scriptPlaceholder');
+
+        if (scriptLines.length === 0) {
+            content.innerHTML = '';
+            placeholder.style.display = 'block';
+            return;
+        }
+
+        placeholder.style.display = 'none';
+        let html = '';
+        scriptLines.forEach((line, index) => {
+            html += `<div class="mb-3 ${index > 0 ? 'border-t border-amber-200 pt-3' : ''}">`;
+            if (line.direction) {
+                html += `<p class="text-gray-500 italic text-xs mb-1">(${line.direction})</p>`;
+            }
+            html += `<p><strong class="text-rose-600 uppercase tracking-wide text-xs">${line.character}:</strong></p>`;
+            html += `<p class="ml-4 text-dark">${line.dialogue}</p>`;
+            html += `</div>`;
+        });
+        content.innerHTML = html;
+    }
+    </script>
+</body>
+</html>

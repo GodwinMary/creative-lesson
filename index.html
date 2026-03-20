@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCA Learn - Cultural & Creative Arts for JSS1-3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4380D',
+                        secondary: '#FAAD14',
+                        accent: '#389E0D',
+                        dark: '#1A1A2E',
+                        cream: '#FFF8E7',
+                        terracotta: '#C4501A',
+                        gold: '#E8A317',
+                        forest: '#2D6A1E',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body class="bg-cream font-['Nunito'] text-dark">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-dark text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-3xl">🎨</span>
+                <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="index.html" class="text-secondary">Home</a>
+                <div class="relative group">
+                    <button class="hover:text-secondary transition">Classes ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-40 hidden group-hover:block shadow-xl">
+                        <a href="jss1.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 1</a>
+                        <a href="jss2.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 2</a>
+                        <a href="jss3.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 3</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="hover:text-secondary transition">Explore ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-48 hidden group-hover:block shadow-xl">
+                        <a href="drawing.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎨 Drawing Studio</a>
+                        <a href="music.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎵 Music</a>
+                        <a href="drama.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎭 Drama & Theatre</a>
+                        <a href="crafts.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🏺 Traditional Crafts</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🖼️ Cultural Gallery</a>
+                    </div>
+                </div>
+                <a href="quiz.html" class="hover:text-secondary transition">🧠 AI Quiz</a>
+                <a href="assistant.html" class="bg-primary px-4 py-2 rounded-full hover:bg-terracotta transition">🤖 AI Assistant</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden text-2xl" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark border-t border-gray-700 px-4 pb-4">
+            <a href="index.html" class="block py-2 text-secondary font-semibold">Home</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Classes</p>
+            <a href="jss1.html" class="block py-2 pl-4 hover:text-secondary">JSS 1</a>
+            <a href="jss2.html" class="block py-2 pl-4 hover:text-secondary">JSS 2</a>
+            <a href="jss3.html" class="block py-2 pl-4 hover:text-secondary">JSS 3</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Explore</p>
+            <a href="drawing.html" class="block py-2 pl-4 hover:text-secondary">🎨 Drawing Studio</a>
+            <a href="music.html" class="block py-2 pl-4 hover:text-secondary">🎵 Music</a>
+            <a href="drama.html" class="block py-2 pl-4 hover:text-secondary">🎭 Drama & Theatre</a>
+            <a href="crafts.html" class="block py-2 pl-4 hover:text-secondary">🏺 Traditional Crafts</a>
+            <a href="gallery.html" class="block py-2 pl-4 hover:text-secondary">🖼️ Cultural Gallery</a>
+            <div class="mt-3 flex flex-col gap-2">
+                <a href="quiz.html" class="block py-2 hover:text-secondary font-semibold">🧠 AI Quiz</a>
+                <a href="assistant.html" class="block py-2 bg-primary text-center rounded-full font-semibold">🤖 AI Assistant</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-dark via-gray-900 to-primary text-white">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 text-8xl animate-float">🎨</div>
+            <div class="absolute top-20 right-20 text-7xl animate-float-delay">🎵</div>
+            <div class="absolute bottom-20 left-1/4 text-6xl animate-float">🎭</div>
+            <div class="absolute bottom-10 right-1/3 text-8xl animate-float-delay">🏺</div>
+            <div class="absolute top-1/3 left-1/2 text-5xl animate-float">🥁</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 py-20 md:py-32 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-block bg-secondary/20 text-secondary px-4 py-1 rounded-full text-sm font-bold mb-4 animate-pulse">
+                    ✨ AI-Powered Learning
+                </div>
+                <h1 class="font-['Fredoka_One'] text-4xl md:text-6xl leading-tight mb-6">
+                    Discover the Beauty of
+                    <span class="text-secondary"> Nigerian Culture</span> &
+                    <span class="text-green-400"> Creative Arts</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+                    An interactive learning experience for JSS 1-3 students. Explore drawing, music, drama, traditional crafts, and more — powered by AI to make learning fun!
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#classes" class="bg-secondary text-dark px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-400 transition transform hover:scale-105 shadow-lg">
+                        Start Learning →
+                    </a>
+                    <a href="assistant.html" class="bg-white/10 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/20">
+                        🤖 Ask AI Assistant
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H0Z" fill="#FFF8E7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Select Your Class -->
+    <section id="classes" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">Choose Your Class</h2>
+            <p class="text-gray-600 text-lg">Select your JSS level to access your curriculum</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- JSS 1 -->
+            <a href="jss1.html" class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 overflow-hidden border-2 border-transparent hover:border-secondary">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-8 text-white text-center">
+                    <div class="text-6xl mb-3">📘</div>
+                    <h3 class="font-['Fredoka_One'] text-2xl">JSS 1</h3>
+                    <p class="text-blue-100 text-sm mt-1">Foundation Level</p>
+                </div>
+                <div class="p-6">
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✦</span> Introduction to CCA</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✦</span> Nigerian Cultural Heritage</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✦</span> Basic Drawing & Painting</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✦</span> Music Fundamentals</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✦</span> Drama Basics</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✦</span> Traditional Crafts</li>
+                    </ul>
+                    <div class="mt-4 text-blue-500 font-bold group-hover:text-blue-600 transition">
+                        Explore JSS 1 →
+                    </div>
+                </div>
+            </a>
+            <!-- JSS 2 -->
+            <a href="jss2.html" class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 overflow-hidden border-2 border-transparent hover:border-secondary">
+                <div class="bg-gradient-to-r from-green-500 to-green-600 p-8 text-white text-center">
+                    <div class="text-6xl mb-3">📗</div>
+                    <h3 class="font-['Fredoka_One'] text-2xl">JSS 2</h3>
+                    <p class="text-green-100 text-sm mt-1">Intermediate Level</p>
+                </div>
+                <div class="p-6">
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center gap-2"><span class="text-green-500">✦</span> Elements & Principles of Art</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✦</span> Nigerian Music & Dance</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✦</span> Creative Writing & Stories</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✦</span> Sculpture & 3D Art</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✦</span> Stage Craft & Drama</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✦</span> Cultural Festivals</li>
+                    </ul>
+                    <div class="mt-4 text-green-500 font-bold group-hover:text-green-600 transition">
+                        Explore JSS 2 →
+                    </div>
+                </div>
+            </a>
+            <!-- JSS 3 -->
+            <a href="jss3.html" class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 overflow-hidden border-2 border-transparent hover:border-secondary">
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-8 text-white text-center">
+                    <div class="text-6xl mb-3">📕</div>
+                    <h3 class="font-['Fredoka_One'] text-2xl">JSS 3</h3>
+                    <p class="text-purple-100 text-sm mt-1">Advanced Level</p>
+                </div>
+                <div class="p-6">
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center gap-2"><span class="text-purple-500">✦</span> Advanced Drawing Techniques</li>
+                        <li class="flex items-center gap-2"><span class="text-purple-500">✦</span> Art Appreciation & Criticism</li>
+                        <li class="flex items-center gap-2"><span class="text-purple-500">✦</span> Contemporary Nigerian Art</li>
+                        <li class="flex items-center gap-2"><span class="text-purple-500">✦</span> Music Composition</li>
+                        <li class="flex items-center gap-2"><span class="text-purple-500">✦</span> Theatre Production</li>
+                        <li class="flex items-center gap-2"><span class="text-purple-500">✦</span> Careers in CCA</li>
+                    </ul>
+                    <div class="mt-4 text-purple-500 font-bold group-hover:text-purple-600 transition">
+                        Explore JSS 3 →
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- AI Features Section -->
+    <section class="bg-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="inline-block bg-secondary/20 text-secondary px-4 py-1 rounded-full text-sm font-bold mb-3">
+                    Powered by AI
+                </div>
+                <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl mb-3">Smart Learning Tools</h2>
+                <p class="text-gray-400 text-lg">Interactive AI features to make your learning experience amazing</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="quiz.html" class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition group">
+                    <div class="text-5xl mb-4">🧠</div>
+                    <h3 class="font-bold text-xl mb-2 group-hover:text-secondary transition">AI Quiz Master</h3>
+                    <p class="text-gray-400">Test your knowledge with AI-generated quizzes tailored to each topic. Get instant feedback and track your progress!</p>
+                </a>
+                <a href="assistant.html" class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition group">
+                    <div class="text-5xl mb-4">🤖</div>
+                    <h3 class="font-bold text-xl mb-2 group-hover:text-secondary transition">AI Study Assistant</h3>
+                    <p class="text-gray-400">Chat with your personal AI tutor! Ask questions about any CCA topic and get helpful explanations instantly.</p>
+                </a>
+                <a href="drawing.html" class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition group">
+                    <div class="text-5xl mb-4">🎨</div>
+                    <h3 class="font-bold text-xl mb-2 group-hover:text-secondary transition">Digital Art Studio</h3>
+                    <p class="text-gray-400">Practice drawing and painting with our interactive digital canvas. Learn lines, shapes, colors, and shading techniques!</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Topics -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">Explore Creative Arts</h2>
+            <p class="text-gray-600 text-lg">Dive into the wonderful world of Nigerian culture and arts</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="drawing.html" class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-red-400 to-orange-500 p-8 text-white text-center h-full">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🎨</div>
+                    <h3 class="font-bold text-lg">Drawing & Painting</h3>
+                    <p class="text-white/80 text-sm mt-2">Lines, shapes, colors & techniques</p>
+                </div>
+            </a>
+            <a href="music.html" class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-indigo-400 to-purple-500 p-8 text-white text-center h-full">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🎵</div>
+                    <h3 class="font-bold text-lg">Music</h3>
+                    <p class="text-white/80 text-sm mt-2">Rhythm, melody & instruments</p>
+                </div>
+            </a>
+            <a href="drama.html" class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-pink-400 to-rose-500 p-8 text-white text-center h-full">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🎭</div>
+                    <h3 class="font-bold text-lg">Drama & Theatre</h3>
+                    <p class="text-white/80 text-sm mt-2">Performance, mime & storytelling</p>
+                </div>
+            </a>
+            <a href="crafts.html" class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-amber-400 to-yellow-600 p-8 text-white text-center h-full">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🏺</div>
+                    <h3 class="font-bold text-lg">Traditional Crafts</h3>
+                    <p class="text-white/80 text-sm mt-2">Weaving, pottery & bead-making</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Nigerian Heritage Highlight -->
+    <section class="bg-gradient-to-r from-accent to-forest text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl mb-4">Celebrate Nigerian Heritage</h2>
+                    <p class="text-green-100 text-lg mb-6 leading-relaxed">
+                        Nigeria is home to over 250 ethnic groups, each with rich cultural traditions in art, music, dance, and craftsmanship. From the ancient Nok terracotta sculptures to the vibrant Eyo festival of Lagos, our cultural heritage is one of the richest in the world.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white/10 rounded-xl p-4 text-center">
+                            <div class="text-3xl mb-1">🎭</div>
+                            <p class="font-bold">250+</p>
+                            <p class="text-green-200 text-sm">Ethnic Groups</p>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center">
+                            <div class="text-3xl mb-1">🎵</div>
+                            <p class="font-bold">500+</p>
+                            <p class="text-green-200 text-sm">Languages</p>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center">
+                            <div class="text-3xl mb-1">🏺</div>
+                            <p class="font-bold">2000+</p>
+                            <p class="text-green-200 text-sm">Years of Art</p>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center">
+                            <div class="text-3xl mb-1">🎨</div>
+                            <p class="font-bold">100+</p>
+                            <p class="text-green-200 text-sm">Art Forms</p>
+                        </div>
+                    </div>
+                    <a href="gallery.html" class="inline-block bg-white text-forest px-6 py-3 rounded-full font-bold hover:bg-green-50 transition">
+                        Explore Cultural Gallery →
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur text-center">
+                        <div class="text-4xl mb-2">🗿</div>
+                        <h4 class="font-bold">Nok Art</h4>
+                        <p class="text-green-200 text-sm">Terracotta sculptures dating back to 500 BC</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur text-center">
+                        <div class="text-4xl mb-2">👑</div>
+                        <h4 class="font-bold">Benin Bronzes</h4>
+                        <p class="text-green-200 text-sm">Magnificent bronze castings from Benin Kingdom</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur text-center">
+                        <div class="text-4xl mb-2">👘</div>
+                        <h4 class="font-bold">Adire Textile</h4>
+                        <p class="text-green-200 text-sm">Traditional Yoruba indigo-dyed cloth</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur text-center">
+                        <div class="text-4xl mb-2">🥁</div>
+                        <h4 class="font-bold">Talking Drum</h4>
+                        <p class="text-green-200 text-sm">The iconic Dundun drum of the Yoruba</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-3xl">🎨</span>
+                        <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">An AI-powered learning platform for Cultural and Creative Arts. Designed for Nigerian JSS 1-3 students.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Classes</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="jss1.html" class="hover:text-white transition">JSS 1 - Foundation</a></li>
+                        <li><a href="jss2.html" class="hover:text-white transition">JSS 2 - Intermediate</a></li>
+                        <li><a href="jss3.html" class="hover:text-white transition">JSS 3 - Advanced</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Explore</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="drawing.html" class="hover:text-white transition">Drawing & Painting</a></li>
+                        <li><a href="music.html" class="hover:text-white transition">Music</a></li>
+                        <li><a href="drama.html" class="hover:text-white transition">Drama & Theatre</a></li>
+                        <li><a href="crafts.html" class="hover:text-white transition">Traditional Crafts</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition">Cultural Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">AI Tools</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="quiz.html" class="hover:text-white transition">AI Quiz Master</a></li>
+                        <li><a href="assistant.html" class="hover:text-white transition">AI Study Assistant</a></li>
+                        <li><a href="drawing.html" class="hover:text-white transition">Digital Art Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2026 CCA Learn. Built for Nigerian Students with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

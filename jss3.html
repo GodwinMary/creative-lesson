@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSS 3 - Cultural & Creative Arts | CCA Learn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4380D',
+                        secondary: '#FAAD14',
+                        accent: '#389E0D',
+                        dark: '#1A1A2E',
+                        cream: '#FFF8E7',
+                        terracotta: '#C4501A',
+                        gold: '#E8A317',
+                        forest: '#2D6A1E',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body class="bg-cream font-['Nunito'] text-dark">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-dark text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-3xl">🎨</span>
+                <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="index.html" class="hover:text-secondary transition">Home</a>
+                <div class="relative group">
+                    <button class="text-secondary transition">Classes ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-40 hidden group-hover:block shadow-xl">
+                        <a href="jss1.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 1</a>
+                        <a href="jss2.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 2</a>
+                        <a href="jss3.html" class="block px-4 py-2 bg-gray-800 text-secondary">JSS 3</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="hover:text-secondary transition">Explore ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-48 hidden group-hover:block shadow-xl">
+                        <a href="drawing.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎨 Drawing Studio</a>
+                        <a href="music.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎵 Music</a>
+                        <a href="drama.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎭 Drama & Theatre</a>
+                        <a href="crafts.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🏺 Traditional Crafts</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🖼️ Cultural Gallery</a>
+                    </div>
+                </div>
+                <a href="quiz.html" class="hover:text-secondary transition">🧠 AI Quiz</a>
+                <a href="assistant.html" class="bg-primary px-4 py-2 rounded-full hover:bg-terracotta transition">🤖 AI Assistant</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden text-2xl" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark border-t border-gray-700 px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-secondary font-semibold">Home</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Classes</p>
+            <a href="jss1.html" class="block py-2 pl-4 hover:text-secondary">JSS 1</a>
+            <a href="jss2.html" class="block py-2 pl-4 hover:text-secondary">JSS 2</a>
+            <a href="jss3.html" class="block py-2 pl-4 text-secondary font-semibold">JSS 3</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Explore</p>
+            <a href="drawing.html" class="block py-2 pl-4 hover:text-secondary">🎨 Drawing Studio</a>
+            <a href="music.html" class="block py-2 pl-4 hover:text-secondary">🎵 Music</a>
+            <a href="drama.html" class="block py-2 pl-4 hover:text-secondary">🎭 Drama & Theatre</a>
+            <a href="crafts.html" class="block py-2 pl-4 hover:text-secondary">🏺 Traditional Crafts</a>
+            <a href="gallery.html" class="block py-2 pl-4 hover:text-secondary">🖼️ Cultural Gallery</a>
+            <div class="mt-3 flex flex-col gap-2">
+                <a href="quiz.html" class="block py-2 hover:text-secondary font-semibold">🧠 AI Quiz</a>
+                <a href="assistant.html" class="block py-2 bg-primary text-center rounded-full font-semibold">🤖 AI Assistant</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 text-white">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 text-8xl animate-float">🎨</div>
+            <div class="absolute top-20 right-20 text-7xl animate-float-delay">🎭</div>
+            <div class="absolute bottom-20 left-1/4 text-6xl animate-float">🎪</div>
+            <div class="absolute bottom-10 right-1/3 text-8xl animate-float-delay">🖼️</div>
+            <div class="absolute top-1/3 left-1/2 text-5xl animate-float">🎯</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+                    📘 Advanced Level
+                </div>
+                <h1 class="font-['Fredoka_One'] text-4xl md:text-5xl leading-tight mb-4">
+                    JSS 3 - Cultural &
+                    <span class="text-secondary"> Creative Arts</span>
+                </h1>
+                <p class="text-xl text-white/90 mb-6">
+                    Master advanced artistic techniques and cultural appreciation. Prepare for BECE with comprehensive arts education and creative expression skills.
+                </p>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
+                        <span class="text-secondary font-bold">📚 12 Topics</span>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
+                        <span class="text-secondary font-bold">🎯 BECE Focus</span>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
+                        <span class="text-secondary font-bold">🏆 Certificate Ready</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="#topics" class="bg-secondary text-dark px-6 py-3 rounded-full font-bold hover:bg-yellow-400 transition transform hover:scale-105">
+                        Start Learning →
+                    </a>
+                    <a href="quiz.html" class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full font-bold hover:bg-white/30 transition">
+                        🧠 Practice Quiz
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Overview -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-dark">Your JSS 3 Progress</h3>
+                    <span class="text-sm text-gray-600" id="progress-text-jss3">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                    <div id="progress-bar-jss3" class="bg-gradient-to-r from-purple-500 to-indigo-600 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+                <p class="text-sm text-gray-600">Complete all topics to earn your JSS 3 CCA Certificate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section id="topics" class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-4">JSS 3 Topics</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Advanced topics covering BECE preparation, cultural heritage, and creative arts mastery
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Topic 1: Advanced Drawing Techniques -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="advanced-drawing">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">🎨</div>
+                        <h3 class="font-bold text-xl mb-2">Advanced Drawing Techniques</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Technical Skills</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">BECE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Perspective drawing and depth perception</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Advanced shading techniques (cross-hatching, stippling)</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Figure drawing and human proportions</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'advanced-drawing')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 2: Nigerian Contemporary Art -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="contemporary-art">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">🖼️</div>
+                        <h3 class="font-bold text-xl mb-2">Nigerian Contemporary Art</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Cultural Studies</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">Modern</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Modern Nigerian artists and their works</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Art galleries and museums in Nigeria</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Contemporary art movements and trends</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'contemporary-art')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 3: Advanced Music Theory -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="advanced-music">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">🎵</div>
+                        <h3 class="font-bold text-xl mb-2">Advanced Music Theory</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Music Theory</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">Technical</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Complex rhythms and time signatures</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Harmony and chord progressions</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Music composition and arrangement</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'advanced-music')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 4: Theatre Production -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="theatre-production">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">🎭</div>
+                        <h3 class="font-bold text-xl mb-2">Theatre Production</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Drama</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">Practical</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Stage management and direction</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Set design and construction</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Costume design and makeup</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'theatre-production')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 5: Cultural Festivals -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="cultural-festivals">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">🎉</div>
+                        <h3 class="font-bold text-xl mb-2">Cultural Festivals</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Heritage</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">BECE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Major Nigerian cultural festivals</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Festival organization and management</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Cultural tourism and preservation</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'cultural-festivals')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 6: Digital Arts -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="digital-arts">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">💻</div>
+                        <h3 class="font-bold text-xl mb-2">Digital Arts</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Modern</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">Technology</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Introduction to digital drawing tools</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Graphic design principles</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Animation and multimedia basics</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'digital-arts')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 7: Traditional Dance Forms -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="traditional-dance">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">💃</div>
+                        <h3 class="font-bold text-xl mb-2">Traditional Dance Forms</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Dance</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">Cultural</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Advanced traditional dance techniques</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Choreography and performance</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Contemporary fusion dance</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'traditional-dance')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 8: Art Criticism -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="art-criticism">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">📝</div>
+                        <h3 class="font-bold text-xl mb-2">Art Criticism</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Analysis</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">BECE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Principles of art criticism</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Analyzing artistic works</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Writing art reviews and critiques</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'art-criticism')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 9: Entrepreneurship in Arts -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="arts-entrepreneurship">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">💼</div>
+                        <h3 class="font-bold text-xl mb-2">Entrepreneurship in Arts</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Career</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">Skills</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Career opportunities in creative arts</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Starting an arts business</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Marketing and selling artistic works</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'arts-entrepreneurship')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 10: World Music Cultures -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="world-music">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">🌍</div>
+                        <h3 class="font-bold text-xl mb-2">World Music Cultures</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Global</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">Diversity</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Music from different world cultures</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">World instruments and their origins</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Cultural exchange through music</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'world-music')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 11: BECE Preparation -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="bece-prep">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">📚</div>
+                        <h3 class="font-bold text-xl mb-2">BECE Preparation</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Exam</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">Essential</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">BECE CCA exam format and questions</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Practice questions and answers</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Exam strategies and time management</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'bece-prep')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 12: Final Project -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-purple-300" data-topic-class="jss3" data-topic-id="final-project">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+                        <div class="text-3xl mb-2">🏆</div>
+                        <h3 class="font-bold text-xl mb-2">Final Project</h3>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="bg-white/20 px-2 py-1 rounded">Project</span>
+                            <span class="bg-white/20 px-2 py-1 rounded">Certificate</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Create a comprehensive arts portfolio</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Present a cultural performance</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-purple-500 mt-1">•</span>
+                                <span class="text-sm">Earn JSS 3 CCA completion certificate</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="topic-check text-gray-400">○</span>
+                            <button onclick="markComplete('jss3', 'final-project')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200 transition">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Resources -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-4">Study Resources</h2>
+                <p class="text-xl text-gray-600">Everything you need to excel in JSS 3 CCA</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-4xl mb-4">📖</div>
+                    <h3 class="font-bold text-xl mb-3">Study Guides</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <span class="text-purple-500">✓</span>
+                            <span>Comprehensive topic notes</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-purple-500">✓</span>
+                            <span>BECE past questions</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-purple-500">✓</span>
+                            <span>Quick reference guides</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-4xl mb-4">🎥</div>
+                    <h3 class="font-bold text-xl mb-3">Video Lessons</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <span class="text-purple-500">✓</span>
+                            <span>Step-by-step tutorials</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-purple-500">✓</span>
+                            <span>Live demonstrations</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-purple-500">✓</span>
+                            <span>Expert interviews</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-4xl mb-4">🧪</div>
+                    <h3 class="font-bold text-xl mb-3">Practice Tools</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <span class="text-purple-500">✓</span>
+                            <span>Interactive quizzes</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-purple-500">✓</span>
+                            <span>Virtual art studio</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-purple-500">✓</span>
+                            <span>Progress tracking</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation to Other Classes -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-8">
+            <h2 class="font-['Fredoka_One'] text-2xl md:text-3xl text-dark mb-2">Explore Other Classes</h2>
+            <p class="text-gray-600">Continue your CCA learning journey</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <a href="jss1.html" class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-blue-300">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-6 text-white">
+                    <div class="text-3xl mb-2">📘</div>
+                    <h3 class="font-bold text-xl">JSS 1</h3>
+                    <p class="text-blue-100 text-sm">Beginner Level</p>
+                </div>
+                <div class="p-4 text-center">
+                    <span class="text-blue-500 font-bold group-hover:text-blue-600 transition">Review JSS 1 →</span>
+                </div>
+            </a>
+
+            <a href="jss2.html" class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden border-2 border-transparent hover:border-green-300">
+                <div class="bg-gradient-to-br from-green-500 to-green-600 p-6 text-white">
+                    <div class="text-3xl mb-2">📗</div>
+                    <h3 class="font-bold text-xl">JSS 2</h3>
+                    <p class="text-green-100 text-sm">Intermediate Level</p>
+                </div>
+                <div class="p-4 text-center">
+                    <span class="text-green-500 font-bold group-hover:text-green-600 transition">Review JSS 2 →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-2xl">🎨</span>
+                        <span class="font-['Fredoka_One'] text-lg text-secondary">CCA Learn</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Empowering Nigerian students with comprehensive Cultural & Creative Arts education.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-secondary transition">Home</a></li>
+                        <li><a href="quiz.html" class="hover:text-secondary transition">AI Quiz</a></li>
+                        <li><a href="assistant.html" class="hover:text-secondary transition">AI Assistant</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Classes</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="jss1.html" class="hover:text-secondary transition">JSS 1</a></li>
+                        <li><a href="jss2.html" class="hover:text-secondary transition">JSS 2</a></li>
+                        <li><a href="jss3.html" class="hover:text-secondary transition">JSS 3</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 CCA Learn. All rights reserved. Made with ❤️ for Nigerian students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize progress on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            ProgressTracker.updateUI('jss3');
+        });
+
+        // Mark topic as complete
+        function markComplete(classLevel, topicId) {
+            ProgressTracker.markComplete(classLevel, topicId);
+            
+            // Show completion message
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = '✓ Completed!';
+            button.classList.add('bg-green-100', 'text-green-700');
+            button.classList.remove('bg-purple-100', 'text-purple-700');
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('bg-green-100', 'text-green-700');
+                button.classList.add('bg-purple-100', 'text-purple-700');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

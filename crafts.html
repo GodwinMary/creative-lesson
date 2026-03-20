@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traditional Nigerian Crafts - CCA Learn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4380D',
+                        secondary: '#FAAD14',
+                        accent: '#389E0D',
+                        dark: '#1A1A2E',
+                        cream: '#FFF8E7',
+                        terracotta: '#C4501A',
+                        gold: '#E8A317',
+                        forest: '#2D6A1E',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body class="bg-cream font-['Nunito'] text-dark">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-dark text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-3xl">🎨</span>
+                <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="index.html" class="hover:text-secondary transition">Home</a>
+                <div class="relative group">
+                    <button class="hover:text-secondary transition">Classes ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-40 hidden group-hover:block shadow-xl">
+                        <a href="jss1.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 1</a>
+                        <a href="jss2.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 2</a>
+                        <a href="jss3.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">JSS 3</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-secondary transition">Explore ▾</button>
+                    <div class="absolute top-full left-0 bg-dark border border-gray-700 rounded-lg py-2 w-48 hidden group-hover:block shadow-xl">
+                        <a href="drawing.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎨 Drawing Studio</a>
+                        <a href="music.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎵 Music</a>
+                        <a href="drama.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🎭 Drama & Theatre</a>
+                        <a href="crafts.html" class="block px-4 py-2 bg-gray-800 text-secondary">🏺 Traditional Crafts</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-800 hover:text-secondary">🖼️ Cultural Gallery</a>
+                    </div>
+                </div>
+                <a href="quiz.html" class="hover:text-secondary transition">🧠 AI Quiz</a>
+                <a href="assistant.html" class="bg-primary px-4 py-2 rounded-full hover:bg-terracotta transition">🤖 AI Assistant</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden text-2xl" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark border-t border-gray-700 px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-secondary font-semibold">Home</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Classes</p>
+            <a href="jss1.html" class="block py-2 pl-4 hover:text-secondary">JSS 1</a>
+            <a href="jss2.html" class="block py-2 pl-4 hover:text-secondary">JSS 2</a>
+            <a href="jss3.html" class="block py-2 pl-4 hover:text-secondary">JSS 3</a>
+            <p class="text-gray-400 text-xs mt-2 uppercase tracking-wider">Explore</p>
+            <a href="drawing.html" class="block py-2 pl-4 hover:text-secondary">🎨 Drawing Studio</a>
+            <a href="music.html" class="block py-2 pl-4 hover:text-secondary">🎵 Music</a>
+            <a href="drama.html" class="block py-2 pl-4 hover:text-secondary">🎭 Drama & Theatre</a>
+            <a href="crafts.html" class="block py-2 pl-4 text-secondary font-semibold">🏺 Traditional Crafts</a>
+            <a href="gallery.html" class="block py-2 pl-4 hover:text-secondary">🖼️ Cultural Gallery</a>
+            <div class="mt-3 flex flex-col gap-2">
+                <a href="quiz.html" class="block py-2 hover:text-secondary font-semibold">🧠 AI Quiz</a>
+                <a href="assistant.html" class="block py-2 bg-primary text-center rounded-full font-semibold">🤖 AI Assistant</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-amber-400 to-yellow-600 text-white">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 text-8xl animate-float">🏺</div>
+            <div class="absolute top-20 right-20 text-7xl animate-float-delay">🧶</div>
+            <div class="absolute bottom-20 left-1/4 text-6xl animate-float">📿</div>
+            <div class="absolute bottom-10 right-1/3 text-8xl animate-float-delay">🪵</div>
+            <div class="absolute top-1/3 left-1/2 text-5xl animate-float">🎭</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+                    🏺 Explore Nigerian Heritage
+                </div>
+                <h1 class="font-['Fredoka_One'] text-4xl md:text-6xl leading-tight mb-6">
+                    Traditional Nigerian
+                    <span class="text-dark"> Crafts</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+                    Discover the rich world of Nigerian craftsmanship -- from ancient weaving traditions and pottery to intricate beadwork and wood carving. Learn the skills, stories, and cultural significance behind every handmade creation.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#craft-types" class="bg-dark text-secondary px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-900 transition transform hover:scale-105 shadow-lg">
+                        Explore Crafts →
+                    </a>
+                    <a href="#diy-activities" class="bg-white/20 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/30 transition border border-white/30">
+                        🛠️ Try DIY Projects
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H0Z" fill="#FFF8E7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-6">The Art of Nigerian Craftsmanship</h2>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                Nigeria has one of the oldest and most diverse craft traditions in Africa and the entire world. For thousands of years, Nigerian artisans have transformed natural materials -- clay, wood, fibres, metals, and beads -- into objects of breathtaking beauty and practical use. Every craft tells a story: of the community that created it, the beliefs that shaped it, and the skilled hands that brought it to life.
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                Traditional crafts are more than just decoration. They serve as markers of identity, symbols of status, objects of spiritual importance, and essential items for daily living. From the Aso-Oke cloth worn at Yoruba celebrations to the Nok terracotta figures that date back over 2,500 years, Nigerian crafts connect us to our ancestors and define who we are as a people.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white rounded-xl p-5 shadow-md text-center">
+                    <div class="text-4xl mb-2">🧵</div>
+                    <p class="font-bold text-dark">Weaving</p>
+                    <p class="text-gray-500 text-sm">Textiles & Fabrics</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-md text-center">
+                    <div class="text-4xl mb-2">🏺</div>
+                    <p class="font-bold text-dark">Pottery</p>
+                    <p class="text-gray-500 text-sm">Clay & Ceramics</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-md text-center">
+                    <div class="text-4xl mb-2">📿</div>
+                    <p class="font-bold text-dark">Beadwork</p>
+                    <p class="text-gray-500 text-sm">Beads & Jewelry</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-md text-center">
+                    <div class="text-4xl mb-2">🪵</div>
+                    <p class="font-bold text-dark">Carving</p>
+                    <p class="text-gray-500 text-sm">Wood & Sculpture</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Craft Types -->
+    <section id="craft-types" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-14">
+            <div class="inline-block bg-amber-100 text-amber-700 px-4 py-1 rounded-full text-sm font-bold mb-3">
+                🏺 Major Craft Traditions
+            </div>
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">Nigerian Craft Types</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Each craft has deep roots in Nigerian history and carries forward the wisdom, creativity, and identity of its people.</p>
+        </div>
+
+        <!-- 1. Weaving -->
+        <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-10 border border-amber-100">
+            <div class="md:flex">
+                <div class="md:w-2/5 bg-gradient-to-br from-amber-400 to-orange-500 p-8 flex flex-col items-center justify-center text-white">
+                    <img src="images/crafts/weaving.jpg" alt="Traditional Nigerian Weaving" class="w-full h-64 object-cover rounded-2xl mb-4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-64 bg-white/20 rounded-2xl items-center justify-center text-8xl backdrop-blur">🧶</div>
+                    <h3 class="font-['Fredoka_One'] text-2xl mt-2">Weaving</h3>
+                    <p class="text-white/80 text-sm text-center">Aso-Oke, Akwete & Traditional Textiles</p>
+                </div>
+                <div class="md:w-3/5 p-8">
+                    <h4 class="font-bold text-xl text-amber-700 mb-3">History & Cultural Significance</h4>
+                    <p class="text-gray-600 mb-4">
+                        Weaving is one of the oldest crafts in Nigeria, with evidence of textile production dating back centuries. It is practiced across many ethnic groups and is deeply woven into the social fabric of Nigerian life. Hand-woven cloth is a symbol of prestige, worn at important occasions such as weddings, chieftaincy installations, funerals, and festivals. The craft is typically passed down from generation to generation within families.
+                    </p>
+
+                    <h4 class="font-bold text-xl text-amber-700 mb-3">Materials Used</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+                        <li><strong>Cotton</strong> -- the most common fibre, grown locally and spun by hand</li>
+                        <li><strong>Silk</strong> -- imported and later locally produced, used for luxury cloths</li>
+                        <li><strong>Raffia</strong> -- from palm fronds, used in mat-making and decorative weaves</li>
+                        <li><strong>Synthetic threads</strong> -- modern additions for colour variety and durability</li>
+                    </ul>
+
+                    <h4 class="font-bold text-xl text-amber-700 mb-3">Regions Known for Weaving</h4>
+                    <div class="grid sm:grid-cols-3 gap-3 mb-4">
+                        <div class="bg-amber-50 rounded-xl p-3 text-center">
+                            <p class="font-bold text-amber-800">Yoruba</p>
+                            <p class="text-gray-500 text-sm">Aso-Oke from Iseyin, Oyo, and surrounding towns</p>
+                        </div>
+                        <div class="bg-amber-50 rounded-xl p-3 text-center">
+                            <p class="font-bold text-amber-800">Igbo</p>
+                            <p class="text-gray-500 text-sm">Akwete cloth from Abia State</p>
+                        </div>
+                        <div class="bg-amber-50 rounded-xl p-3 text-center">
+                            <p class="font-bold text-amber-800">Hausa</p>
+                            <p class="text-gray-500 text-sm">Narrow-strip weaving in northern Nigeria</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-xl text-amber-700 mb-3">Types of Aso-Oke</h4>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-start gap-3 bg-cream rounded-lg p-3">
+                            <span class="text-amber-500 font-bold text-lg">1.</span>
+                            <div>
+                                <p class="font-bold text-dark">Sanyan</p>
+                                <p class="text-gray-500 text-sm">A light brown or beige cloth made from wild silk (anaphe silk moth cocoons). It is the most prestigious and expensive type, often worn by royalty and elders.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-cream rounded-lg p-3">
+                            <span class="text-amber-500 font-bold text-lg">2.</span>
+                            <div>
+                                <p class="font-bold text-dark">Etu</p>
+                                <p class="text-gray-500 text-sm">A dark indigo-dyed cloth with light blue or white thin stripes. It is associated with dignity and is commonly worn at important social gatherings.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-cream rounded-lg p-3">
+                            <span class="text-amber-500 font-bold text-lg">3.</span>
+                            <div>
+                                <p class="font-bold text-dark">Alaari</p>
+                                <p class="text-gray-500 text-sm">A rich crimson or magenta cloth, originally made with imported silk threads. It is vibrant and festive, popular at weddings and celebrations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-xl text-amber-700 mb-3">Akwete Cloth</h4>
+                    <p class="text-gray-600 mb-4">
+                        Akwete cloth, produced by the women of Akwete in Abia State, is one of the most celebrated Igbo weaving traditions. It features bold, colourful geometric patterns and motifs inspired by nature -- tortoise shells, pythons, and palm fronds. The weaving is done on a broad vertical loom, unlike the narrow strip looms of the Yoruba and Hausa.
+                    </p>
+
+                    <h4 class="font-bold text-xl text-amber-700 mb-3">Basic Weaving Patterns</h4>
+                    <p class="text-gray-600">
+                        Traditional weaving employs several fundamental patterns: <strong>plain weave</strong> (alternating over-under), <strong>twill weave</strong> (diagonal lines), and <strong>supplementary weft patterns</strong> (extra decorative threads added on top of the base weave). In Aso-Oke, thin strips of about 4-6 inches wide are woven on narrow looms and then sewn together to create larger cloths used for agbada, fila (caps), and ipele (shoulder wraps).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Pottery & Ceramics -->
+        <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-10 border border-orange-100">
+            <div class="md:flex flex-row-reverse">
+                <div class="md:w-2/5 bg-gradient-to-br from-orange-600 to-red-700 p-8 flex flex-col items-center justify-center text-white">
+                    <img src="images/crafts/pottery.jpg" alt="Nigerian Pottery and Ceramics" class="w-full h-64 object-cover rounded-2xl mb-4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-64 bg-white/20 rounded-2xl items-center justify-center text-8xl backdrop-blur">🏺</div>
+                    <h3 class="font-['Fredoka_One'] text-2xl mt-2">Pottery & Ceramics</h3>
+                    <p class="text-white/80 text-sm text-center">From Nok Terracotta to Modern Clay Art</p>
+                </div>
+                <div class="md:w-3/5 p-8">
+                    <h4 class="font-bold text-xl text-orange-700 mb-3">History -- The Nok Legacy</h4>
+                    <p class="text-gray-600 mb-4">
+                        Nigerian pottery has an extraordinary history. The most famous example is the <strong>Nok terracotta</strong>, dating from around 500 BC to 200 AD, discovered in central Nigeria near the village of Nok in present-day Kaduna State. These terracotta sculptures -- depicting human heads, figures, and animals -- are among the oldest known figurative sculptures in sub-Saharan Africa. They reveal a sophisticated society with advanced artistic skills. Pottery continues to be a vital craft across Nigeria today, practised predominantly by women in many communities.
+                    </p>
+
+                    <h4 class="font-bold text-xl text-orange-700 mb-3">Pottery Methods</h4>
+                    <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                        <div class="bg-orange-50 rounded-xl p-4">
+                            <p class="font-bold text-orange-800 mb-1">🔵 Coil Method</p>
+                            <p class="text-gray-500 text-sm">Rolling clay into long ropes and stacking them in coils to build up the pot walls. The coils are then smoothed together. This is the most common traditional Nigerian method.</p>
+                        </div>
+                        <div class="bg-orange-50 rounded-xl p-4">
+                            <p class="font-bold text-orange-800 mb-1">🟫 Slab Method</p>
+                            <p class="text-gray-500 text-sm">Flat pieces of clay are rolled out and joined together to form box-like or angular shapes. This method is suited for making rectangular containers and tiles.</p>
+                        </div>
+                        <div class="bg-orange-50 rounded-xl p-4">
+                            <p class="font-bold text-orange-800 mb-1">🤏 Pinch Method</p>
+                            <p class="text-gray-500 text-sm">Starting with a ball of clay and pinching it with the thumb and fingers to form a small pot. This is the simplest method and is great for beginners.</p>
+                        </div>
+                        <div class="bg-orange-50 rounded-xl p-4">
+                            <p class="font-bold text-orange-800 mb-1">🎡 Wheel Throwing</p>
+                            <p class="text-gray-500 text-sm">Using a spinning potter's wheel to shape clay into symmetrical forms. This technique was introduced later and is now used in urban pottery workshops.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-xl text-orange-700 mb-3">Uses of Pottery</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+                        <li><strong>Cooking pots</strong> -- clay pots give food a unique flavour; used for soups and stews</li>
+                        <li><strong>Water storage</strong> -- the porous clay keeps water naturally cool</li>
+                        <li><strong>Decorative items</strong> -- flower vases, figurines, wall hangings</li>
+                        <li><strong>Ritual objects</strong> -- pots used in ceremonies, shrines, and cultural events</li>
+                        <li><strong>Storage jars</strong> -- for grain, palm oil, and other produce</li>
+                    </ul>
+
+                    <h4 class="font-bold text-xl text-orange-700 mb-3">Pottery Regions</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">Suleja (Niger State)</span>
+                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">Afikpo (Ebonyi State)</span>
+                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">Ilorin (Kwara State)</span>
+                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">Abuja</span>
+                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">Ipetumodu (Osun State)</span>
+                    </div>
+
+                    <h4 class="font-bold text-xl text-orange-700 mb-3">Step-by-Step Pottery Process</h4>
+                    <ol class="space-y-2 text-gray-600">
+                        <li class="flex items-start gap-2"><span class="bg-orange-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span> <strong>Gather and prepare clay</strong> -- dig clay from riverbanks or special deposits, remove impurities like stones and roots, then knead thoroughly to remove air bubbles.</li>
+                        <li class="flex items-start gap-2"><span class="bg-orange-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span> <strong>Shape the pot</strong> -- use the coil, slab, pinch, or wheel method to form the desired shape. Traditional Nigerian potters often work without a wheel, using inverted pots or calabash bases as turning platforms.</li>
+                        <li class="flex items-start gap-2"><span class="bg-orange-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span> <strong>Smooth and decorate</strong> -- use a smooth stone, wooden paddle, or wet cloth to even out the surface. Add decorative patterns by incising, stamping, or applying slip (liquid clay) in a different colour.</li>
+                        <li class="flex items-start gap-2"><span class="bg-orange-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span> <strong>Dry the pot</strong> -- leave it in the shade for several days to dry slowly and evenly. Rapid drying can cause cracking.</li>
+                        <li class="flex items-start gap-2"><span class="bg-orange-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">5</span> <strong>Fire the pot</strong> -- traditionally done in open bonfires using dry grass, wood, and cow dung as fuel. Modern potters may use kilns. Firing hardens the clay and makes it waterproof.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Bead-Making & Jewelry -->
+        <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-10 border border-pink-100">
+            <div class="md:flex">
+                <div class="md:w-2/5 bg-gradient-to-br from-pink-500 to-red-500 p-8 flex flex-col items-center justify-center text-white">
+                    <img src="images/crafts/beadwork.jpg" alt="Nigerian Bead-Making and Jewelry" class="w-full h-64 object-cover rounded-2xl mb-4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-64 bg-white/20 rounded-2xl items-center justify-center text-8xl backdrop-blur">📿</div>
+                    <h3 class="font-['Fredoka_One'] text-2xl mt-2">Bead-Making & Jewelry</h3>
+                    <p class="text-white/80 text-sm text-center">Coral, Glass & Cultural Adornment</p>
+                </div>
+                <div class="md:w-3/5 p-8">
+                    <h4 class="font-bold text-xl text-pink-700 mb-3">Nigerian Bead Traditions</h4>
+                    <p class="text-gray-600 mb-4">
+                        Beads hold profound cultural meaning across Nigeria. They are not merely decorative -- they signify royalty, wealth, spirituality, and social status. Archaeological finds show that bead-making and use in Nigeria dates back over a thousand years. The famous bead-making centre of Ile-Ife produced glass beads that were traded across West Africa.
+                    </p>
+
+                    <div class="grid sm:grid-cols-3 gap-3 mb-4">
+                        <div class="bg-pink-50 rounded-xl p-4 text-center">
+                            <p class="text-3xl mb-2">🔴</p>
+                            <p class="font-bold text-pink-800">Igbo Coral Beads</p>
+                            <p class="text-gray-500 text-sm">Red coral beads are symbols of chieftaincy and high social status among the Igbo. They are worn during title-taking ceremonies and important festivals.</p>
+                        </div>
+                        <div class="bg-pink-50 rounded-xl p-4 text-center">
+                            <p class="text-3xl mb-2">🟡</p>
+                            <p class="font-bold text-pink-800">Yoruba Beads (Ileke)</p>
+                            <p class="text-gray-500 text-sm">Yoruba beaded crowns (ade), necklaces, and waist beads carry deep spiritual and royal significance. The Ooni of Ife's beaded crown is sacred.</p>
+                        </div>
+                        <div class="bg-pink-50 rounded-xl p-4 text-center">
+                            <p class="text-3xl mb-2">🟤</p>
+                            <p class="font-bold text-pink-800">Hausa/Fulani Beads</p>
+                            <p class="text-gray-500 text-sm">Amber, carnelian, and chevron beads are treasured in northern Nigeria. Fulani women wear elaborate bead necklaces as part of their traditional attire.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-xl text-pink-700 mb-3">Materials Used in Nigerian Beadwork</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">Glass</span>
+                        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">Coral</span>
+                        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">Bone</span>
+                        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">Seeds</span>
+                        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">Clay</span>
+                        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">Stone (Carnelian, Agate)</span>
+                        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">Metal</span>
+                        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">Shells (Cowries)</span>
+                    </div>
+
+                    <h4 class="font-bold text-xl text-pink-700 mb-3">Cultural Significance of Beads</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+                        <li><strong>Royalty</strong> -- beaded crowns, staffs, and regalia identify kings and chiefs</li>
+                        <li><strong>Marriage</strong> -- brides receive coral and bead sets as part of bridal gifts</li>
+                        <li><strong>Festivals</strong> -- elaborate bead costumes are worn during masquerade festivals</li>
+                        <li><strong>Spirituality</strong> -- certain beads are associated with deities in Yoruba tradition</li>
+                        <li><strong>Wealth</strong> -- historically, beads served as currency and trade items</li>
+                    </ul>
+
+                    <h4 class="font-bold text-xl text-pink-700 mb-3">Types of Beadwork</h4>
+                    <p class="text-gray-600">
+                        Nigerian beadwork includes <strong>stringing</strong> (threading beads onto cord or wire), <strong>loom beading</strong> (weaving beads on a small loom to create flat beaded fabric), <strong>bead embroidery</strong> (sewing beads onto cloth or leather), and <strong>bead netting</strong> (creating openwork bead structures like crowns and covers for calabashes). The Benin Kingdom is especially famous for its coral bead regalia, and the Oba of Benin's full coral bead outfit is one of the most magnificent examples of beadwork in Africa.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Calabash/Gourd Decoration -->
+        <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-10 border border-green-100">
+            <div class="md:flex flex-row-reverse">
+                <div class="md:w-2/5 bg-gradient-to-br from-green-500 to-emerald-700 p-8 flex flex-col items-center justify-center text-white">
+                    <img src="images/crafts/calabash.jpg" alt="Calabash and Gourd Decoration" class="w-full h-64 object-cover rounded-2xl mb-4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-64 bg-white/20 rounded-2xl items-center justify-center text-8xl backdrop-blur">🥥</div>
+                    <h3 class="font-['Fredoka_One'] text-2xl mt-2">Calabash/Gourd Decoration</h3>
+                    <p class="text-white/80 text-sm text-center">Carving, Burning & Painting</p>
+                </div>
+                <div class="md:w-3/5 p-8">
+                    <h4 class="font-bold text-xl text-green-700 mb-3">The Versatile Calabash</h4>
+                    <p class="text-gray-600 mb-4">
+                        The calabash (also called gourd) is one of the most widely used natural materials in Nigerian culture. It comes from the fruit of the bottle gourd plant (<em>Lagenaria siceraria</em>). When dried and hollowed out, calabashes serve as bowls, cups, water containers, storage vessels, musical instruments, and decorative objects. Nigerian artisans have developed remarkable skills in transforming plain calabashes into works of art.
+                    </p>
+
+                    <h4 class="font-bold text-xl text-green-700 mb-3">Decoration Techniques</h4>
+                    <div class="space-y-3 mb-4">
+                        <div class="bg-green-50 rounded-xl p-4">
+                            <p class="font-bold text-green-800 mb-1">🔪 Carving (Incising)</p>
+                            <p class="text-gray-500 text-sm">Using sharp knives or pointed tools to cut patterns into the surface of the dried calabash. The carved areas create contrast with the smooth surface. This is one of the most common techniques in Hausa and Fulani traditions.</p>
+                        </div>
+                        <div class="bg-green-50 rounded-xl p-4">
+                            <p class="font-bold text-green-800 mb-1">🔥 Pyrography (Burning)</p>
+                            <p class="text-gray-500 text-sm">Using a heated metal rod or wire to burn decorative patterns onto the calabash surface. The burnt marks create dark brown or black patterns against the lighter gourd surface. This is known as <em>tukunya</em> in Hausa.</p>
+                        </div>
+                        <div class="bg-green-50 rounded-xl p-4">
+                            <p class="font-bold text-green-800 mb-1">🎨 Painting & Dyeing</p>
+                            <p class="text-gray-500 text-sm">Modern artisans paint calabashes with bright colours and elaborate designs. Traditionally, natural dyes from plants, charcoal, and ochre were used.</p>
+                        </div>
+                        <div class="bg-green-50 rounded-xl p-4">
+                            <p class="font-bold text-green-800 mb-1">🧩 Beading & Embellishment</p>
+                            <p class="text-gray-500 text-sm">Adding beads, cowrie shells, leather strips, or metal rings to decorated calabashes for extra ornamentation. These are often used as gifts or for display.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-xl text-green-700 mb-3">Uses in Nigerian Culture</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+                        <li>Serving bowls for food and drinks (especially at traditional weddings)</li>
+                        <li>Water and milk containers for nomadic Fulani herders</li>
+                        <li>Musical instruments -- rattles (shekere), thumb pianos</li>
+                        <li>Storage containers for grains, seeds, and medicines</li>
+                        <li>Decorative items for homes and cultural displays</li>
+                        <li>Gift items at ceremonies and festivals</li>
+                    </ul>
+
+                    <h4 class="font-bold text-xl text-green-700 mb-3">Common Decorative Patterns</h4>
+                    <p class="text-gray-600">
+                        Traditional calabash patterns include <strong>geometric motifs</strong> (triangles, zigzags, concentric circles), <strong>nature-inspired designs</strong> (flowers, leaves, animals), <strong>symbolic patterns</strong> representing proverbs or cultural values, and <strong>abstract interlocking shapes</strong> unique to specific ethnic groups. The Hausa and Nupe peoples of northern Nigeria are especially renowned for their calabash decoration artistry.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Leather Work -->
+        <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-10 border border-yellow-100">
+            <div class="md:flex">
+                <div class="md:w-2/5 bg-gradient-to-br from-yellow-700 to-amber-900 p-8 flex flex-col items-center justify-center text-white">
+                    <img src="images/crafts/leatherwork.jpg" alt="Nigerian Leather Work" class="w-full h-64 object-cover rounded-2xl mb-4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-64 bg-white/20 rounded-2xl items-center justify-center text-8xl backdrop-blur">👜</div>
+                    <h3 class="font-['Fredoka_One'] text-2xl mt-2">Leather Work</h3>
+                    <p class="text-white/80 text-sm text-center">Hausa Leather Traditions & Design</p>
+                </div>
+                <div class="md:w-3/5 p-8">
+                    <h4 class="font-bold text-xl text-yellow-800 mb-3">Hausa Leather Traditions</h4>
+                    <p class="text-gray-600 mb-4">
+                        Northern Nigeria, particularly the Hausa and Kanuri areas, has a leather-working tradition that dates back centuries and was famous across the Saharan trade routes. During the trans-Saharan trade era, Hausa leather goods -- known in Europe as "Moroccan leather" -- were exported as far as North Africa and Europe. The leather workers of Kano, Sokoto, and Zaria are especially renowned. The craft involves tanning animal hides (goat, sheep, cow) and transforming them into beautiful, durable products using embossing, tooling, and dyeing techniques.
+                    </p>
+
+                    <h4 class="font-bold text-xl text-yellow-800 mb-3">Products</h4>
+                    <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                        <div class="bg-yellow-50 rounded-xl p-3 flex items-center gap-3">
+                            <span class="text-2xl">👜</span>
+                            <div>
+                                <p class="font-bold text-yellow-900">Bags & Pouches</p>
+                                <p class="text-gray-500 text-sm">Handbags, satchels, and pouches with embossed designs</p>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-50 rounded-xl p-3 flex items-center gap-3">
+                            <span class="text-2xl">👞</span>
+                            <div>
+                                <p class="font-bold text-yellow-900">Shoes & Sandals</p>
+                                <p class="text-gray-500 text-sm">Decorated leather sandals and slippers (e.g., Hausa <em>takalmi</em>)</p>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-50 rounded-xl p-3 flex items-center gap-3">
+                            <span class="text-2xl">🛋️</span>
+                            <div>
+                                <p class="font-bold text-yellow-900">Poufs & Cushions</p>
+                                <p class="text-gray-500 text-sm">Leather ottoman poufs, now popular worldwide as decor</p>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-50 rounded-xl p-3 flex items-center gap-3">
+                            <span class="text-2xl">📚</span>
+                            <div>
+                                <p class="font-bold text-yellow-900">Book Covers & Sheaths</p>
+                                <p class="text-gray-500 text-sm">Quran covers, journal covers, and knife sheaths</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-xl text-yellow-800 mb-3">Dyeing Techniques</h4>
+                    <p class="text-gray-600 mb-4">
+                        Traditional leather dyeing in Nigeria uses both natural and modern dyes. The famous <strong>Kano dye pits</strong> (dating back over 500 years) used indigo for deep blue, <strong>henna</strong> for reddish-brown, <strong>bagaruwa</strong> (acacia pods) for tanning, and <strong>potash</strong> mixed with various plants for yellow and green tones. The leather is soaked, beaten, and sun-dried multiple times to achieve rich, lasting colours. Once dyed, artisans emboss elaborate geometric and floral patterns using metal tools, creating the distinctively beautiful Hausa leather products.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Wood Carving -->
+        <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-10 border border-emerald-100">
+            <div class="md:flex flex-row-reverse">
+                <div class="md:w-2/5 bg-gradient-to-br from-emerald-800 to-green-950 p-8 flex flex-col items-center justify-center text-white">
+                    <img src="images/crafts/woodcarving.jpg" alt="Nigerian Wood Carving" class="w-full h-64 object-cover rounded-2xl mb-4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-64 bg-white/20 rounded-2xl items-center justify-center text-8xl backdrop-blur">🗿</div>
+                    <h3 class="font-['Fredoka_One'] text-2xl mt-2">Wood Carving</h3>
+                    <p class="text-white/80 text-sm text-center">Masks, Doors, Figurines & Stools</p>
+                </div>
+                <div class="md:w-3/5 p-8">
+                    <h4 class="font-bold text-xl text-emerald-800 mb-3">Benin & Beyond: Wood Carving Traditions</h4>
+                    <p class="text-gray-600 mb-4">
+                        Wood carving is one of Nigeria's most celebrated art forms. The Benin Kingdom is famous for its intricately carved wooden altarpieces, doors, and figures, and Nigerian wood carving traditions extend across Yoruba, Igbo, Ibibio, Urhobo, and many other communities. Wood carvers held positions of great respect in traditional society, and their work was essential for religious worship, royal courts, architectural decoration, and everyday life. Many carved objects are also connected to masquerade traditions.
+                    </p>
+
+                    <h4 class="font-bold text-xl text-emerald-800 mb-3">Types of Wood Carvings</h4>
+                    <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                        <div class="bg-emerald-50 rounded-xl p-4">
+                            <p class="font-bold text-emerald-800 mb-1">🎭 Masks</p>
+                            <p class="text-gray-500 text-sm">Used in masquerade festivals, rituals, and ceremonies. Gelede masks (Yoruba), maiden spirit masks (Igbo), and Ekpe masks (Efik/Ibibio) are notable examples. Each mask has specific spiritual or social meanings.</p>
+                        </div>
+                        <div class="bg-emerald-50 rounded-xl p-4">
+                            <p class="font-bold text-emerald-800 mb-1">🚪 Doors & Panels</p>
+                            <p class="text-gray-500 text-sm">Carved palace doors depicting historical scenes, religious themes, and daily life. The Yoruba carved doors by Olowe of Ise are world-famous and displayed in major museums globally.</p>
+                        </div>
+                        <div class="bg-emerald-50 rounded-xl p-4">
+                            <p class="font-bold text-emerald-800 mb-1">🗿 Figurines & Statues</p>
+                            <p class="text-gray-500 text-sm">Representations of deities, ancestors, twins (ere ibeji), and cultural heroes. Yoruba twin figures (ibeji) are among the most collected African art objects in the world.</p>
+                        </div>
+                        <div class="bg-emerald-50 rounded-xl p-4">
+                            <p class="font-bold text-emerald-800 mb-1">🪑 Stools & Furniture</p>
+                            <p class="text-gray-500 text-sm">Royal stools, headrests, and ceremonial seats. Among the Yoruba, the carved stool (apoti) of a king is a symbol of authority. Carved mortar and pestle sets are also common.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-xl text-emerald-800 mb-3">Tools and Techniques</h4>
+                    <p class="text-gray-600 mb-4">
+                        Traditional carvers use an adze (a curved cutting tool), chisels, gouges, knives, and mallets. The process begins by selecting a suitable wood -- <strong>iroko</strong>, <strong>mahogany</strong>, <strong>ebony</strong>, and <strong>obeche</strong> are popular choices. The carver first roughs out the basic form, then refines the details. Surface decoration is added through incising, chip-carving, and relief carving. Finished pieces may be stained with plant dyes, oiled, or painted. Some masks and figures are adorned with metal, beads, cloth, or raffia.
+                    </p>
+
+                    <h4 class="font-bold text-xl text-emerald-800 mb-3">Famous Carving Centres</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold">Benin City (Edo State)</span>
+                        <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold">Oyo & Ife (Osun/Oyo State)</span>
+                        <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold">Awka (Anambra State)</span>
+                        <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold">Ikom (Cross River State)</span>
+                        <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold">Nok (Kaduna State)</span>
+                        <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold">Ibibio/Annang (Akwa Ibom State)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Craft by JSS Level -->
+    <section class="bg-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="inline-block bg-secondary/20 text-secondary px-4 py-1 rounded-full text-sm font-bold mb-3">
+                    📚 Curriculum Guide
+                </div>
+                <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl mb-3">Crafts by JSS Level</h2>
+                <p class="text-gray-400 text-lg">What you will learn about traditional crafts at each level of Junior Secondary School</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- JSS 1 -->
+                <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-center">
+                        <div class="text-4xl mb-2">📘</div>
+                        <h3 class="font-['Fredoka_One'] text-xl">JSS 1 -- Foundation</h3>
+                        <p class="text-blue-100 text-sm">Introduction to Crafts</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Introduction to Local Crafts</p>
+                                    <p class="text-sm text-gray-400">Identify craft types in your community. Learn what crafts are and why they matter to Nigerian culture.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Simple Paper Crafts</p>
+                                    <p class="text-sm text-gray-400">Learn folding, cutting, and pasting techniques to create greeting cards, bookmarks, and paper flowers.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Basic Weaving with Paper Strips</p>
+                                    <p class="text-sm text-gray-400">Create simple over-under weaving patterns using coloured paper strips to understand the fundamentals of textile weaving.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Craft Materials Identification</p>
+                                    <p class="text-sm text-gray-400">Recognize and name common craft materials: clay, raffia, beads, wood, calabash, thread, and fabric.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="jss1.html" class="mt-6 inline-block text-blue-400 font-bold hover:text-blue-300 transition">View JSS 1 Curriculum →</a>
+                    </div>
+                </div>
+
+                <!-- JSS 2 -->
+                <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 text-center">
+                        <div class="text-4xl mb-2">📗</div>
+                        <h3 class="font-['Fredoka_One'] text-xl">JSS 2 -- Intermediate</h3>
+                        <p class="text-green-100 text-sm">Hands-On Projects</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start gap-2">
+                                <span class="text-green-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Clay Modelling</p>
+                                    <p class="text-sm text-gray-400">Learn the pinch and coil methods. Create simple pots, bowls, and animal figures. Understand clay preparation and drying.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-green-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Simple Bead Stringing</p>
+                                    <p class="text-sm text-gray-400">Design and make bead bracelets and necklaces. Learn about colour patterns, symmetry, and basic bead threading techniques.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-green-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Tie-Dye (Adire)</p>
+                                    <p class="text-sm text-gray-400">Learn the Yoruba art of resist-dyeing. Practice tying, folding, and dyeing fabric to create beautiful patterns.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-green-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Calabash Decoration</p>
+                                    <p class="text-sm text-gray-400">Practice simple painting and surface decoration on calabash or gourd surfaces using paints and markers.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="jss2.html" class="mt-6 inline-block text-green-400 font-bold hover:text-green-300 transition">View JSS 2 Curriculum →</a>
+                    </div>
+                </div>
+
+                <!-- JSS 3 -->
+                <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 text-center">
+                        <div class="text-4xl mb-2">📕</div>
+                        <h3 class="font-['Fredoka_One'] text-xl">JSS 3 -- Advanced</h3>
+                        <p class="text-purple-100 text-sm">Design & Innovation</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start gap-2">
+                                <span class="text-purple-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Advanced Craft Projects</p>
+                                    <p class="text-sm text-gray-400">Complete a full craft project from design to finished product. Work with more complex materials and techniques.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-purple-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Design Thinking</p>
+                                    <p class="text-sm text-gray-400">Learn the design process: research, sketch, prototype, test, and refine. Apply design thinking to craft projects.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-purple-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Modern Applications</p>
+                                    <p class="text-sm text-gray-400">Explore how traditional craft skills are used in modern industries: fashion design, interior decor, product design, and tourism.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-purple-400 mt-1">✦</span>
+                                <div>
+                                    <p class="font-semibold text-white">Entrepreneurship in Crafts</p>
+                                    <p class="text-sm text-gray-400">Understand how crafts can become a livelihood. Learn about pricing, marketing, and selling handmade products.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="jss3.html" class="mt-6 inline-block text-purple-400 font-bold hover:text-purple-300 transition">View JSS 3 Curriculum →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIY Craft Activities -->
+    <section id="diy-activities" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-14">
+            <div class="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-bold mb-3">
+                🛠️ Hands-On Learning
+            </div>
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-3">DIY Craft Activities</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Try these simple craft projects at home using everyday materials. Follow the step-by-step instructions carefully!</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Activity 1: Paper Weaving -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-amber-200 hover:shadow-xl transition">
+                <div class="bg-gradient-to-r from-amber-400 to-yellow-500 p-6 text-white text-center">
+                    <div class="text-5xl mb-2">🧶</div>
+                    <h3 class="font-['Fredoka_One'] text-xl">Paper Weaving Pattern</h3>
+                    <p class="text-white/80 text-sm">Difficulty: Beginner | Time: 30 minutes</p>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-amber-700 mb-2">Materials Needed:</h4>
+                    <ul class="text-gray-600 text-sm mb-4 space-y-1">
+                        <li>- 2 sheets of coloured paper (different colours)</li>
+                        <li>- Scissors</li>
+                        <li>- Ruler</li>
+                        <li>- Glue stick or tape</li>
+                    </ul>
+                    <h4 class="font-bold text-amber-700 mb-2">Steps:</h4>
+                    <ol class="text-gray-600 text-sm space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="bg-amber-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            Take the first sheet of paper. Fold it in half lengthwise. Using a ruler, draw straight lines from the folded edge toward the open edge, stopping about 2cm from the top. Space the lines about 2cm apart.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-amber-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            Cut along each line you drew. Unfold the paper -- you now have a base with vertical slits.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-amber-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            Take the second sheet and cut it into long strips about 2cm wide.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-amber-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                            Weave each strip horizontally through the slits in an over-under pattern. Push each strip up snugly against the previous one. Alternate the pattern (if the first strip went over-under, the next goes under-over).
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-amber-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">5</span>
+                            Once all strips are woven in, glue or tape the edges to secure them. Trim any excess paper. You now have a beautiful woven pattern!
+                        </li>
+                    </ol>
+                    <div class="mt-4 bg-amber-50 rounded-lg p-3 text-sm text-amber-800">
+                        <strong>Tip:</strong> Try using three or more colours, or vary the strip widths for more interesting patterns. You can also try diagonal weaving for a more advanced design!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity 2: Bead Bracelet -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-pink-200 hover:shadow-xl transition">
+                <div class="bg-gradient-to-r from-pink-500 to-rose-500 p-6 text-white text-center">
+                    <div class="text-5xl mb-2">📿</div>
+                    <h3 class="font-['Fredoka_One'] text-xl">Simple Bead Bracelet</h3>
+                    <p class="text-white/80 text-sm">Difficulty: Beginner | Time: 20 minutes</p>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-pink-700 mb-2">Materials Needed:</h4>
+                    <ul class="text-gray-600 text-sm mb-4 space-y-1">
+                        <li>- Beads (any kind: plastic, wood, seed, or clay beads)</li>
+                        <li>- Elastic cord or string (about 25cm)</li>
+                        <li>- Tape (to help thread beads)</li>
+                        <li>- Scissors</li>
+                    </ul>
+                    <h4 class="font-bold text-pink-700 mb-2">Steps:</h4>
+                    <ol class="text-gray-600 text-sm space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            Measure your wrist with the cord. Add about 5cm extra for tying the knot. Cut the cord to this length.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            Wrap a small piece of tape around one end of the cord to make a stiff tip (like a needle) for easier threading. Tie a large knot at the other end so beads do not slide off.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            Plan your design first! Lay out your beads in a pattern. You might try: ABAB (alternating two colours), ABCABC (three-colour repeat), or create your own Nigerian-flag-inspired pattern (green-white-green).
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                            Thread the beads onto the cord one by one, following your planned pattern. Push each bead down snugly against the previous one.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">5</span>
+                            Once you have enough beads to go around your wrist, remove the tape, bring the two ends together, and tie a tight double knot. Cut off any excess cord. Your bracelet is ready to wear!
+                        </li>
+                    </ol>
+                    <div class="mt-4 bg-pink-50 rounded-lg p-3 text-sm text-pink-800">
+                        <strong>Tip:</strong> Use larger beads for a bold look, or tiny seed beads for a delicate design. You can also add a special charm or pendant in the centre of your bracelet.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity 3: Clay Pinch Pot -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-orange-200 hover:shadow-xl transition">
+                <div class="bg-gradient-to-r from-orange-600 to-red-600 p-6 text-white text-center">
+                    <div class="text-5xl mb-2">🏺</div>
+                    <h3 class="font-['Fredoka_One'] text-xl">Clay Pinch Pot</h3>
+                    <p class="text-white/80 text-sm">Difficulty: Beginner-Intermediate | Time: 45 minutes</p>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-orange-700 mb-2">Materials Needed:</h4>
+                    <ul class="text-gray-600 text-sm mb-4 space-y-1">
+                        <li>- Clay or playdough (about the size of a tennis ball)</li>
+                        <li>- Small bowl of water</li>
+                        <li>- Flat surface or board to work on</li>
+                        <li>- Pointed stick or pencil for decoration</li>
+                    </ul>
+                    <h4 class="font-bold text-orange-700 mb-2">Steps:</h4>
+                    <ol class="text-gray-600 text-sm space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="bg-orange-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            Knead your clay on the flat surface for 2-3 minutes until it is soft and smooth with no air bubbles. If the clay is too dry, wet your hands slightly.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-orange-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            Roll the clay into a smooth ball between your palms. Make sure there are no cracks on the surface.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-orange-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            Hold the ball in one hand. Push your thumb into the centre of the ball, stopping about 1cm from the bottom (do not go all the way through!).
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-orange-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                            Now pinch the walls of the pot between your thumb (inside) and fingers (outside). Rotate the pot slowly as you pinch, making the walls even and about 1cm thick all around. Keep the walls an even thickness.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-orange-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">5</span>
+                            Shape the rim by gently pressing and smoothing the top edge. Use a damp finger to smooth any cracks. If you want a wider bowl, continue pinching outward; for a taller pot, pinch upward.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-orange-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">6</span>
+                            Use the pointed stick or pencil to carve simple patterns around the outside: zigzags, dots, circles, or traditional Nigerian geometric designs. Let the pot dry completely (this may take 1-2 days for real clay).
+                        </li>
+                    </ol>
+                    <div class="mt-4 bg-orange-50 rounded-lg p-3 text-sm text-orange-800">
+                        <strong>Tip:</strong> If you do not have clay, you can make your own by mixing 2 cups flour, 1 cup salt, and about 3/4 cup water. Knead until smooth. This salt dough can be air-dried or baked in an oven at low heat.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Craft Masters of Nigeria -->
+    <section class="bg-gradient-to-r from-terracotta to-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold mb-3">
+                    👑 Heritage & Legacy
+                </div>
+                <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl mb-3">Craft Masters of Nigeria</h2>
+                <p class="text-red-100 text-lg max-w-2xl mx-auto">These remarkable artisans and traditions have shaped Nigerian craft heritage and earned recognition across the world.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Master 1 -->
+                <div class="bg-white/10 backdrop-blur border border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition">
+                    <div class="p-6 text-center">
+                        <img src="images/crafts/olowe-of-ise.jpg" alt="Olowe of Ise" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-white/30" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-24 h-24 rounded-full mx-auto mb-4 bg-white/20 items-center justify-center text-4xl border-4 border-white/30">🗿</div>
+                        <h3 class="font-bold text-xl mb-1">Olowe of Ise</h3>
+                        <p class="text-red-200 text-sm mb-3">Master Wood Carver (c. 1875-1938)</p>
+                        <p class="text-white/80 text-sm">
+                            The greatest Yoruba wood carver ever recorded. His intricate carved veranda posts, doors, and bowls for the kings of Ekiti and Ondo are masterpieces of African art, now displayed in museums worldwide including the Smithsonian. His works feature elongated figures, bold compositions, and astonishing detail.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Master 2 -->
+                <div class="bg-white/10 backdrop-blur border border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition">
+                    <div class="p-6 text-center">
+                        <img src="images/crafts/ladi-kwali.jpg" alt="Ladi Kwali" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-white/30" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-24 h-24 rounded-full mx-auto mb-4 bg-white/20 items-center justify-center text-4xl border-4 border-white/30">🏺</div>
+                        <h3 class="font-bold text-xl mb-1">Ladi Kwali</h3>
+                        <p class="text-red-200 text-sm mb-3">Master Potter (c. 1925-1984)</p>
+                        <p class="text-white/80 text-sm">
+                            Nigeria's most famous potter and one of Africa's greatest ceramic artists. A Gwari woman from Niger State, she combined traditional hand-building techniques with modern glazing methods. Her face appeared on the Nigerian 20-naira note. The Pottery Centre in Suleja (formerly Abuja) is named in her honour.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Master 3 -->
+                <div class="bg-white/10 backdrop-blur border border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition">
+                    <div class="p-6 text-center">
+                        <img src="images/crafts/benin-bronze-guild.jpg" alt="Benin Bronze Casters Guild" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-white/30" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-24 h-24 rounded-full mx-auto mb-4 bg-white/20 items-center justify-center text-4xl border-4 border-white/30">👑</div>
+                        <h3 class="font-bold text-xl mb-1">Benin Bronze Casters Guild</h3>
+                        <p class="text-red-200 text-sm mb-3">Igun-Eronmwon (13th Century - Present)</p>
+                        <p class="text-white/80 text-sm">
+                            The Igun-Eronmwon guild of bronze casters in Benin City has practised the lost-wax casting technique for over 700 years, creating the world-famous Benin Bronzes. This hereditary guild on Igun Street is a UNESCO World Heritage Site. The tradition continues today, with master casters passing their skills to the next generation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Master 4 -->
+                <div class="bg-white/10 backdrop-blur border border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition">
+                    <div class="p-6 text-center">
+                        <img src="images/crafts/nike-davies-okundaye.jpg" alt="Nike Davies-Okundaye" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-white/30" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-24 h-24 rounded-full mx-auto mb-4 bg-white/20 items-center justify-center text-4xl border-4 border-white/30">👘</div>
+                        <h3 class="font-bold text-xl mb-1">Nike Davies-Okundaye</h3>
+                        <p class="text-red-200 text-sm mb-3">Textile Artist & Educator (1951 - Present)</p>
+                        <p class="text-white/80 text-sm">
+                            Nigeria's foremost textile artist, renowned for her mastery of adire (indigo resist-dyeing), batik, weaving, and embroidery. She has trained over 3,000 young artists through her art centres in Lagos, Osogbo, Abuja, and Ogidi. Her Nike Art Gallery in Lagos is one of the largest in West Africa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="bg-gradient-to-r from-amber-400 to-yellow-500 rounded-3xl p-8 md:p-12 text-center shadow-xl">
+            <h2 class="font-['Fredoka_One'] text-3xl md:text-4xl text-dark mb-4">Ready to Create Something Amazing?</h2>
+            <p class="text-amber-900 text-lg mb-8 max-w-2xl mx-auto">
+                Test your knowledge of Nigerian crafts with our AI-powered quiz, or ask our AI Assistant any question about traditional crafts, materials, and techniques!
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="quiz.html" class="bg-dark text-secondary px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-900 transition transform hover:scale-105 shadow-lg">
+                    🧠 Take a Crafts Quiz
+                </a>
+                <a href="assistant.html" class="bg-white text-dark px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-100 transition transform hover:scale-105 shadow-lg">
+                    🤖 Ask AI Assistant
+                </a>
+                <a href="gallery.html" class="bg-dark/20 text-dark px-8 py-3 rounded-full font-bold text-lg hover:bg-dark/30 transition border border-dark/30">
+                    🖼️ Visit Gallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-3xl">🎨</span>
+                        <span class="font-['Fredoka_One'] text-xl text-secondary">CCA Learn</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">An AI-powered learning platform for Cultural and Creative Arts. Designed for Nigerian JSS 1-3 students.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Classes</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="jss1.html" class="hover:text-white transition">JSS 1 - Foundation</a></li>
+                        <li><a href="jss2.html" class="hover:text-white transition">JSS 2 - Intermediate</a></li>
+                        <li><a href="jss3.html" class="hover:text-white transition">JSS 3 - Advanced</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">Explore</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="drawing.html" class="hover:text-white transition">Drawing & Painting</a></li>
+                        <li><a href="music.html" class="hover:text-white transition">Music</a></li>
+                        <li><a href="drama.html" class="hover:text-white transition">Drama & Theatre</a></li>
+                        <li><a href="crafts.html" class="hover:text-white transition">Traditional Crafts</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition">Cultural Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary mb-3">AI Tools</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="quiz.html" class="hover:text-white transition">AI Quiz Master</a></li>
+                        <li><a href="assistant.html" class="hover:text-white transition">AI Study Assistant</a></li>
+                        <li><a href="drawing.html" class="hover:text-white transition">Digital Art Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 CCA Learn. Built for Nigerian Students with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
