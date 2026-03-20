@@ -13,6 +13,33 @@ document.addEventListener('click', function(e) {
     }
 });
 
+// Profile Management
+const ProfileManager = {
+    // Check if user is logged in
+    isLoggedIn() {
+        return localStorage.getItem('cca-profile') !== null;
+    },
+
+    // Get user profile
+    getProfile() {
+        const profile = localStorage.getItem('cca-profile');
+        return profile ? JSON.parse(profile) : null;
+    },
+
+    // Auto-login on page load
+    autoLogin() {
+        if (this.isLoggedIn()) {
+            const profile = this.getProfile();
+            console.log('User logged in:', profile.fullName);
+        }
+    }
+};
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    ProfileManager.autoLogin();
+});
+
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
